@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}CTData Angular App{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/dist/bower_components/angular-ui-bootstrap-bower/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/dist/css/project.css">
+
+    <script src="static/dist/bower_components/d3/d3.js"></script>
+    <script src="static/dist/bower_components/d3-jetpack/d3-jetpack.js"></script>
+    <script src="static/dist/bower_components/angular/angular.js"></script>
+    <script src="static/dist/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="static/dist/bower_components/angular-ui-bootstrap-bower/ui-bootstrap.min.js"></script>
+    <script src="static/dist/bower_components/ng-lodash/build/ng-lodash.min.js"></script>
+    <script src="static/dist/js/table.js"></script>
+    <script src="static/dist/js/app.js"></script>
+  </head>
+  <body>
+    <div id="wrap" ng-controller="WrapController">
+      <div class="navbar-header">
+        <nav class="navbar navbar-dark navbar-static-top bg-inverse">
+          <div class="container-fluid">
+              <div>
+                <ul class="nav navbar-nav pull-right">
+                  <li class="logo"><a class="logo-link" href="http://ctdata.org">Created by the Connecticut Data Collaborative</a>
+                  <span class="logo-small">
+                    <div class="logo-circle dark-blue"></div>
+                    <div class="logo-circle medium-blue"></div>
+                    <div class="logo-circle light-blue"></div>
+                    <div class="logo-circle extra-light-blue"></div>
+                  </li>
+                  <li><a href="https://twitter.com/ctopendata">
+                      <i class="fa fa-inverse fa-twitter fa-lg"></i>
+                      </a>
+                  </li>
+                  <li><a href="https://www.facebook.com/pages/CT-Data-Collaborative/150954425018093"><i class="fa fa-inverse fa-facebook fa-lg"></i></a></li>
+                </ul>
+              </div>
+          </div>
+        </nav>
+      </div> <!-- End Nav -->
+      <div id="main" ng-class="{true: 'toggled', false: ''}[toggle.toggled]">
+          <div id="sidebar-wrapper" ng-controller="SidebarController">
+              <ul class="sidebar-nav">
+              <li class="category" ng-class="checkSelected(category.selected)" ng-click="updateSelected(category)" ng-repeat="category in categories">
+                <span class="icon color-{{$index}}"><i class="{{category.icon}}"></i></span>
+                <span class="name">{{ category.name }}</span>
+              </li>
+            </ul>
+          </div>
+          <div id="page-content-wrapper" ng-controller="DataVizController">
+            <div class="top-row">
+              <div class="arrow_box">
+                <div class="top-row-title">
+                  <i id="menu-toggle" class="fa fa-bars" ng-click="toggle.toggled = !toggle.toggled"></i>
+                  <h1><a href="#">CTData Angular Project</a></h1>
+                </div>
+              </div>
+            </div>
+            <div class="container-fluid main-internal">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div ng-repeat="cat in categories">
+                    <h2>{{cat.name}}</h2>
+                    <pre>
+                    {{cat}}
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="footer">
+        <div class="copyright">
+          <p>CTData.org is a Project of the Connecticut Data Collaborative. Copyright <i class="fa fa-copyright fa-inverse"></i> 2015 CT Data Collaborative</p>
+        </div>
+    </div>
+    <!-- Latest JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- I haven't actually checked to see if removing this causes problems with the ui-bootstrap -->
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+  </body>
+</html>
