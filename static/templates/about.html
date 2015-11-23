@@ -1,0 +1,23 @@
+<div id="page-content-wrapper" ng-controller="DataVizController">
+  <div class="top-row">
+    <div class="arrow_box">
+      <div class="top-row-title">
+        <i id="menu-toggle" class="fa fa-bars" ng-click="toggle.toggled = !toggle.toggled"></i>
+        <h1>Civic Health Index - About the Contributors</h1>
+        <h5 class="pull-right"><a href="#data">See the Data</a></h5>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid main-internal">
+    <div class="row">
+      <div class="col-sm-12">
+        <div ng-repeat="cat in categories">
+          <h2>{{cat.name}}</h2>
+          <pre>
+          {{cat}}
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

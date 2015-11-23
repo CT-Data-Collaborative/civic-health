@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" ng-app='app'>
   <head>
+    <base href="/">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{% block title %}CTData Angular App{% endblock title %}</title>
+    <title>Civic Health Index - CTData.org</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -28,7 +29,7 @@
     <script src="static/dist/js/table.js"></script>
     <script src="static/dist/js/app.js"></script>
   </head>
-  <body>
+  <body ng-app="app">
     <div id="wrap" ng-controller="WrapController">
       <div class="navbar-header">
         <nav class="navbar navbar-dark navbar-static-top bg-inverse">
@@ -54,35 +55,15 @@
       </div> <!-- End Nav -->
       <div id="main" ng-class="{true: 'toggled', false: ''}[toggle.toggled]">
           <div id="sidebar-wrapper" ng-controller="SidebarController">
+              <ul class=></ul>
               <ul class="sidebar-nav">
-              <li class="category" ng-class="checkSelected(category.selected)" ng-click="updateSelected(category)" ng-repeat="category in categories">
-                <span class="icon color-{{$index}}"><i class="{{category.icon}}"></i></span>
-                <span class="name">{{ category.name }}</span>
-              </li>
+                <li class="category" ng-class="checkSelected(category.selected)" ng-click="updateSelected(category)" ng-repeat="category in categories">
+                  <span class="icon color-{{$index}}"><i class="{{category.icon}}"></i></span>
+                  <span class="name">{{ category.name }}</span>
+                </li>
             </ul>
           </div>
-          <div id="page-content-wrapper" ng-controller="DataVizController">
-            <div class="top-row">
-              <div class="arrow_box">
-                <div class="top-row-title">
-                  <i id="menu-toggle" class="fa fa-bars" ng-click="toggle.toggled = !toggle.toggled"></i>
-                  <h1><a href="#">CTData Angular Project</a></h1>
-                </div>
-              </div>
-            </div>
-            <div class="container-fluid main-internal">
-              <div class="row">
-                <div class="col-sm-12">
-                  <div ng-repeat="cat in categories">
-                    <h2>{{cat.name}}</h2>
-                    <pre>
-                    {{cat}}
-                    </pre>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ng-view></ng-view>
       </div>
     </div>
     <div class="footer">
