@@ -1,2 +1,120 @@
-var app=angular.module("app",["ngAnimate","ui.bootstrap","ngLodash"]);angular.module("app").controller("DataVizController",["$scope","$http","$log","sidebarDisplay","categories","lodash",function(e,a,t,o,l,n){e.toggle=o.toggle,e.categories=l.list,e.$watchCollection(function(){return e.categories},function(){console.log("Selection Detected")},!0)}]),angular.module("app").directive("simpletable",function(){var e=tableChart();return{restrict:"E",scope:{data:"=data"},link:function(a,t,o){a.$watchCollection("data",function(a){d3.select(t[0]).datum(a).call(e)})}}}),angular.module("app").service("categories",["lodash",function(e){var a={};return a.list=[{name:"Category 1",selected:!0,icon:"fa fa-gavel"},{name:"Category 2",selected:!0,icon:"fa fa-gavel"},{name:"Category 3",selected:!0,icon:"fa fa-gavel"},{name:"Category 4",selected:!0,icon:"fa fa-gavel"},{name:"Category 5",selected:!0,icon:"fa fa-gavel"},{name:"Category 6",selected:!0,icon:"fa fa-gavel"},{name:"Category 7",selected:!0,icon:"fa fa-gavel"}],a.toggle=function(t){position=e.findIndex(a.list,function(e){return e.name==t.name}),a.list[position].selected=!a.list[position].selected},a}]),angular.module("app").controller("SidebarController",["$scope","$log","lodash","categories",function(e,a,t,o){e.status={isopen:!1},e.categories=o.list,e.updateSelected=function(e){o.toggle(e)},e.checkSelected=function(e){return e?"selected":"deselected"}}]),angular.module("app").service("sidebarDisplay",function(){return{toggle:{toggled:!1}}}),angular.module("app").controller("WrapController",["$scope","sidebarDisplay",function(e,a){e.toggle=a.toggle}]);
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vZHVsZS5qcyIsImRhdGF2aXovZGF0YXZpei5jb250cm9sbGVyLmpzIiwiZGF0YXZpei9zaW1wbGV0YWJsZS5kaXJlY3RpdmUuanMiLCJzaWRlYmFyL2NhdGVnb3JpZXMuc2VydmljZS5qcyIsInNpZGViYXIvc2lkZWJhci5jb250cm9sbGVyLmpzIiwic2lkZWJhci9zaWRlYmFyZGlzcGxheS5zZXJ2aWNlLmpzIiwic2lkZWJhci93cmFwLmNvbnRyb2xsZXIuanMiXSwibmFtZXMiOlsiYXBwIiwiYW5ndWxhciIsIm1vZHVsZSIsImNvbnRyb2xsZXIiLCIkc2NvcGUiLCIkaHR0cCIsIiRsb2ciLCJzaWRlYmFyRGlzcGxheSIsImNhdGVnb3JpZXMiLCJsb2Rhc2giLCJ0b2dnbGUiLCJsaXN0IiwiJHdhdGNoQ29sbGVjdGlvbiIsImNvbnNvbGUiLCJsb2ciLCJkaXJlY3RpdmUiLCJjaGFydCIsInRhYmxlQ2hhcnQiLCJyZXN0cmljdCIsInNjb3BlIiwiZGF0YSIsImxpbmsiLCJlbGVtZW50IiwiYXR0cnMiLCJkMyIsInNlbGVjdCIsImRhdHVtIiwiY2FsbCIsInNlcnZpY2UiLCJuYW1lIiwic2VsZWN0ZWQiLCJpY29uIiwiY2F0ZWdvcnkiLCJwb3NpdGlvbiIsImZpbmRJbmRleCIsImxpc3RjYXQiLCJzdGF0dXMiLCJpc29wZW4iLCJ1cGRhdGVTZWxlY3RlZCIsImNoZWNrU2VsZWN0ZWQiLCJib29sIiwidG9nZ2xlZCJdLCJtYXBwaW5ncyI6IkFBQUEsR0FBQUEsS0FBQUMsUUFBQUMsT0FBQSxPQUNBLFlBQ0EsZUFDQSxZQ0hBRCxTQUFBQyxPQUFBLE9BQ0FDLFdBQUEscUJBQ0EsU0FBQSxRQUFBLE9BQUEsaUJBQUEsYUFBQSxTQUNBLFNBQUFDLEVBQUFDLEVBQUFDLEVBQUFDLEVBQUFDLEVBQUFDLEdBRUFMLEVBQUFNLE9BQUFILEVBQUFHLE9BQ0FOLEVBQUFJLFdBQUFBLEVBQUFHLEtBSUFQLEVBQUFRLGlCQUFBLFdBQ0EsTUFBQVIsR0FBQUksWUFDQSxXQUNBSyxRQUFBQyxJQUFBLHdCQUNBLE1DZEFiLFFBQUFDLE9BQUEsT0FDQWEsVUFBQSxjQUFBLFdBRUEsR0FBQUMsR0FBQUMsWUFDQSxRQUNBQyxTQUFBLElBQ0FDLE9BQ0FDLEtBQUEsU0FFQUMsS0FBQSxTQUFBRixFQUFBRyxFQUFBQyxHQUNBSixFQUFBUCxpQkFBQSxPQUFBLFNBQUFRLEdBQ0FJLEdBQUFDLE9BQUFILEVBQUEsSUFBQUksTUFBQU4sR0FBQU8sS0FBQVgsU0NYQWYsUUFBQUMsT0FBQSxPQUNBMEIsUUFBQSxjQUFBLFNBQUEsU0FBQW5CLEdBQ0EsR0FBQUQsS0FnQkEsT0FmQUEsR0FBQUcsT0FDQWtCLEtBQUEsYUFBQUMsVUFBQSxFQUFBQyxLQUFBLGdCQUNBRixLQUFBLGFBQUFDLFVBQUEsRUFBQUMsS0FBQSxnQkFDQUYsS0FBQSxhQUFBQyxVQUFBLEVBQUFDLEtBQUEsZ0JBQ0FGLEtBQUEsYUFBQUMsVUFBQSxFQUFBQyxLQUFBLGdCQUNBRixLQUFBLGFBQUFDLFVBQUEsRUFBQUMsS0FBQSxnQkFDQUYsS0FBQSxhQUFBQyxVQUFBLEVBQUFDLEtBQUEsZ0JBQ0FGLEtBQUEsYUFBQUMsVUFBQSxFQUFBQyxLQUFBLGdCQUVBdkIsRUFBQUUsT0FBQSxTQUFBc0IsR0FDQUMsU0FBQXhCLEVBQUF5QixVQUFBMUIsRUFBQUcsS0FBQSxTQUFBd0IsR0FDQSxNQUFBQSxHQUFBTixNQUFBRyxFQUFBSCxPQUVBckIsRUFBQUcsS0FBQXNCLFVBQUFILFVBQUF0QixFQUFBRyxLQUFBc0IsVUFBQUgsVUFFQXRCLEtDbEJBUCxRQUFBQyxPQUFBLE9BQ0FDLFdBQUEscUJBQ0EsU0FBQSxPQUFBLFNBQUEsYUFDQSxTQUFBQyxFQUFBRSxFQUFBRyxFQUFBRCxHQUNBSixFQUFBZ0MsUUFDQUMsUUFBQSxHQUdBakMsRUFBQUksV0FBQUEsRUFBQUcsS0FHQVAsRUFBQWtDLGVBQUEsU0FBQU4sR0FDQXhCLEVBQUFFLE9BQUFzQixJQUVBNUIsRUFBQW1DLGNBQUEsU0FBQUMsR0FDQSxNQUFBQSxHQUNBLFdBRUEsaUJDbEJBdkMsUUFBQUMsT0FBQSxPQUNBMEIsUUFBQSxpQkFBQSxXQUNBLE9BQ0FsQixRQUFBK0IsU0FBQSxNQ0hBeEMsUUFBQUMsT0FBQSxPQUNBQyxXQUFBLGtCQUFBLFNBQUEsaUJBQUEsU0FBQUMsRUFBQUcsR0FDQUgsRUFBQU0sT0FBQUgsRUFBQUciLCJmaWxlIjoiYXBwLmpzIiwic291cmNlc0NvbnRlbnQiOlsidmFyIGFwcCA9IGFuZ3VsYXIubW9kdWxlKCdhcHAnLCBbXG4gICAgJ25nQW5pbWF0ZScsXG4gICAgJ3VpLmJvb3RzdHJhcCcsXG4gICAgJ25nTG9kYXNoJ1xuICAgIF0pO1xuIiwiYW5ndWxhci5tb2R1bGUoJ2FwcCcpXG4uY29udHJvbGxlcignRGF0YVZpekNvbnRyb2xsZXInLFxuICAgIFsnJHNjb3BlJywgJyRodHRwJywgJyRsb2cnLCAnc2lkZWJhckRpc3BsYXknLCAnY2F0ZWdvcmllcycsICdsb2Rhc2gnLFxuICAgIGZ1bmN0aW9uKCRzY29wZSwgJGh0dHAsICRsb2csIHNpZGViYXJEaXNwbGF5LCBjYXRlZ29yaWVzLCBsb2Rhc2gpe1xuICAgICAgICB2YXIgbG8gPSBsb2Rhc2g7XG4gICAgICAgICRzY29wZS50b2dnbGUgPSBzaWRlYmFyRGlzcGxheS50b2dnbGU7XG4gICAgICAgICRzY29wZS5jYXRlZ29yaWVzID0gY2F0ZWdvcmllcy5saXN0O1xuXG4gICAgICAgIC8vIFNhbXBsZSB3YXRjaC4uLmRvZXNuJ3QgZG8gbXVjaCwgYnV0IGRlbW9uc3RyYXRlcyBob3dcbiAgICAgICAgLy8gdG8gd2F0Y2ggb2JqZWN0IGZyb20gYSBzZXJ2aWNlLlxuICAgICAgICAkc2NvcGUuJHdhdGNoQ29sbGVjdGlvbihmdW5jdGlvbigpIHtcbiAgICAgICAgICAgIHJldHVybiAkc2NvcGUuY2F0ZWdvcmllcztcbiAgICAgICAgfSwgZnVuY3Rpb24oKSB7XG4gICAgICAgICAgICBjb25zb2xlLmxvZyhcIlNlbGVjdGlvbiBEZXRlY3RlZFwiKTtcbiAgICAgICAgfSwgdHJ1ZSk7XG59XSlcbiIsImFuZ3VsYXIubW9kdWxlKCdhcHAnKVxuLmRpcmVjdGl2ZSgnc2ltcGxldGFibGUnLCBmdW5jdGlvbigpIHtcbiAgICAvLyBUaGlzIGZ1bmN0aW9uIHNob3VsZCByZWZsZWN0IHdoYXRldmVyIHlvdXIgZDMgdGFibGUgZnVuY3Rpb24gaXMgY2FsbGVkLlxuICAgIHZhciBjaGFydCA9IHRhYmxlQ2hhcnQoKTtcbiAgICByZXR1cm4gIHtcbiAgICAgICAgcmVzdHJpY3Q6ICdFJyxcbiAgICAgICAgc2NvcGU6IHtcbiAgICAgICAgICAgIGRhdGE6IFwiPWRhdGFcIiAvLyBXZSBjYW4gY2FsbCB0aGlzIHcvZSB3ZSB3YW50LlxuICAgICAgICB9LFxuICAgICAgICBsaW5rOiBmdW5jdGlvbihzY29wZSwgZWxlbWVudCwgYXR0cnMpIHtcbiAgICAgICAgICAgIHNjb3BlLiR3YXRjaENvbGxlY3Rpb24oJ2RhdGEnLCBmdW5jdGlvbihkYXRhKSB7XG4gICAgICAgICAgICAgICAgZDMuc2VsZWN0KGVsZW1lbnRbMF0pLmRhdHVtKGRhdGEpLmNhbGwoY2hhcnQpO1xuICAgICAgICAgICAgfSk7XG4gICAgICAgIH1cbiAgICB9XG59KVxuIiwiYW5ndWxhci5tb2R1bGUoJ2FwcCcpXG4uc2VydmljZSgnY2F0ZWdvcmllcycsIFsnbG9kYXNoJywgZnVuY3Rpb24obG9kYXNoKSB7XG4gICAgdmFyIGNhdGVnb3JpZXMgPSB7fTtcbiAgICBjYXRlZ29yaWVzLmxpc3QgPSBbXG4gICAgICAgIHsnbmFtZSc6ICdDYXRlZ29yeSAxJywgJ3NlbGVjdGVkJzogdHJ1ZSwgJ2ljb24nOiAnZmEgZmEtZ2F2ZWwnfSxcbiAgICAgICAgeyduYW1lJzogJ0NhdGVnb3J5IDInLCAnc2VsZWN0ZWQnOiB0cnVlLCAnaWNvbic6ICdmYSBmYS1nYXZlbCd9LFxuICAgICAgICB7J25hbWUnOiAnQ2F0ZWdvcnkgMycsICdzZWxlY3RlZCc6IHRydWUsICdpY29uJzogJ2ZhIGZhLWdhdmVsJ30sXG4gICAgICAgIHsnbmFtZSc6ICdDYXRlZ29yeSA0JywgJ3NlbGVjdGVkJzogdHJ1ZSwgJ2ljb24nOiAnZmEgZmEtZ2F2ZWwnfSxcbiAgICAgICAgeyduYW1lJzogJ0NhdGVnb3J5IDUnLCAnc2VsZWN0ZWQnOiB0cnVlLCAnaWNvbic6ICdmYSBmYS1nYXZlbCd9LFxuICAgICAgICB7J25hbWUnOiAnQ2F0ZWdvcnkgNicsICdzZWxlY3RlZCc6IHRydWUsICdpY29uJzogJ2ZhIGZhLWdhdmVsJ30sXG4gICAgICAgIHsnbmFtZSc6ICdDYXRlZ29yeSA3JywgJ3NlbGVjdGVkJzogdHJ1ZSwgJ2ljb24nOiAnZmEgZmEtZ2F2ZWwnfVxuICAgIF07XG4gICAgY2F0ZWdvcmllcy50b2dnbGUgPSBmdW5jdGlvbihjYXRlZ29yeSkge1xuICAgICAgICBwb3NpdGlvbiA9IGxvZGFzaC5maW5kSW5kZXgoY2F0ZWdvcmllcy5saXN0LCBmdW5jdGlvbihsaXN0Y2F0KSB7XG4gICAgICAgICAgICByZXR1cm4gbGlzdGNhdC5uYW1lID09IGNhdGVnb3J5Lm5hbWU7XG4gICAgICAgIH0pO1xuICAgICAgICBjYXRlZ29yaWVzLmxpc3RbcG9zaXRpb25dLnNlbGVjdGVkID0gIWNhdGVnb3JpZXMubGlzdFtwb3NpdGlvbl0uc2VsZWN0ZWQ7XG4gICAgfVxuICAgIHJldHVybiBjYXRlZ29yaWVzO1xufV0pXG4iLCJhbmd1bGFyLm1vZHVsZSgnYXBwJylcbi5jb250cm9sbGVyKCdTaWRlYmFyQ29udHJvbGxlcicsXG4gICAgWyckc2NvcGUnLCAnJGxvZycsICdsb2Rhc2gnLCAnY2F0ZWdvcmllcycsXG4gICAgZnVuY3Rpb24oJHNjb3BlLCAkbG9nLCBsb2Rhc2gsIGNhdGVnb3JpZXMpIHtcbiAgICAgICAgJHNjb3BlLnN0YXR1cyA9IHtcbiAgICAgICAgICAgIGlzb3BlbjogZmFsc2VcbiAgICAgICAgfTtcblxuICAgICAgICAkc2NvcGUuY2F0ZWdvcmllcyA9IGNhdGVnb3JpZXMubGlzdDtcbiAgICAgICAgLy8gRnVuY3Rpb25zIGZvciBtYW5hZ2luZyB0aGUgcHJlc2VudGF0aW9uIG9mIHRoZSBzZWxlY3RlZCBpdGVtcyBpblxuICAgICAgICAvLyB0aGUgc2lkZWJhciBhbmQgcHJvcGlnYXRpbmcgc2VsZWN0aW9ucyB0aHJvdWdoIHRoZSBjYXRnb3JpZXMgc2VydmljZVxuICAgICAgICAkc2NvcGUudXBkYXRlU2VsZWN0ZWQgPSBmdW5jdGlvbihjYXRlZ29yeSkge1xuICAgICAgICAgICAgY2F0ZWdvcmllcy50b2dnbGUoY2F0ZWdvcnkpO1xuICAgICAgICB9XG4gICAgICAgICRzY29wZS5jaGVja1NlbGVjdGVkID0gZnVuY3Rpb24oYm9vbCkge1xuICAgICAgICAgICAgaWYgKGJvb2wpIHtcbiAgICAgICAgICAgICAgICByZXR1cm4gXCJzZWxlY3RlZFwiO1xuICAgICAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICAgICAgICByZXR1cm4gXCJkZXNlbGVjdGVkXCI7XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbn1dKVxuIiwiYW5ndWxhci5tb2R1bGUoJ2FwcCcpXG4uc2VydmljZSgnc2lkZWJhckRpc3BsYXknLCBmdW5jdGlvbigpIHtcbiAgICByZXR1cm4ge1xuICAgICAgICB0b2dnbGU6IHsgdG9nZ2xlZDogZmFsc2UgfVxuICAgIH1cbn0pXG4iLCJhbmd1bGFyLm1vZHVsZSgnYXBwJylcbi5jb250cm9sbGVyKCdXcmFwQ29udHJvbGxlcicsIFsnJHNjb3BlJywgJ3NpZGViYXJEaXNwbGF5JywgZnVuY3Rpb24oJHNjb3BlLCBzaWRlYmFyRGlzcGxheSkge1xuICAgICRzY29wZS50b2dnbGUgPSBzaWRlYmFyRGlzcGxheS50b2dnbGU7XG59XSlcbiJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
+var app = angular.module('app', [
+    'ngAnimate',
+    'ui.bootstrap',
+    'ngLodash',
+    'ngRoute'
+    ]);
+
+angular.module('app')
+.config(function($routeProvider, $locationProvider) {
+    $routeProvider
+        .when('/data', {
+            templateUrl: 'static/templates/data.html',
+            controller: 'DataVizController'
+        })
+        .when('/about', {
+            templateUrl: 'static/templates/about.html'
+        })
+        .otherwise({
+            redirectTo: '/data'
+        });
+});
+angular.module('app')
+.controller('DataVizController',
+    ['$scope', '$http', '$log', 'sidebarDisplay', 'categories', 'lodash',
+    function($scope, $http, $log, sidebarDisplay, categories, lodash){
+        var lo = lodash;
+        $scope.toggle = sidebarDisplay.toggle;
+        $scope.categories = categories.list;
+
+        // Sample watch...doesn't do much, but demonstrates how
+        // to watch object from a service.
+        $scope.$watchCollection(function() {
+            return $scope.categories;
+        }, function() {
+            console.log("Selection Detected");
+        }, true);
+}])
+
+angular.module('app')
+.directive('simpletable', function() {
+    // This function should reflect whatever your d3 table function is called.
+    var chart = tableChart();
+    return  {
+        restrict: 'E',
+        scope: {
+            data: "=data" // We can call this w/e we want.
+        },
+        link: function(scope, element, attrs) {
+            scope.$watchCollection('data', function(data) {
+                d3.select(element[0]).datum(data).call(chart);
+            });
+        }
+    }
+})
+
+angular.module('app')
+.service('categories', ['$http', 'lodash', function($http, lodash) {
+    var categories = {};
+    categories.list = [
+        // {'name': 'Category 1', 'selected': true, 'icon': 'fa fa-gavel'},
+        // {'name': 'Category 2', 'selected': true, 'icon': 'fa fa-gavel'},
+        // {'name': 'Category 3', 'selected': true, 'icon': 'fa fa-gavel'},
+        // {'name': 'Category 4', 'selected': true, 'icon': 'fa fa-gavel'},
+        // {'name': 'Category 5', 'selected': true, 'icon': 'fa fa-gavel'},
+        // {'name': 'Category 6', 'selected': true, 'icon': 'fa fa-gavel'},
+        // {'name': 'Category 7', 'selected': true, 'icon': 'fa fa-gavel'}
+    ];
+
+    $http.get('/static/dist/data/data.json')
+        .success(function(response) {
+            console.log(response);
+            categories.list = lodash.map(response, function(cat) {
+                return { "name" : cat.topic, "selected" : true, "icon" : cat.icon };
+            });
+        });
+
+    categories.toggle = function(category) {
+        position = lodash.findIndex(categories.list, function(listcat) {
+            return listcat.name == category.name;
+        });
+        categories.list[position].selected = !categories.list[position].selected;
+    }
+    return categories;
+}])
+
+angular.module('app')
+.controller('SidebarController',
+    ['$scope', '$log', 'lodash', 'categories',
+    function($scope, $log, lodash, categories) {
+        $scope.status = {
+            isopen: false
+        };
+
+        $scope.categories = categories.list;
+
+        // Functions for managing the presentation of the selected items in
+        // the sidebar and propigating selections through the catgories service
+        $scope.updateSelected = function(category) {
+            categories.toggle(category);
+        };
+        $scope.checkSelected = function(bool) {
+            if (bool) {
+                return "selected";
+            } else {
+                return "deselected";
+            }
+        };
+}])
+
+angular.module('app')
+.service('sidebarDisplay', function() {
+    return {
+        toggle: { toggled: false }
+    }
+})
+
+angular.module('app')
+.controller('WrapController', ['$scope', 'sidebarDisplay', function($scope, sidebarDisplay) {
+    $scope.toggle = sidebarDisplay.toggle;
+}])
