@@ -1,5 +1,5 @@
 .sidebar-nav {
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     bottom: 0;
     width: $sidebar-menu-width;
@@ -25,6 +25,39 @@
     li {
         background: $light-tan;
         cursor: pointer;
+        &.contributor {
+            border-top: solid .1rem $dark-grey;
+            border-bottom: solid .1rem $dark-grey;
+            border-right: solid .1rem $dark-grey;
+            padding-left: .5rem;
+            padding-top: .5rem;
+
+            &.color-0, &.color-5, &.color-10 {
+                border-left: solid .25rem $ctdata-extra-dark-blue;
+            }
+            &.color-1, &.color-6, &.color-11 {
+                border-left: solid .25rem $ctdata-dark-blue;
+            }
+            &.color-2, &.color-7, &.color-12 {
+                border-left: solid .25rem $ctdata-medium-blue;
+            }
+            &.color-3, &.color-8, &.color-13 {
+                border-left: solid .25rem $ctdata-light-blue;
+            }
+            &.color-4, &.color-9, &.color-14 {
+                border-left: solid .25rem $ctdata-extra-light-blue;
+            }
+
+            a {
+                color: $light-grey;
+                text-decoration: none;
+            }
+
+            a:hover {
+                color: $ctdata-extra-dark-blue;
+                text-decoration: underline;
+            }
+        }
         &.category {
             background: white;
             border-top: solid .1rem $dark-grey;
@@ -52,19 +85,19 @@
                     width: (18em / 14);
                 }
 
-                &.color-0,.color-5,.color-10 {
+                &.color-0, &.color-5, &.color-10 {
                     border-left: solid .25rem $ctdata-extra-dark-blue;
                 }
-                &.color-1,.color-6,.color-11 {
+                &.color-1, &.color-6, &.color-11 {
                     border-left: solid .25rem $ctdata-dark-blue;
                 }
-                &.color-2,.color-7,.color-12 {
+                &.color-2, &.color-7, &.color-12 {
                     border-left: solid .25rem $ctdata-medium-blue;
                 }
-                &.color-3,.color-8,.color-13 {
+                &.color-3, &.color-8, &.color-13 {
                     border-left: solid .25rem $ctdata-light-blue;
                 }
-                &.color-4,.color-9,.color-14 {
+                &.color-4, &.color-9, &.color-14 {
                     border-left: solid .25rem $ctdata-extra-light-blue;
                 }
             }
@@ -90,4 +123,15 @@
             text-decoration: none;
         }
     }
+}
+
+h3 {
+    text-align: center;
+    font-weight: $heavy;
+    padding-top:2rem;
+}
+
+img.logo {
+    width: 50%;
+    margin: 5% 25%;
 }

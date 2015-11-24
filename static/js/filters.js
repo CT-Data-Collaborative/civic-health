@@ -10,6 +10,11 @@ angular.module('app')
     }
   };
 })
+.filter('sluggify', function() {
+    return function(input) {
+        return input.toLowerCase().replace(/[^a-zA-Z0-9_]/g, "_")
+    };
+})
 .filter('safe', function($sce) {
     return $sce.trustAsHtml;
 });

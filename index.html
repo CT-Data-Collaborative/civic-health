@@ -55,15 +55,26 @@
       </div> <!-- End Nav -->
       <div id="main" ng-class="{true: 'toggled', false: ''}[toggle.toggled]">
           <div id="sidebar-wrapper" ng-controller="SidebarController">
-              <ul class=></ul>
-              <ul class="sidebar-nav">
-                <li class="category" ng-class="checkSelected(category.selected)" ng-click="updateSelected(category)" ng-repeat="category in categories">
-                  <span class="icon color-{{$index}}"><i class="{{category.icon}}"></i></span>
-                  <span class="name">{{ category.name }}</span>
-                </li>
+            <div>
+              <img class="logo" src="static/dist/images/sots-seal.png"></img>
+            </div>
+            <h3>Partner Organizations</h3>
+            <ul class="sidebar-nav">
+              <li class="contributor color-{{ $index }}" ng-repeat="contributor in contributors">
+                <!-- <span class="icon color-{{$index}}"></i></span> -->
+                <!-- <a href="#about#{{ contributor.name | sluggify }}"><span class="name">{{ contributor.name }}</span></a> -->
+                <a class="name" href="#about#{{ contributor.name | sluggify }}">{{ contributor.name }}</a>
+              </li>
             </ul>
-          </div>
-          <ng-view></ng-view>
+            <h3>Index Categories</h3>
+            <ul class="sidebar-nav">
+              <li class="category" ng-class="checkSelected(category.selected)" ng-click="updateSelected(category)" ng-repeat="category in categories">
+                <span class="icon color-{{$index}}"><i class="{{category.icon}}"></i></span>
+                <span class="name">{{ category.name }}</span>
+              </li>
+          </ul>
+        </div>
+        <ng-view></ng-view>
       </div>
     </div>
     <div class="footer">
