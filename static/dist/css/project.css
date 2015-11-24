@@ -268,7 +268,7 @@
   background: white; }
 
 .sidebar-nav {
-  position: absolute;
+  /*position: absolute;*/
   top: 0;
   bottom: 0;
   width: 300px;
@@ -286,6 +286,28 @@
   .sidebar-nav li {
     background: #F2F2EA;
     cursor: pointer; }
+    .sidebar-nav li.contributor {
+      border-top: solid 0.1rem #979797;
+      border-bottom: solid 0.1rem #979797;
+      border-right: solid 0.1rem #979797;
+      padding-left: .5rem;
+      padding-top: .5rem; }
+      .sidebar-nav li.contributor.color-0, .sidebar-nav li.contributor.color-5, .sidebar-nav li.contributor.color-10 {
+        border-left: solid 0.25rem #4670A7; }
+      .sidebar-nav li.contributor.color-1, .sidebar-nav li.contributor.color-6, .sidebar-nav li.contributor.color-11 {
+        border-left: solid 0.25rem #1EACF1; }
+      .sidebar-nav li.contributor.color-2, .sidebar-nav li.contributor.color-7, .sidebar-nav li.contributor.color-12 {
+        border-left: solid 0.25rem #63D1F4; }
+      .sidebar-nav li.contributor.color-3, .sidebar-nav li.contributor.color-8, .sidebar-nav li.contributor.color-13 {
+        border-left: solid 0.25rem #9EDDFC; }
+      .sidebar-nav li.contributor.color-4, .sidebar-nav li.contributor.color-9, .sidebar-nav li.contributor.color-14 {
+        border-left: solid 0.25rem #CDEFFE; }
+      .sidebar-nav li.contributor a {
+        color: #4A4A4A;
+        text-decoration: none; }
+      .sidebar-nav li.contributor a:hover {
+        color: #4670A7;
+        text-decoration: underline; }
     .sidebar-nav li.category {
       background: white;
       border-top: solid 0.1rem #979797;
@@ -306,15 +328,15 @@
       .sidebar-nav li span.icon .fa {
         text-align: center;
         width: 1.28571em; }
-      .sidebar-nav li span.icon.color-0, .sidebar-nav li span.icon .color-5, .sidebar-nav li span.icon .color-10 {
+      .sidebar-nav li span.icon.color-0, .sidebar-nav li span.icon.color-5, .sidebar-nav li span.icon.color-10 {
         border-left: solid 0.25rem #4670A7; }
-      .sidebar-nav li span.icon.color-1, .sidebar-nav li span.icon .color-6, .sidebar-nav li span.icon .color-11 {
+      .sidebar-nav li span.icon.color-1, .sidebar-nav li span.icon.color-6, .sidebar-nav li span.icon.color-11 {
         border-left: solid 0.25rem #1EACF1; }
-      .sidebar-nav li span.icon.color-2, .sidebar-nav li span.icon .color-7, .sidebar-nav li span.icon .color-12 {
+      .sidebar-nav li span.icon.color-2, .sidebar-nav li span.icon.color-7, .sidebar-nav li span.icon.color-12 {
         border-left: solid 0.25rem #63D1F4; }
-      .sidebar-nav li span.icon.color-3, .sidebar-nav li span.icon .color-8, .sidebar-nav li span.icon .color-13 {
+      .sidebar-nav li span.icon.color-3, .sidebar-nav li span.icon.color-8, .sidebar-nav li span.icon.color-13 {
         border-left: solid 0.25rem #9EDDFC; }
-      .sidebar-nav li span.icon.color-4, .sidebar-nav li span.icon .color-9, .sidebar-nav li span.icon .color-14 {
+      .sidebar-nav li span.icon.color-4, .sidebar-nav li span.icon.color-9, .sidebar-nav li span.icon.color-14 {
         border-left: solid 0.25rem #CDEFFE; }
     .sidebar-nav li span.name {
       font-size: 1rem;
@@ -329,6 +351,15 @@
       background: rgba(255, 255, 255, 0.2); }
     .sidebar-nav li a:active, .sidebar-nav li a:focus {
       text-decoration: none; }
+
+h3 {
+  text-align: center;
+  font-weight: 700;
+  padding-top: 2rem; }
+
+img.logo {
+  width: 50%;
+  margin: 5% 25%; }
 
 .ctdata-btn {
   background-color: #4670A7;
