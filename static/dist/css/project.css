@@ -339,7 +339,10 @@
   color: black; }
 
 table.ctdata-table {
+  width: 100%;
   margin-bottom: 2rem; }
+  table.ctdata-table tbody > tr > th {
+    width: 40%; }
   table.ctdata-table th, table.ctdata-table td {
     padding: .25em,.75em; }
   table.ctdata-table tr:hover {
@@ -353,6 +356,9 @@ table.ctdata-table {
     font-weight: 700;
     background-color: #CDEFFE;
     border-left: 5px solid #fff; }
+  table.ctdata-table .col-span-center {
+    text-align: center;
+    background-color: #9EDDFC; }
   table.ctdata-table .value {
     text-align: right;
     font-weight: 300; }

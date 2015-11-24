@@ -4,7 +4,13 @@ angular.module('app')
     function($scope, $http, $log, sidebarDisplay, categories, lodash){
         var lo = lodash;
         $scope.toggle = sidebarDisplay.toggle;
-        $scope.categories = categories.list;
+
+        var promise = categories.getCategories("all");
+        promise.then(function(result) {
+            $scope.categories = result;
+        }, function(rejection) {
+            alert("promise rejected!");
+        })
 
         // Sample watch...doesn't do much, but demonstrates how
         // to watch object from a service.

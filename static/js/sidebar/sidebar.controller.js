@@ -6,7 +6,12 @@ angular.module('app')
             isopen: false
         };
 
-        $scope.categories = categories.list;
+        var promise = categories.getCategories();
+        promise.then(function(result) {
+            $scope.categories = result;
+        }, function(rejection) {
+            alert("promise rejected!");
+        })
 
         // Functions for managing the presentation of the selected items in
         // the sidebar and propigating selections through the catgories service

@@ -1,0 +1,55 @@
+<div id="page-content-wrapper" ng-controller="DataVizController">
+  <div class="top-row">
+    <div class="arrow_box">
+      <div class="top-row-title">
+        <i id="menu-toggle" class="fa fa-bars" ng-click="toggle.toggled = !toggle.toggled"></i>
+        <h1>Civic Health Index</h1>
+        <h5 class="pull-right"><a href="#about">About the Contributors</a></h5>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid main-internal">
+    <div class="row">
+      <div class="col-sm-12 row">
+        <div ng-repeat="cat in categories">
+          <h2>{{cat.name}}</h2>
+          <div class="col-sm-12" ng-repeat="datum in cat.data" style="overflow-x:auto;">
+            <table class="ctdata-table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th class="col-span-center col-name" colspan="6">State</th>
+                    <th class="col-span-center col-name" colspan="2">National</th>
+                  </tr>
+                  <tr>
+                    <th></th>
+                    <th class="col-name">Estimate</th>
+                    <th class="col-name">3-Year Trend</th>
+                    <th class="col-name">Rank</th>
+                    <th class="col-name">Percentile</th>
+                    <th class="col-name">Sample Size</th>
+                    <th class="col-name">Margins of Error</th>
+                    <th class="col-name">Estimate</th>
+                    <th class="col-name">3-Year Trend</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="name">{{ datum["Indicator"] }}</th>
+                    <td class="value">{{ datum["State (2013)"] }}</td>
+                    <td class="value">{{ datum["State Trend (2013)"] }}</td>
+                    <td class="value">{{ datum["Rank (2013)"] }}</td>
+                    <td class="value">{{ datum["Percentile (2013)"] }}</td>
+                    <td class="value">{{ datum["Sample (2013)"] }}</td>
+                    <td class="value">{{ datum["Margins of Error (2013)"] }}</td>
+                    <td class="value">{{ datum["National (2013)"] }}</td>
+                    <td class="value">{{ datum["National Trend (2013)"] }}</td>
+                  </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

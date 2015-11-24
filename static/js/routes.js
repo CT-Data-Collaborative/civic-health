@@ -2,11 +2,11 @@ angular.module('app')
 .config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/data', {
-            templateUrl: 'static/templates/data.html',
+            templateUrl: 'static/dist/templates/data.html',
             controller: 'DataVizController'
         })
         .when('/about', {
-            templateUrl: 'static/templates/about.html'
+            templateUrl: 'static/dist/templates/about.html'
         })
         .otherwise({
             redirectTo: '/data'
