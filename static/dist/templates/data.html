@@ -11,7 +11,7 @@
   <div class="container-fluid main-internal">
     <div class="row">
       <div class="col-sm-12 row">
-        <div ng-repeat="cat in categories">
+        <div ng-repeat="cat in categories" ng-show="cat.selected">
           <h2>{{cat.name}}</h2>
           <div class="col-sm-12" ng-repeat="datum in cat.data" style="overflow-x:auto;">
             <table class="ctdata-table">

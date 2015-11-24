@@ -8,7 +8,7 @@ angular.module('app')
 
         var promise = categories.getCategories();
         promise.then(function(result) {
-            $scope.categories = result;
+            $scope.categories = categories.list;
         }, function(rejection) {
             alert("promise rejected!");
         })
@@ -17,6 +17,7 @@ angular.module('app')
         // the sidebar and propigating selections through the catgories service
         $scope.updateSelected = function(category) {
             categories.toggle(category);
+            console.log(lodash.pluck(categories.list, "selected"))
         };
         $scope.checkSelected = function(bool) {
             if (bool) {

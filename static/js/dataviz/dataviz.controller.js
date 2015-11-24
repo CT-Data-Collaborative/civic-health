@@ -7,7 +7,7 @@ angular.module('app')
 
         var promise = categories.getCategories("all");
         promise.then(function(result) {
-            $scope.categories = result;
+            $scope.categories = categories.list;
         }, function(rejection) {
             alert("promise rejected!");
         })
