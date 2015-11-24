@@ -361,6 +361,12 @@ img.logo {
   width: 50%;
   margin: 5% 25%; }
 
+div.contributor {
+  border-bottom: 1px solid #979797;
+  padding: 0.5rem 0.25rem; }
+  div.contributor p {
+    padding: 0.5rem 0.25rem; }
+
 .ctdata-btn {
   background-color: #4670A7;
   color: #CDEFFE; }

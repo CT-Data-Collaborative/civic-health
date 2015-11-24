@@ -1,4 +1,4 @@
-<div id="page-content-wrapper" ng-controller="DataVizController">
+<div id="page-content-wrapper" ng-controller="AboutPageController">
   <div class="top-row">
     <div class="arrow_box">
       <div class="top-row-title">
@@ -11,11 +11,10 @@
   <div class="container-fluid main-internal">
     <div class="row">
       <div class="col-sm-12">
-        <div ng-repeat="cat in categories">
-          <h2>{{cat.name}}</h2>
-          <pre>
-          {{cat}}
-          </pre>
+        <div ng-repeat="contributor in contributors" class="contributor">
+          <h2 id="{{ contributor.name | sluggify }}">{{contributor.name}}</h2>
+          <a href="http://{{ contributor.url }}">{{ contributor.url }}</a>
+          <p>A blurb about {{ contributor.name }}</p>
         </div>
       </div>
     </div>
