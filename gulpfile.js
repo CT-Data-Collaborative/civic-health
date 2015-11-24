@@ -7,13 +7,13 @@ var ngAnnotate = require('gulp-ng-annotate')
 var connect = require('gulp-connect')
 
 gulp.task('js', function() {
-    gulp.src(['static/js/**/module.js', 'static/js/**/*/*.js'])
-     .pipe(sourcemaps.init())
+    gulp.src(['static/js/**/module.js', 'static/js/routes.js', 'static/js/filters.js', 'static/js/**/*/*.js'])
+      .pipe(sourcemaps.init())
       .pipe(concat('app.js'))
       .pipe(ngAnnotate())
       .pipe(uglify())
-     .pipe(sourcemaps.write())
-     .pipe(gulp.dest('static/dist/js/'))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('static/dist/js/'))
 });
 
 

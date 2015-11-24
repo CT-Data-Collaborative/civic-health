@@ -18,32 +18,33 @@
                 <thead>
                   <tr>
                     <th></th>
-                    <th class="col-span-center col-name" colspan="6">State</th>
+                    <th class="col-span-center col-name" colspan="2">State</th>
                     <th class="col-span-center col-name" colspan="2">National</th>
+                    <th class="col-span-center col-name" colspan="4">State</th>
                   </tr>
                   <tr>
                     <th></th>
+                    <th class="col-name">Estimate</th>
+                    <th class="col-name">3-Year Trend</th>
                     <th class="col-name">Estimate</th>
                     <th class="col-name">3-Year Trend</th>
                     <th class="col-name">Rank</th>
                     <th class="col-name">Percentile</th>
                     <th class="col-name">Sample Size</th>
                     <th class="col-name">Margins of Error</th>
-                    <th class="col-name">Estimate</th>
-                    <th class="col-name">3-Year Trend</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th class="name">{{ datum["Indicator"] }}</th>
-                    <td class="value">{{ datum["State (2013)"] }}</td>
-                    <td class="value">{{ datum["State Trend (2013)"] }}</td>
-                    <td class="value">{{ datum["Rank (2013)"] }}</td>
-                    <td class="value">{{ datum["Percentile (2013)"] }}</td>
-                    <td class="value">{{ datum["Sample (2013)"] }}</td>
-                    <td class="value">{{ datum["Margins of Error (2013)"] }}</td>
-                    <td class="value">{{ datum["National (2013)"] }}</td>
-                    <td class="value">{{ datum["National Trend (2013)"] }}</td>
+                    <td ng-bind-html="datum['State (2013)'] | suppressions | safe" class="value">{{ datum["State (2013)"] }}</td>
+                    <td ng-bind-html="datum['State Trend (Pooled)'] | suppressions | safe" class="value">{{ datum["State Trend (Pooled)"] }}</td>
+                    <td ng-bind-html="datum['National (2013)'] | suppressions | safe" class="value">{{ datum["National (2013)"] }}</td>
+                    <td ng-bind-html="datum['National Trend (Pooled)'] | suppressions | safe" class="value">{{ datum["National Trend (Pooled)"] }}</td>
+                    <td ng-bind-html="datum['Rank (2013)'] | suppressions | safe" class="value">{{ datum["Rank (2013)"] }}</td>
+                    <td ng-bind-html="datum['Percentile (2013)'] | suppressions | safe" class="value">{{ datum["Percentile (2013)"] }}</td>
+                    <td ng-bind-html="datum['Sample (2013)'] | suppressions | safe" class="value">{{ datum["Sample (2013)"] }}</td>
+                    <td ng-bind-html="datum['Margins of Error (2013)'] | suppressions | safe" class="value">{{ datum["Margins of Error (2013)"] }}</td>
                   </tr>
                 </tbody>
             </table>
