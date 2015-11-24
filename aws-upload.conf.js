@@ -5,6 +5,7 @@ module.exports = {
         "static/dist/js/*.js",
         "static/dist/css/*.css",
         "static/dist/data/*.json",
+        "static/dist/templates/*.html",
         "static/dist/bower_components/**/*.*",
         "index.html"
     ]
