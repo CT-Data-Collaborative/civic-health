@@ -1,7 +1,7 @@
 angular.module('app')
 .controller('DataVizController',
-    ['$scope', '$http', '$log', '$location', '$anchorScroll', '$rootScope', '$routeParams', 'sidebarDisplay', 'categories', 'lodash',
-    function($scope, $http, $log, $location, $anchorScroll, $rootScope, $routeParams, sidebarDisplay, categories, lodash){
+    ['$scope', '$http', '$log', '$location',/* '$anchorScroll', '$rootScope', '$routeParams', */'sidebarDisplay', 'categories', 'lodash',
+    function($scope, $http, $log, $location,/* $anchorScroll, $rootScope, $routeParams, */sidebarDisplay, categories, lodash){
         var lo = lodash;
         $scope.toggle = sidebarDisplay.toggle;
 

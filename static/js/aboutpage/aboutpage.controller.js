@@ -1,7 +1,7 @@
 angular.module('app')
 .controller('AboutPageController',
-    ['$scope', '$http', '$log', '$location', '$anchorScroll', '$rootScope', '$routeParams', 'sidebarDisplay', 'contributors',
-    function($scope, $http, $log, $location, $anchorScroll, $rootScope, $routeParams, sidebarDisplay, contributors){
+    ['$scope', '$http', '$log', '$location',/* '$anchorScroll', '$rootScope', '$routeParams', */'sidebarDisplay', 'contributors',
+    function($scope, $http, $log, $location,/* $anchorScroll, $rootScope, $routeParams, */sidebarDisplay, contributors){
         $scope.toggle = sidebarDisplay.toggle;
         console.log($scope.toggle);
 
