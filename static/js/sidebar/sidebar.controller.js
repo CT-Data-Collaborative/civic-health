@@ -1,10 +1,10 @@
 angular.module('app')
 .controller('SidebarController',
-    ['$scope', '$log', 'lodash', 'categories', 'contributors',
+    ['$scope', '$log','lodash', 'categories', 'contributors',
     function($scope, $log, lodash, categories, contributors) {
-        $scope.status = {
-            isopen: false
-        };
+        // $scope.status = {
+        //     isopen: false
+        // };
 
         var categoryPromise = categories.getCategories();
         categoryPromise.then(function(result) {
@@ -26,6 +26,7 @@ angular.module('app')
             categories.toggle(category);
             console.log(lodash.pluck(categories.list, "selected"))
         };
+
         $scope.checkSelected = function(bool) {
             if (bool) {
                 return "selected";
@@ -33,4 +34,10 @@ angular.module('app')
                 return "deselected";
             }
         };
+        $scope.$watchCollection(function() {
+            return $scope.toggle;
+        }, function() {
+            console.log("toggled triggered from sidebar");
+            console.log($scope.toggle);
+        });
 }])

@@ -53,7 +53,7 @@
           </div>
         </nav>
       </div> <!-- End Nav -->
-      <div id="main" ng-class="{true: 'toggled', false: ''}[toggle.toggled]">
+      <div id="main" ng-class="{true: 'toggled', false: ''}[toggle.open]">
           <div id="sidebar-wrapper" ng-controller="SidebarController">
             <div>
               <img class="logo" src="static/dist/images/sots-seal.png"></img>
@@ -63,7 +63,7 @@
               <li class="contributor color-{{ $index }}" ng-repeat="contributor in contributors">
                 <!-- <span class="icon color-{{$index}}"></i></span> -->
                 <!-- <a href="#about#{{ contributor.name | sluggify }}"><span class="name">{{ contributor.name }}</span></a> -->
-                <a class="name" href="#about#{{ contributor.name | sluggify }}">{{ contributor.name }}</a>
+                <a class="name" href="#about">{{ contributor.name }}</a>
               </li>
             </ul>
             <h3>Index Categories</h3>
@@ -74,7 +74,7 @@
               </li>
           </ul>
         </div>
-        <ng-view></ng-view>
+        <div ng-view class="view-animate"></div ng-view>
       </div>
     </div>
     <div class="footer">

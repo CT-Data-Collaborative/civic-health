@@ -6,7 +6,8 @@ angular.module('app')
             controller: 'DataVizController'
         })
         .when('/about', {
-            templateUrl: 'static/dist/templates/about.html'
+            templateUrl: 'static/dist/templates/about.html',
+            controller: 'AboutPageController'
         })
         .otherwise({
             redirectTo: '/data'
