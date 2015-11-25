@@ -2,7 +2,7 @@
   <div class="top-row">
     <div class="arrow_box">
       <div class="top-row-title">
-        <i id="menu-toggle" class="fa fa-bars" ng-click="toggle.toggled = !toggle.toggled"></i>
+        <i id="menu-toggle" class="fa fa-bars" ng-click="toggle.open = !toggle.open"></i>
         <h1>Civic Health Index</h1>
         <h5 class="pull-right"><a href="#about">About the Contributors</a></h5>
       </div>
@@ -10,7 +10,7 @@
   </div>
   <div class="container-fluid main-internal">
     <div class="row">
-      <div class="col-sm-12 row">
+      <div class="col-sm-12">
         <div ng-repeat="cat in categories" ng-show="cat.selected">
           <h2>{{cat.name}}</h2>
           <div class="col-sm-12" ng-repeat="datum in cat.data" style="overflow-x:auto;">
