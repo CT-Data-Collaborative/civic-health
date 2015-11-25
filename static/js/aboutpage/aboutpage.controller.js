@@ -18,7 +18,7 @@ angular.module('app')
             // corresponding changes in the about and data templates.
             // This listener ensures that the sidebar doesn't get closed, which somehow
             // resolves the issue of rendering the template underneat the slideout menu
-            $scope.toggle.open = true;
+            $scope.toggle.open = false;
         });
 
 }])
