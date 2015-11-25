@@ -16,26 +16,51 @@ function timeSeries() {
         selection.each(function(dataset) {
             //console.log(dataset);
             var svg = d3.select(this).select("svg").remove(),
-                width = 960, // need to figure out how to get this from the directive, and have it redraw on window size change
-                height = 0.35 * width, // need to figure out how to get this from the directive, and have it redraw on window size change
-                margin = {
-                    top: height * 0.1,
-                    left: width * 0.04,
-                    bottom: height * 0.08,
-                    right: width * 0.03
-                },
-                // config = dataset["config"],
-                // rawdata = dataset["data"],
-                data = dataset;
+                config = dataset["config"],
+                rawdata = dataset["data"],
+                data = rawdata,
+                width = config.width * 0.75;
 
+            if (width < 600) {
+                var yTicks = 7,
+                    height = 0.5 * width,
+                    margin = {
+                        top: height * 0.1,
+                        left: width * 0.08,
+                        bottom: height * 0.12,
+                        right: width * 0.05
+                    },
+                    timeFormat = function(val) {
+                        return "'"+d3.time.format("%y")(val);
+                    };
+            } else if (width <= 1000) {
+                var yTicks = 9,
+                    height = 0.35 * width,
+                    margin = {
+                        top: height * 0.1,
+                        left: width * 0.08,
+                        bottom: height * 0.10,
+                        right: width * 0.04
+                    },
+                    timeFormat = d3.time.format("%Y");
+            } else {
+                var yTicks = 12,
+                    height = 0.25 * width,
+                    margin = {
+                        top: height * 0.1,
+                        left: width * 0.08,
+                        bottom: height * 0.10,
+                        right: width * 0.04
+                    },
+                    timeFormat = d3.time.format("%Y");
+            }
+
+                console.log(width);
+
+                // draw chart
                 if (data.length > 0) {
                     svg = d3.select(this).append("svg")
                             .attr("class", "timeseries")
-                    // draw chart
-                    /***    
-                        This code was pasted in from a testing script elsewhere and needs
-                            to be refactored a little before it will work in this context!!
-                    ***/
                     var parseDate = d3.time.format("%Y").parse;
 
                     var x = d3.time.scale()
@@ -49,10 +74,12 @@ function timeSeries() {
                     var xAxis = d3.svg.axis()
                         .scale(x)
                         .ticks(d3.time.years, 4)
+                        .tickFormat(timeFormat)
                         .orient("bottom");
 
                     var yAxis = d3.svg.axis()
                         .scale(y)
+                        .ticks(yTicks)
                         .orient("left");
 
                     var line = d3.svg.line()
@@ -85,8 +112,8 @@ function timeSeries() {
                     x.domain(d3.extent(data, function(d) { return d.date; }));
 
                     y.domain([
-                      d3.min(locations, function(l){ return d3.min(l.values, function(v) {return v.value;}); }),
-                      d3.max(locations, function(l){ return d3.max(l.values, function(v) {return v.value;}); })
+                      d3.min(locations, function(l){ return d3.min(l.values, function(v) {return v.value;}); }) * 0.95,
+                      d3.max(locations, function(l){ return d3.max(l.values, function(v) {return v.value;}); }) * 1.05
                     ]);
 
                     var location = g.selectAll(".location")
