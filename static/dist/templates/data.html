@@ -14,8 +14,6 @@
         <div ng-repeat="cat in categories" ng-show="cat.selected">
           <h2>{{cat.name}}</h2>
           <div class="col-sm-12" ng-repeat="datum in cat.data" style="overflow-x:auto;">
-            <timeseries ng-if="datum.timeseries" data=datum.timeseriesdata></timeseries>
-            <!-- <pre ng-if="datum.timeseries">{{datum.timeseriesdata}}</pre> -->
             <table class="ctdata-table">
                 <thead>
                   <tr>
@@ -39,7 +37,10 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <th class="name">{{ datum["Indicator"] }}</th>
+                    <th class="name">
+                      {{ datum["Indicator"] }}
+                      <i ng-if="datum.timeseries" class="fa fa-line-chart timeseries_toggle" ng-click="toggleChart(datum.Indicator)"></i>
+                    </th>
                     <td ng-bind-html="datum['State (2013)'] | suppressions | safe" class="value">{{ datum["State (2013)"] }}</td>
                     <td ng-bind-html="datum['State Trend (Pooled)'] | suppressions | safe" class="value">{{ datum["State Trend (Pooled)"] }}</td>
                     <td ng-bind-html="datum['National (2013)'] | suppressions | safe" class="value">{{ datum["National (2013)"] }}</td>
@@ -51,6 +52,7 @@
                   </tr>
                 </tbody>
             </table>
+            <timeseries style="display:none;" ng-if="datum.timeseries" data=datum.timeseriesdata id="{{datum.Indicator | sluggify}}"></timeseries>
           </div>
         </div>
       </div>
