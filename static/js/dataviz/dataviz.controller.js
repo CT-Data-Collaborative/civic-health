@@ -13,6 +13,6 @@ angular.module('app')
         })
 
          $scope.$on('$viewContentLoaded', function(event) {
-            $scope.toggle.toggled = false;
+            $scope.toggle.open = true;
         });
 }])
