@@ -41,4 +41,29 @@ table.ctdata-table {
         padding-right: .5rem;
         padding-left: .5rem;
     }
+
+    @media screen and (max-width: $reflow-table-break) {
+        margin-bottom: 1rem;
+
+        thead {
+            display: none;
+        }
+
+        tr, td {
+            display: block;
+        }
+
+        tr {
+            border-bottom: 1px solid $dark-grey;
+            padding-bottom: 1rem;
+        }
+
+        tr:hover {
+            background: none;
+        }
+
+        td:before {
+            content: attr(data-title) ":\00A0";
+        }
+    }
 }
