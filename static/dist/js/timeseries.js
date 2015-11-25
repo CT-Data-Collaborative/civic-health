@@ -18,13 +18,17 @@ function timeSeries() {
             var svg = d3.select(this).select("svg").remove(),
                 config = dataset["config"],
                 rawdata = dataset["data"],
+                data = rawdata;
+
                 if (data.length > 0) {
+                    svg = d3.select(this).append("svg")
+                            .attr("class", "timeseries")
                     // draw chart
                     /***    
                         This code was pasted in from a testing script elsewhere and needs
                             to be refactored a little before it will work in this context!!
                     ***/
-                    /*var parseDate = d3.time.format("%Y").parse;
+                    var parseDate = d3.time.format("%Y").parse;
 
                     var x = d3.time.scale()
                         .range([0, width]);
@@ -109,10 +113,11 @@ function timeSeries() {
                         .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.temperature) + ")"; })
                         .attr("x", 3)
                         .attr("dy", ".35em")
-                        .text(function(d) { return d.name; });*/
+                        .text(function(d) { return d.name; });
                 } else {
                     console.log("no data yet")
                 }
         });
     }
+    return chart;
 }
