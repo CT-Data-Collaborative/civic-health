@@ -1,9 +1,14 @@
 angular.module('app')
 .controller('AboutPageController',
-    ['$scope', '$http', '$log', 'sidebarDisplay', 'contributors',
-    function($scope, $http, $log, sidebarDisplay, contributors){
+    ['$scope', '$http', '$log', '$location', '$anchorScroll', '$rootScope', '$routeParams', 'sidebarDisplay', 'contributors',
+    function($scope, $http, $log, $location, $anchorScroll, $rootScope, $routeParams, sidebarDisplay, contributors){
         $scope.toggle = sidebarDisplay.toggle;
         console.log($scope.toggle);
+
+        $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+            $location.hash($routeParams.scrollTo);
+            $anchorScroll();
+        });
 
         var contributorPromise = contributors.getContributors("all");
         contributorPromise.then(function(result) {

@@ -1,9 +1,14 @@
 angular.module('app')
 .controller('DataVizController',
-    ['$scope', '$http', '$log', 'sidebarDisplay', 'categories', 'lodash',
-    function($scope, $http, $log, sidebarDisplay, categories, lodash){
+    ['$scope', '$http', '$log', '$location', '$anchorScroll', '$rootScope', '$routeParams', 'sidebarDisplay', 'categories', 'lodash',
+    function($scope, $http, $log, $location, $anchorScroll, $rootScope, $routeParams, sidebarDisplay, categories, lodash){
         var lo = lodash;
         $scope.toggle = sidebarDisplay.toggle;
+
+        $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+            $location.hash($routeParams.scrollTo);
+            $anchorScroll();
+        });
 
         var promise = categories.getCategories("all");
         promise.then(function(result) {
