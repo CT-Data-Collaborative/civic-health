@@ -5,10 +5,10 @@ angular.module('app')
         var lo = lodash;
         $scope.toggle = sidebarDisplay.toggle;
 
-        $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
-            $location.hash($routeParams.scrollTo);
-            $anchorScroll();
-        });
+        // $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+        //     $location.hash($routeParams.scrollTo);
+        //     $anchorScroll();
+        // });
 
         var promise = categories.getCategories("all");
         promise.then(function(result) {

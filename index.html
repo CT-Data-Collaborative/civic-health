@@ -61,9 +61,8 @@
             <h3>Partner Organizations</h3>
             <ul class="sidebar-nav">
               <li class="contributor color-{{ $index }}" ng-repeat="contributor in contributors">
-                <!-- <span class="icon color-{{$index}}"></i></span> -->
-                <!-- <a href="#about#{{ contributor.name | sluggify }}"><span class="name">{{ contributor.name }}</span></a> -->
-                <a class="name" href="#/about?scrollTo={{ contributor.name | sluggify }}">{{ contributor.name }}</a>
+                <!-- <a class="name" href="#/about?scrollTo={{ contributor.name | sluggify }}">{{ contributor.name }}</a> -->
+                <a class="name" href="#/about">{{ contributor.name }}</a>
               </li>
             </ul>
             <h3>Index Categories</h3>

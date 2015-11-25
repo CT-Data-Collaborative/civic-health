@@ -5,10 +5,10 @@ angular.module('app')
         $scope.toggle = sidebarDisplay.toggle;
         console.log($scope.toggle);
 
-        $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
-            $location.hash($routeParams.scrollTo);
-            $anchorScroll();
-        });
+        // $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+        //     $location.hash($routeParams.scrollTo);
+        //     $anchorScroll();
+        // });
 
         var contributorPromise = contributors.getContributors("all");
         contributorPromise.then(function(result) {
