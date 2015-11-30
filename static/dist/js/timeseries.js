@@ -21,7 +21,22 @@ function timeSeries() {
                 data = rawdata,
                 width = config.width * 0.75;
 
-            if (width < 300) {
+            if (width < 100) {
+                var yTicks = 2,
+                    xTicksYears = 16,
+                    width = 1.25 * width,
+                    height = 0.5 * width,
+                    margin = {
+                        top: height * 0.1,
+                        left: width * 0.35,
+                        bottom: height * 0.4,
+                        right: width * 0.05
+                    },
+                    legendEntrySize = 0.25,
+                    timeFormat = function(val) {
+                        return "'"+d3.time.format("%y")(val);
+                    };
+            } else if (width < 300) {
                 var yTicks = 3,
                     xTicksYears = 12,
                     height = 0.45 * width,
