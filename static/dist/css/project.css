@@ -369,8 +369,12 @@ i.suppression_tip {
       .sidebar-nav li span.icon.color-4, .sidebar-nav li span.icon.color-9, .sidebar-nav li span.icon.color-14 {
         border-left: solid 0.25rem #CDEFFE; }
     .sidebar-nav li span.name {
+      display: inline-block;
+      position: absolute;
       font-size: 1rem;
-      padding-left: .5rem; }
+      padding-left: 0.5rem;
+      padding-right: 1rem;
+      width: 80%; }
     .sidebar-nav li a {
       display: block;
       text-decoration: none;

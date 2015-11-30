@@ -102,8 +102,12 @@
                 }
             }
             &.name {
+                display: inline-block;
+                position:absolute;
                 font-size: 1rem;
-                padding-left: .5rem;
+                padding-left: 0.5rem;
+                padding-right: 1rem;
+                width: 80%;
             }
         }
 
