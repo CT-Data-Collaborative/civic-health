@@ -293,6 +293,10 @@
   padding-bottom: 2rem;
   background: white; }
 
+i.suppression_tip {
+  font-size: 0.75rem;
+  color: #1EACF1; }
+
 .sidebar-nav {
   /*position: absolute;*/
   top: 0;
