@@ -1,4 +1,11 @@
+timeseries {
+  @media screen and (max-width: $reflow-table-break) and (min-width: 768px) {
+      position: relative;
+      top: -10rem;
+  }
+}
 svg.timeseries {
+  width:100%;
 }
 
 .axis path,
@@ -15,11 +22,18 @@ svg.timeseries {
 .line {
   fill: none;
   stroke: steelblue;
-  stroke-width: 1.5px;
+  stroke-width: 1px;
 }
 
 i.timeseries_toggle {
     color: $ctdata-extra-dark-blue;
     cursor: pointer;
     font-size:1.4rem;
+}
+
+@media screen and (max-width: $reflow-table-break) {
+    div.data-container {
+        border-bottom: 1px solid $dark-grey;
+        padding-bottom: 1rem;
+    }
 }

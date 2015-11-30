@@ -125,13 +125,15 @@
     }
 }
 
-h3 {
-    text-align: center;
-    font-weight: $heavy;
-    padding-top:2rem;
-}
+#sidebar-wrapper {
+    h3 {
+        text-align: center;
+        font-weight: $heavy;
+        padding-top:2rem;
+    }
 
-img.logo {
-    width: 50%;
-    margin: 5% 25%;
+    img.logo {
+        width: 50%;
+        margin: 5% 25%;
+    }
 }

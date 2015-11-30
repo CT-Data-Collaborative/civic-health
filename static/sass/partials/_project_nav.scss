@@ -18,6 +18,11 @@
               // margin: 7px 5px 0 5px;
               margin: .4rem .5rem .4rem .5rem;
 
+              @media screen and (max-width: 415px) {
+                  // margin: .2rem .25rem;
+                  margin: .1rem .1rem;
+              }
+
           }
 
           li.logo {
@@ -37,6 +42,10 @@
       }
 
   .logo-circle {
+      @media screen and (max-width:500px) {
+          display: none;
+      }
+
       margin-top: .25em;
       margin-right: .25em;
       border-radius: 50%;

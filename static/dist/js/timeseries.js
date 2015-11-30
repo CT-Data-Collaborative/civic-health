@@ -21,41 +21,58 @@ function timeSeries() {
                 data = rawdata,
                 width = config.width * 0.75;
 
-            if (width < 600) {
-                var yTicks = 7,
-                    height = 0.5 * width,
+            if (width < 300) {
+                var yTicks = 5,
+                    width = 0.75 * width,
+                    height = 0.45 * width,
                     margin = {
                         top: height * 0.1,
                         left: width * 0.08,
                         bottom: height * 0.12,
                         right: width * 0.05
                     },
+                    legendEntrySize = 0.25,
                     timeFormat = function(val) {
                         return "'"+d3.time.format("%y")(val);
                     };
-            } else if (width <= 1000) {
-                var yTicks = 9,
+            } else if (width < 600) {
+                var yTicks = 3,
                     height = 0.35 * width,
                     margin = {
                         top: height * 0.1,
                         left: width * 0.08,
-                        bottom: height * 0.10,
-                        right: width * 0.04
+                        bottom: height * 0.12,
+                        right: width * 0.05
                     },
-                    timeFormat = d3.time.format("%Y");
-            } else {
-                var yTicks = 12,
-                    height = 0.25 * width,
+                    legendEntrySize = 0.18,
+                    timeFormat = function(val) {
+                        return "'"+d3.time.format("%y")(val);
+                    };
+            } else if (width <= 1000) {
+                var yTicks = 4,
+                    height = 0.1 * width,
                     margin = {
                         top: height * 0.1,
                         left: width * 0.08,
                         bottom: height * 0.10,
                         right: width * 0.04
                     },
+                    legendEntrySize = 0.15,
+                    timeFormat = d3.time.format("%Y");
+            } else {
+                var yTicks = 6,
+                    height = 0.15 * width,
+                    margin = {
+                        top: height * 0.1,
+                        left: width * 0.08,
+                        bottom: height * 0.10,
+                        right: width * 0.04
+                    },
+                    legendEntrySize = 0.15,
                     timeFormat = d3.time.format("%Y");
             }
 
-                console.log(width);
+                console.log("width:"+width);
 
                 // draw chart
                 if (data.length > 0) {
@@ -93,15 +110,15 @@ function timeSeries() {
 
                     color.domain(d3.keys(data[0]).filter(function(key) { return key !== "Year"; }));
 
-                    data.forEach(function(d) {
-                        d.date = parseDate(d.Year);
-                      });
+                    // data.forEach(function(d) {
+                    //     d.date = parseDate(d.Year);
+                    //   });
                       
                     var locations = color.domain().map(function(name) {
                         return {
                           name : name,
                           values: data.filter(function(d) {return +d[name] !== 0}).map(function(d){
-                              return {date: d.date, value: +d[name]};
+                              return {date: parseDate(d.Year), value: +d[name]};
                           })
                         };
                     });
@@ -109,7 +126,16 @@ function timeSeries() {
                     // d3.select(this).append("pre")
                     // .text(JSON.stringify(locations, null, 4))
 
-                    x.domain(d3.extent(data, function(d) { return d.date; }));
+                    var xDomainDates = []
+                    locations.forEach(function(l, li, la) {
+                        xDomainDates = xDomainDates.concat(l.values)
+                    });
+
+                    x.domain(
+                        d3.extent(
+                            xDomainDates,
+                            function(d) { return d.date; })
+                    );
 
                     y.domain([
                       d3.min(locations, function(l){ return d3.min(l.values, function(v) {return v.value;}); }) * 0.95,
@@ -139,7 +165,7 @@ function timeSeries() {
                             .attr("class", "timepoint")
                             .attr("cx", function(d) { return x(d.date); })
                             .attr("cy", function(d) { return y(d.value); })
-                            .attr("r", "3px")
+                            .attr("r", "2px")
                         ;
 
                     // location.append("text")
@@ -149,20 +175,20 @@ function timeSeries() {
                     //     .attr("dy", ".35em")
                     //     .text(function(d) { return d.name; });
 
-                    g.append("g")
-                        .attr("class", "x axis")
-                        .attr("transform", "translate(0," + height + ")")
-                        .call(xAxis);
+                    // g.append("g")
+                    //     .attr("class", "x axis")
+                    //     .attr("transform", "translate(0," + height + ")")
+                    //     .call(xAxis);
 
-                    g.append("g")
-                        .attr("class", "y axis")
-                        .call(yAxis)
-                      .append("text")
-                        .attr("transform", "rotate(-90)")
-                        .attr("y", 6)
-                        .attr("dy", ".71em")
-                        .style("text-anchor", "end")
-                        .text("Participation (%)");
+                    // g.append("g")
+                    //     .attr("class", "y axis")
+                    //     .call(yAxis)
+                    //   .append("text")
+                    //     .attr("transform", "rotate(-90)")
+                    //     .attr("y", 6)
+                    //     .attr("dy", ".71em")
+                    //     .style("text-anchor", "end")
+                    //     .text("Participation (%)");
 
                     legend = g.append("g")
                         .attr("height", svg.attr("height") * (d3.keys(locations).length * 0.05))
@@ -176,7 +202,7 @@ function timeSeries() {
                             .attr("height", 10)
                             .attr("width", 10)
                             .attr("x", 0)
-                            .attr("y", function(d, i) { return i * svg.attr("height") * 0.05})
+                            .attr("y", function(d, i) { return i * svg.attr("height") * legendEntrySize})
                             .attr("fill", function(d) { return color(d.name); })
 
                     legend.selectAll("text")
@@ -185,7 +211,7 @@ function timeSeries() {
                             .append("text")
                             .text(function(d) { return d.name; })
                             .attr("x", 0)
-                            .attr("y", function(d, i) { return i * svg.attr("height") * 0.05})
+                            .attr("y", function(d, i) { return i * svg.attr("height") * legendEntrySize})
                             .attr("dx", -5)
                             .attr("dy", 10)
                             .attr("text-anchor", "end");

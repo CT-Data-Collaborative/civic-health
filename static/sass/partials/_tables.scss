@@ -1,9 +1,10 @@
 table.ctdata-table {
-    width: 100%;
+    width: calc(100% - #{$sidebar-menu-width});
     margin-bottom: 2rem;
 
     tbody > tr > th {
         width: 40%;
+        min-width: 10rem;
     }
 
     th, td {
@@ -53,13 +54,12 @@ table.ctdata-table {
             display: block;
         }
 
-        tr {
-            border-bottom: 1px solid $dark-grey;
-            padding-bottom: 1rem;
-        }
-
         tr:hover {
             background: none;
+        }
+
+        tbody > tr > th {
+            padding-bottom:0.25rem;
         }
 
         td:before {
