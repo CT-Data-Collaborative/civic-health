@@ -1,8 +1,4 @@
 timeseries {
-  @media screen and (max-width: $reflow-table-break) and (min-width: 768px) {
-      position: relative;
-      top: -10rem;
-  }
 }
 svg.timeseries {
   width:100%;
@@ -22,7 +18,7 @@ svg.timeseries {
 .line {
   fill: none;
   stroke: steelblue;
-  stroke-width: 1px;
+  stroke-width: 1.5px;
 }
 
 i.timeseries_toggle {

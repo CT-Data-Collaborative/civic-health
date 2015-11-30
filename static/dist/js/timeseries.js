@@ -22,50 +22,51 @@ function timeSeries() {
                 width = config.width * 0.75;
 
             if (width < 300) {
-                var yTicks = 5,
-                    width = 0.75 * width,
+                var yTicks = 3,
+                    xTicksYears = 12,
                     height = 0.45 * width,
                     margin = {
                         top: height * 0.1,
-                        left: width * 0.08,
-                        bottom: height * 0.12,
+                        left: width * 0.25,
+                        bottom: height * 0.3,
                         right: width * 0.05
                     },
                     legendEntrySize = 0.25,
                     timeFormat = function(val) {
                         return "'"+d3.time.format("%y")(val);
                     };
-            } else if (width < 600) {
+            } else if (width < 500) {
                 var yTicks = 3,
+                    xTicksYears = 8,
                     height = 0.35 * width,
                     margin = {
                         top: height * 0.1,
-                        left: width * 0.08,
-                        bottom: height * 0.12,
+                        left: width * 0.15,
+                        bottom: height * 0.2,
                         right: width * 0.05
                     },
                     legendEntrySize = 0.18,
-                    timeFormat = function(val) {
-                        return "'"+d3.time.format("%y")(val);
-                    };
+                    timeFormat = d3.time.format("%Y");
             } else if (width <= 1000) {
                 var yTicks = 4,
-                    height = 0.1 * width,
+                    xTicksYears = 4,
+                    height = 0.18 * width,
                     margin = {
                         top: height * 0.1,
                         left: width * 0.08,
-                        bottom: height * 0.10,
+                        bottom: height * 0.22,
                         right: width * 0.04
                     },
                     legendEntrySize = 0.15,
                     timeFormat = d3.time.format("%Y");
             } else {
-                var yTicks = 6,
-                    height = 0.15 * width,
+                var yTicks = 4,
+                    xTicksYears = 4,
+                    height = 0.18 * width,
                     margin = {
                         top: height * 0.1,
                         left: width * 0.08,
-                        bottom: height * 0.10,
+                        bottom: height * 0.18,
                         right: width * 0.04
                     },
                     legendEntrySize = 0.15,
@@ -86,17 +87,23 @@ function timeSeries() {
                     var y = d3.scale.linear()
                         .range([height, 10]);
 
-                    var color = d3.scale.category10();
+                    var color = d3.scale.ordinal()
+                        .range(["steelblue", "orangered"]);
+
+                    var symbolScale = d3.scale.ordinal()
+                        .range(d3.svg.symbolTypes);
+
 
                     var xAxis = d3.svg.axis()
                         .scale(x)
-                        .ticks(d3.time.years, 4)
+                        .ticks(d3.time.years, xTicksYears)
                         .tickFormat(timeFormat)
                         .orient("bottom");
 
                     var yAxis = d3.svg.axis()
                         .scale(y)
                         .ticks(yTicks)
+                        .tickFormat(function(value) {return value+"%"})
                         .orient("left");
 
                     var line = d3.svg.line()
@@ -122,6 +129,8 @@ function timeSeries() {
                           })
                         };
                     });
+
+                    symbolScale.domain(d3.keys(locations));
 
                     // d3.select(this).append("pre")
                     // .text(JSON.stringify(locations, null, 4))
@@ -153,20 +162,33 @@ function timeSeries() {
                         .style("stroke", function(d) { return color(d.name); })
                         .style("fill", "none");
 
-                    location.selectAll("circles")
+                    // location.selectAll("circle")
+                    //     .data(function(d) { return d.values.map(function (v) {
+                    //             v.name = d.name;
+                    //             return v;
+                    //         })
+                    //     })
+                    //     .enter()
+                    //     .append("circle")
+                    //         .style("fill", function(d) { return color(d.name); })
+                    //         .attr("class", "timepoint")
+                    //         .attr("cx", function(d) { return x(d.date); })
+                    //         .attr("cy", function(d) { return y(d.value); })
+                    //         .attr("r", "3px")
+                    //     ;
+
+                    location.selectAll(".point")
                         .data(function(d) { return d.values.map(function (v) {
                                 v.name = d.name;
                                 return v;
                             })
                         })
                         .enter()
-                        .append("circle")
-                            .style("fill", function(d) { return color(d.name); })
-                            .attr("class", "timepoint")
-                            .attr("cx", function(d) { return x(d.date); })
-                            .attr("cy", function(d) { return y(d.value); })
-                            .attr("r", "2px")
-                        ;
+                        .append("path")
+                            .attr("class", "point")
+                            .attr("fill", function(d) {return color(d.name); } )
+                            .attr("d", d3.svg.symbol().type(function(d) {return symbolScale(d.name); }).size(25))
+                            .attr("transform", function(d) { return "translate(" + x(d.date) + ", " + y(d.value) +")";});
 
                     // location.append("text")
                     //     .datum(function(d) { return {name: d.name, value: d.values[d.values.length - 1]}; })
@@ -175,14 +197,14 @@ function timeSeries() {
                     //     .attr("dy", ".35em")
                     //     .text(function(d) { return d.name; });
 
-                    // g.append("g")
-                    //     .attr("class", "x axis")
-                    //     .attr("transform", "translate(0," + height + ")")
-                    //     .call(xAxis);
+                    g.append("g")
+                        .attr("class", "x axis")
+                        .attr("transform", "translate(0," + height + ")")
+                        .call(xAxis);
 
-                    // g.append("g")
-                    //     .attr("class", "y axis")
-                    //     .call(yAxis)
+                    g.append("g")
+                        .attr("class", "y axis")
+                        .call(yAxis)
                     //   .append("text")
                     //     .attr("transform", "rotate(-90)")
                     //     .attr("y", 6)

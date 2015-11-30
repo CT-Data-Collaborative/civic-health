@@ -401,11 +401,6 @@ div.contributor {
   background-color: #CDEFFE;
   color: black; }
 
-@media screen and (max-width: 1100px) and (min-width: 768px) {
-  timeseries {
-    position: relative;
-    top: -10rem; } }
-
 svg.timeseries {
   width: 100%; }
 
@@ -421,7 +416,7 @@ svg.timeseries {
 .line {
   fill: none;
   stroke: steelblue;
-  stroke-width: 1px; }
+  stroke-width: 1.5px; }
 
 i.timeseries_toggle {
   color: #4670A7;
