@@ -268,6 +268,9 @@
   padding-bottom: 2rem;
   background: white; }
 
+.main-internal > .row {
+  width: 85%; }
+
 .sidebar-nav {
   /*position: absolute;*/
   top: 0;

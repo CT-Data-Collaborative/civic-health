@@ -43,6 +43,7 @@
 
 #main.toggled #sidebar-wrapper {
     width: $sidebar-menu-width;
+
 }
 
 
@@ -70,4 +71,8 @@
     padding-top: 1.5rem;
     padding-bottom: 2rem;
     background: white;
+}
+
+.main-internal > .row {
+    width:85%;
 }
