@@ -9,6 +9,19 @@
     </div>
   </div>
   <div class="container-fluid main-internal">
+    <div class="row about_index">
+      <button type="button" class="btn btn-sm" ng-click="aboutCollapsed = !aboutCollapsed">
+        About the Civic Health Index
+      </button>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 about_index" collapse="aboutCollapsed">
+        <p>
+          DRAFT - The Civic Health Index looks at key indicators of civic life in Connecticut: how Connecticut residents engage in civic organizations and group activities, how attentive they are to community problem solving and politics, and how connected they are to family, friends, and neighbors.
+          - Add list of advisory group members
+        </p>
+      </div>
+    </div>
     <div class="row">
       <div class="col-sm-12">
         <div ng-repeat="cat in categories" ng-show="cat.selected">

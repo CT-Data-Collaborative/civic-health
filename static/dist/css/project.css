@@ -297,6 +297,20 @@ i.suppression_tip {
   font-size: 0.75rem;
   color: #1EACF1; }
 
+.about_index button {
+  background-color: #1EACF1;
+  border: 1.5px solid #4670A7;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.1rem; }
+
+.about_index p {
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background-color: #ececec;
+  font-size: 1.25rem; }
+
 .sidebar-nav {
   /*position: absolute;*/
   top: 0;

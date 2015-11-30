@@ -5,6 +5,8 @@ angular.module('app')
         var lo = lodash;
         $scope.toggle = sidebarDisplay.toggle;
 
+        $scope.aboutCollapsed = false;
+
         $scope.toggleChart = function(slug) {
             slug = $filter('sluggify')(slug);
 

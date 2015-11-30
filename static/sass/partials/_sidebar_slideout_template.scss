@@ -77,3 +77,19 @@ i.suppression_tip {
     font-size:0.75rem;
     color:$ctdata-dark-blue;
 }
+
+.about_index button {
+    background-color: $ctdata-dark-blue;
+    border: 1.5px solid $ctdata-extra-dark-blue;
+    color: $white;
+    font-weight: $medium;
+    font-size: 1.1rem;
+}
+
+.about_index p {
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background-color: $extra-light-grey;
+    font-size: 1.25rem;
+}
