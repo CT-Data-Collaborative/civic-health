@@ -19,10 +19,20 @@ angular.module('app')
             return $q(function(resolve, reject) {
                 $http.get('/static/dist/data/data.json')
                     .success(function(response) {
-                        categories.list = lodash.map(lodash.sortBy(response, "rank"), function(o) {
-                            return lodash.extend({}, o, {"selected" : true})
-                        })
-                        categories.list
+                        list = lodash.map(
+                            // sort categories by rank
+                            lodash.sortBy(response, "rank"), function(o) {
+                            // for each indicator in each category, sort 'levels' by a rank as well
+                            o.data.forEach(function(indicator, ii, ia) {
+                                o.data[ii].data = lodash.sortByAll(o.data[ii].data, "rank")
+                            });
+                            // extend each category to have a "selected" value, default to true
+                            o = lodash.extend({}, o, {"selected" : true})
+                            return o;
+                        });
+                        // set categories.list to a sorted array
+                        categories.list = list;
+
                         resolve(categories);
                     })
                     .error(function() {

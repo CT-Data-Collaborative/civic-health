@@ -3,16 +3,17 @@
     <div class="arrow_box">
       <div class="top-row-title">
         <!-- <i id="menu-toggle" class="fa fa-bars" ng-click="toggle.open = !toggle.open"></i> -->
-        <h1>Civic Health Index - About the Contributors</h1>
+        <h1>Civic Health Index</h1>
         <h5 class="pull-right"><a href="#data">See the Data</a></h5>
       </div>
     </div>
   </div>
   <div class="container-fluid main-internal">
+    <h1 class="title">About the Contributors</h1>
     <div class="row">
       <div class="col-sm-12">
         <div ng-repeat="contributor in contributors" class="contributor">
-          <h2 id="{{ contributor.name | sluggify }}">{{contributor.name}}</h2>
+          <h3 id="{{ contributor.name | sluggify }}">{{contributor.name}}</h3>
           <a href="http://{{ contributor.url }}">{{ contributor.url }}</a>
           <p>A blurb about {{ contributor.name }}</p>
         </div>

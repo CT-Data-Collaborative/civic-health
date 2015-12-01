@@ -1,9 +1,10 @@
 table.ctdata-table {
-    width: 100%;
+    width: calc(100% - #{$sidebar-menu-width});
     margin-bottom: 2rem;
 
     tbody > tr > th {
         width: 40%;
+        min-width: 10rem;
     }
 
     th, td {
@@ -42,6 +43,13 @@ table.ctdata-table {
         padding-left: .5rem;
     }
 
+    @media screen and (min-width: $reflow-table-break) {
+        .subcategory_break td,
+        .subcategory_break th {
+            padding-bottom: 0.75rem;
+        }
+    }
+
     @media screen and (max-width: $reflow-table-break) {
         margin-bottom: 1rem;
 
@@ -53,17 +61,29 @@ table.ctdata-table {
             display: block;
         }
 
-        tr {
-            border-bottom: 1px solid $dark-grey;
-            padding-bottom: 1rem;
+        .value {
+            text-align: left!important;
+            padding-left: 1.25rem!important;
         }
 
         tr:hover {
             background: none;
         }
 
+        tbody > tr > td:last-child {
+            padding-bottom: 0.75rem;
+        }
+
+        tbody > tr > th {
+            padding-bottom:0.25rem;
+        }
+
         td:before {
             content: attr(data-title) ":\00A0";
+        }
+
+        tbody:not(:last-child) .subcategory_break td:last-child {
+            border-bottom: 1px solid $extra-light-grey;
         }
     }
 }

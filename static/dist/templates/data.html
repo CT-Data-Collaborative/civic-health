@@ -4,24 +4,37 @@
       <div class="top-row-title">
         <i id="menu-toggle" class="fa fa-bars" ng-click="toggle.open = !toggle.open"></i>
         <h1>Civic Health Index</h1>
-        <h5 class="pull-right"><a href="#about">About the Contributors</a></h5>
+        <h5 class="pull-right"><a href="#about">Contributors</a></h5>
       </div>
     </div>
   </div>
   <div class="container-fluid main-internal">
+    <div class="row about_index">
+      <button type="button" class="btn btn-sm" ng-click="aboutCollapsed = !aboutCollapsed">
+        About the Civic Health Index
+      </button>
+    </div>
+    <div class="row">
+      <div class="col-sm-5 about_index" collapse="aboutCollapsed">
+        <p>
+          DRAFT - The Civic Health Index looks at key indicators of civic life in Connecticut: how Connecticut residents engage in civic organizations and group activities, how attentive they are to community problem solving and politics, and how connected they are to family, friends, and neighbors.
+          - Add list of advisory group members
+        </p>
+      </div>
+    </div>
     <div class="row">
       <div class="col-sm-12">
         <div ng-repeat="cat in categories" ng-show="cat.selected">
           <h2>{{cat.name}}</h2>
-          <div class="col-sm-12" ng-repeat="datum in cat.data">
+          <div class="col-sm-12 data-container">
             <table class="ctdata-table">
                 <thead>
                   <tr>
                     <th></th>
                     <th class="col-span-center col-name" colspan="2">State</th>
                     <th class="col-span-center col-name" colspan="2">National</th>
-                    <th class="col-span-center col-name" colspan="4" ng-if="datum.Pooled">State - 3-Year Trend</th>
-                    <th class="col-span-center col-name" colspan="4" ng-if="!datum.Pooled">State</th>
+                    <th class="col-span-center col-name" colspan="4" ng-if="cat.data | any:'Pooled' ">State - 3-Year Trend</th>
+                    <th class="col-span-center col-name" colspan="4" ng-if="cat.data | none:'Pooled' ">State</th>
                   </tr>
                   <tr>
                     <th></th>
@@ -35,24 +48,59 @@
                     <th class="col-name">Margins of Error</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
+                <tbody ng-repeat="indicator in cat.data">
+                  <tr ng-repeat-start="level in indicator.data" ng-class="{'true' : 'subcategory_break', 'false' : ''}[$last]">
                     <th class="name">
-                      {{ datum["Indicator"] }}
-                      <i ng-if="datum.timeseries" class="fa fa-line-chart timeseries_toggle" ng-click="toggleChart(datum.Indicator)"></i>
+                      {{ indicator.Indicator }}{{ level.level=='' ? '' : ' - '+level.level}}
+                      <i ng-if="level.timeseries" class="fa fa-line-chart timeseries_toggle" ng-click="toggleChart(indicator.Indicator+'-'+level.level)"></i>
                     </th>
-                    <td data-title="State Estimate" ng-bind-html="datum['State (2013)'] | suppressions | safe" class="value">{{ datum["State (2013)"] }}</td>
-                    <td data-title="State 3-Year Trend" ng-bind-html="datum['State Trend (Pooled)'] | suppressions | safe" class="value">{{ datum["State Trend (Pooled)"] }}</td>
-                    <td data-title="National Estimate" ng-bind-html="datum['National (2013)'] | suppressions | safe" class="value">{{ datum["National (2013)"] }}</td>
-                    <td data-title="National 3-Year Trend" ng-bind-html="datum['National Trend (Pooled)'] | suppressions | safe" class="value">{{ datum["National Trend (Pooled)"] }}</td>
-                    <td data-title="{{datum.Pooled ? '3-Year State Trend Rank' : 'Rank'}}" ng-bind-html="datum['Rank (2013)'] | suppressions | safe" class="value">{{ datum["Rank (2013)"] }}</td>
-                    <td data-title="{{datum.Pooled ? '3-Year State Trend Percentile' : 'Percentile'}}" ng-bind-html="datum['Percentile (2013)'] | suppressions | safe" class="value">{{ datum["Percentile (2013)"] }}</td>
-                    <td data-title="{{datum.Pooled ? '3-Year State Trend Sample Size' : 'Sample Size'}}" ng-bind-html="datum['Sample (2013)'] | suppressions | safe" class="value">{{ datum["Sample (2013)"] }}</td>
-                    <td data-title="{{datum.Pooled ? '3-Year State Trend Margins of Error' : 'Margins of Error'}}" ng-bind-html="datum['Margins of Error (2013)'] | suppressions | safe" class="value">{{ datum["Margins of Error (2013)"] }}</td>
+                    <td data-title="State Estimate" class="value">
+                      {{ level['State (2013)'] | number:1 | suppressions | percent | safe }}
+                    </td>
+                    <td data-title="State 3-Year Trend" class="value">
+                      {{ level['State Trend (Pooled)'] | number:1 | suppressions | percent | safe }}
+                      <a ng-if="level['State Trend (Pooled)']=='-9999'" href="#" tooltip="Pooled Estimates for voting are not calculated because voting rates from Midterm and Presidential years are often too different to combine."><i class="fa fa-question suppression_tip"></i></a>
+                      <a ng-if="level['State Trend (Pooled)']=='-666666'" href="#" tooltip="Certain indicators or indicator levels are presented as ranked or percentile values in the last four columns. For these indicators, all other indicator levels are not provided."><i class="fa fa-question suppression_tip"></i></a>
+                    </td>
+                    <td data-title="National Estimate" class="value">
+                      {{ level['National (2013)'] | number:1 | suppressions | percent | safe }}
+                      <a ng-if="level['National (2013)']=='-9999'" href="#" tooltip="Pooled Estimates for voting are not calculated because voting rates from Midterm and Presidential years are often too different to combine."><i class="fa fa-question suppression_tip"></i></a>
+                      <a ng-if="level['National (2013)']=='-666666'" href="#" tooltip="Certain indicators or indicator levels are presented as ranked or percentile values in the last four columns. For these indicators, all other indicator levels are not provided."><i class="fa fa-question suppression_tip"></i></a>
+                    </td>
+                    <td data-title="National 3-Year Trend" class="value">
+                      {{ level['National Trend (Pooled)'] | number:1 | suppressions | percent | safe }}
+                      <a ng-if="level['National Trend (Pooled)']=='-9999'" href="#" tooltip="Pooled Estimates for voting are not calculated because voting rates from Midterm and Presidential years are often too different to combine."><i class="fa fa-question suppression_tip"></i></a>
+                      <a ng-if="level['National Trend (Pooled)']=='-666666'" href="#" tooltip="Certain indicators or indicator levels are presented as ranked or percentile values in the last four columns. For these indicators, all other indicator levels are not provided."><i class="fa fa-question suppression_tip"></i></a>
+                    </td>
+                    <td data-title="{{level.Pooled ? '3-Year State Trend Rank' : 'Rank'}}" class="value">
+                      {{ level['Rank (2013)'] | suppressions | safe }}
+                      <a ng-if="level['Rank (2013)']=='-9999'" href="#" tooltip="Pooled Estimates for voting are not calculated because voting rates from Midterm and Presidential years are often too different to combine."><i class="fa fa-question suppression_tip"></i></a>
+                      <a ng-if="level['Rank (2013)']=='-666666'" href="#" tooltip="Certain indicators or indicator levels are presented as ranked or percentile values in the last four columns. For these indicators, all other indicator levels are not provided."><i class="fa fa-question suppression_tip"></i></a>
+                    </td>
+                    <td data-title="{{level.Pooled ? '3-Year State Trend Percentile' : 'Percentile'}}" class="value">
+                      {{ level['Percentile (2013)'] | suppressions | safe }}
+                      <a ng-if="level['Percentile (2013)']=='-9999'" href="#" tooltip="Pooled Estimates for voting are not calculated because voting rates from Midterm and Presidential years are often too different to combine."><i class="fa fa-question suppression_tip"></i></a>
+                      <a ng-if="level['Percentile (2013)']=='-666666'" href="#" tooltip="Certain indicators or indicator levels are presented as ranked or percentile values in the last four columns. For these indicators, all other indicator levels are not provided."><i class="fa fa-question suppression_tip"></i></a>
+                    </td>
+                    <td data-title="{{level.Pooled ? '3-Year State Trend Sample Size' : 'Sample Size'}}" class="value">
+                      {{ level['Sample (2013)'] | suppressions | safe }}
+                      <a ng-if="level['Sample (2013)']=='-9999'" href="#" tooltip="Pooled Estimates for voting are not calculated because voting rates from Midterm and Presidential years are often too different to combine."><i class="fa fa-question suppression_tip"></i></a>
+                      <a ng-if="level['Sample (2013)']=='-666666'" href="#" tooltip="Certain indicators or indicator levels are presented as ranked or percentile values in the last four columns. For these indicators, all other indicator levels are not provided."><i class="fa fa-question suppression_tip"></i></a>
+                    </td>
+                    <td data-title="{{level.Pooled ? '3-Year State Trend Margins of Error' : 'Margins of Error'}}" class="value">
+                      {{ level['Margins of Error (2013)'] | number:1 | suppressions | percent | safe }}
+                      <a ng-if="level['Margins of Error (2013)']=='-9999'" href="#" tooltip="Pooled Estimates for voting are not calculated because voting rates from Midterm and Presidential years are often too different to combine."><i class="fa fa-question suppression_tip"></i></a>
+                      <a ng-if="level['Margins of Error (2013)']=='-666666'" href="#" tooltip="Certain indicators or indicator levels are presented as ranked or percentile values in the last four columns. For these indicators, all other indicator levels are not provided."><i class="fa fa-question suppression_tip"></i></a>
+                    </td>
+                  </tr>
+                  <tr class="timeseries_row" ng-if="level.timeseries" id="{{indicator.Indicator+'-'+level.level | sluggify}}" ng-show="checkChart(indicator.Indicator+'-'+level.level)" ng-repeat-end>
+                    <th></th>
+                    <td class="timeseries_cell" colspan="8">
+                      <timeseries  data=level.timeseriesdata></timeseries>
+                    </td>
                   </tr>
                 </tbody>
             </table>
-            <timeseries style="display:none;" ng-if="datum.timeseries" data=datum.timeseriesdata id="{{datum.Indicator | sluggify}}"></timeseries>
           </div>
         </div>
       </div>
@@ -62,10 +110,10 @@
         <h5>A Note on Suppressions:</h5>
         <ul>
           <li>
-            <p><strong>NA</strong> -  We do not calculate pooled estimates for voting because voting rates from Midterm and Presidential years are often too different to combine.</p>
+            <p><strong>NA</strong> - Pooled Estimates for voting are not calculated because voting rates from Midterm and Presidential years are often too different to combine.</p>
           </li>
           <li>
-            <p><strong>&mdash;</strong> - Certain indicators or indicator levels are presented as ranked or percentile values in the last four columns. For these indicators, all other indicator levels are not provided</p>
+            <p><strong>*</strong> - Certain indicators or indicator levels are presented as ranked or percentile values in the last four columns. For these indicators, all other indicator levels are not provided</p>
           </li>
         </ul>
       </div>
