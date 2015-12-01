@@ -302,13 +302,6 @@ i.suppression_tip {
   font-size: 0.75rem;
   color: #1EACF1; }
 
-.about_index button {
-  background-color: #1EACF1;
-  border: 1.5px solid #4670A7;
-  color: #fff;
-  font-weight: 500;
-  font-size: 1.1rem; }
-
 .about_index p {
   border-radius: 0.25rem;
   padding: 0.7rem;
@@ -420,13 +413,44 @@ div.contributor {
   div.contributor p {
     padding: 0.5rem 0.25rem; }
 
-.ctdata-btn {
-  background-color: #4670A7;
-  color: #CDEFFE; }
+/*.ctdata-btn {
+	background-color: $ctdata-extra-dark-blue;
+	color: $ctdata-extra-light-blue;
+}
 
 .ctdata-btn:hover {
-  background-color: #CDEFFE;
-  color: black; }
+	background-color: $ctdata-extra-light-blue;
+	color: black;
+}*/
+.ctdata-btn-dark,
+.ctdata-btn-light {
+  color: #fff !important;
+  font-weight: 500;
+  font-size: 1.25rem; }
+  .ctdata-btn-dark:hover,
+  .ctdata-btn-light:hover {
+    color: #fff !important; }
+  .ctdata-btn-dark i,
+  .ctdata-btn-light i {
+    padding: 0 0.1rem; }
+
+.ctdata-btn-dark {
+  background-color: #4670A7;
+  border: 1.5px solid #4A4A4A; }
+  .ctdata-btn-dark:hover {
+    border: 1px solid #9EDDFC; }
+
+.ctdata-btn-dark i {
+  color: #4A4A4A; }
+
+.ctdata-btn-light {
+  background-color: #1EACF1;
+  border: 1.5px solid #4670A7; }
+  .ctdata-btn-light:hover {
+    border: 1px solid #9EDDFC; }
+
+.ctdata-btn-light i {
+  color: #4670A7; }
 
 svg.timeseries {
   width: 100%; }

@@ -1,4 +1,4 @@
-.ctdata-btn {
+/*.ctdata-btn {
 	background-color: $ctdata-extra-dark-blue;
 	color: $ctdata-extra-light-blue;
 }
@@ -6,4 +6,45 @@
 .ctdata-btn:hover {
 	background-color: $ctdata-extra-light-blue;
 	color: black;
+}*/
+
+.ctdata-btn-dark,
+.ctdata-btn-light {
+    color: $white!important;
+    font-weight: $medium;
+    font-size: 1.25rem;
+
+    &:hover {
+        color: $white!important;
+    }
+
+    i {
+        padding: 0 0.1rem;
+    }
+}
+
+.ctdata-btn-dark {
+    background-color: $ctdata-extra-dark-blue;
+    border: 1.5px solid $extra-dark-grey;
+
+    &:hover {
+        border:1px solid $ctdata-light-blue
+    }
+}
+
+.ctdata-btn-dark i {
+    color: $extra-dark-grey;
+}
+
+.ctdata-btn-light {
+    background-color: $ctdata-dark-blue;
+    border: 1.5px solid $ctdata-extra-dark-blue;
+
+    &:hover {
+        border:1px solid $ctdata-light-blue
+    }
+}
+
+.ctdata-btn-light i {
+    color: $ctdata-extra-dark-blue;
 }
