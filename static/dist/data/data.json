@@ -1,862 +1,1001 @@
 [
   {
-    "data": [
-      {
-        "Indicator": "Group participation: School group, neighborhood or community association  (percent Yes)",
-        "timeseries": false,
-        "Sample (2013)": "762",
-        "National (2013)": "13.9",
-        "National Trend (Pooled)": "14.5",
-        "State Trend (Pooled)": "14.4",
-        "Percentile (2013)": "8",
-        "Rank (2013)": "41",
-        "Margins of Error (2013)": "2.3",
-        "State (2013)": "12",
-        "Pooled": false
-      },
-      {
-        "Indicator": "Group participation: Service or civic association  (percent Yes)",
-        "timeseries": false,
-        "Sample (2013)": "761",
-        "National (2013)": "6.8",
-        "National Trend (Pooled)": "7.1",
-        "State Trend (Pooled)": "8.7",
-        "Percentile (2013)": "5",
-        "Rank (2013)": "25",
-        "Margins of Error (2013)": "1.9",
-        "State (2013)": "8",
-        "Pooled": false
-      },
-      {
-        "Indicator": "Group participation: Sports or recreation association  (percent Yes)",
-        "timeseries": false,
-        "Sample (2013)": "761",
-        "National (2013)": "9.9",
-        "National Trend (Pooled)": "10.3",
-        "State Trend (Pooled)": "12.7",
-        "Percentile (2013)": "7",
-        "Rank (2013)": "32",
-        "Margins of Error (2013)": "2.1",
-        "State (2013)": "10",
-        "Pooled": false
-      },
-      {
-        "Indicator": "Group participation: Church, synagogue, mosque, or religious institution  (percent Yes)",
-        "timeseries": false,
-        "Sample (2013)": "761",
-        "National (2013)": "19.4",
-        "National Trend (Pooled)": "19.1",
-        "State Trend (Pooled)": "17.3",
-        "Percentile (2013)": "10",
-        "Rank (2013)": "50",
-        "Margins of Error (2013)": "2.5",
-        "State (2013)": "14.3",
-        "Pooled": false
-      },
-      {
-        "Indicator": "Group participation: Any other type of organization  (percent Yes)",
-        "timeseries": false,
-        "Sample (2013)": "761",
-        "National (2013)": "5",
-        "National Trend (Pooled)": "5.4",
-        "State Trend (Pooled)": "6.8",
-        "Percentile (2013)": "4",
-        "Rank (2013)": "19",
-        "Margins of Error (2013)": "1.7",
-        "State (2013)": "6.2",
-        "Pooled": false
-      },
-      {
-        "Indicator": "Group  Participation - Any Type (percent Yes)",
-        "timeseries": false,
-        "Sample (2013)": "763",
-        "National (2013)": "36.3",
-        "National Trend (Pooled)": "36.4",
-        "State Trend (Pooled)": "38.8",
-        "Percentile (2013)": "7",
-        "Rank (2013)": "36",
-        "Margins of Error (2013)": "3.4",
-        "State (2013)": "35.1",
-        "Pooled": false
-      },
-      {
-        "Indicator": "Officer or member of committee for group or organization?  (percent Yes)",
-        "timeseries": false,
-        "Sample (2013)": "760",
-        "National (2013)": "9.7",
-        "National Trend (Pooled)": "9.8",
-        "State Trend (Pooled)": "11.7",
-        "Percentile (2013)": "5",
-        "Rank (2013)": "25",
-        "Margins of Error (2013)": "2.3",
-        "State (2013)": "11.3",
-        "Pooled": false
-      }
-    ],
     "icon": "fa fa-users",
     "name": "Group Membership",
-    "rank": 6
+    "rank": 6,
+    "data": [
+      {
+        "Indicator": "Group participation (percent Yes)",
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "762",
+            "National (2013)": "13.9",
+            "National Trend (Pooled)": "14.5",
+            "State Trend (Pooled)": "14.4",
+            "Percentile (2013)": "8",
+            "Rank (2013)": "41",
+            "Margins of Error (2013)": "2.3",
+            "State (2013)": "12",
+            "Pooled": false,
+            "level": "School group, neighborhood or community association",
+            "rank": 0
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "761",
+            "National (2013)": "6.8",
+            "National Trend (Pooled)": "7.1",
+            "State Trend (Pooled)": "8.7",
+            "Percentile (2013)": "5",
+            "Rank (2013)": "25",
+            "Margins of Error (2013)": "1.9",
+            "State (2013)": "8",
+            "Pooled": false,
+            "level": "Service or civic association",
+            "rank": 1
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "761",
+            "National (2013)": "9.9",
+            "National Trend (Pooled)": "10.3",
+            "State Trend (Pooled)": "12.7",
+            "Percentile (2013)": "7",
+            "Rank (2013)": "32",
+            "Margins of Error (2013)": "2.1",
+            "State (2013)": "10",
+            "Pooled": false,
+            "level": "Sports or recreation association",
+            "rank": 2
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "761",
+            "National (2013)": "19.4",
+            "National Trend (Pooled)": "19.1",
+            "State Trend (Pooled)": "17.3",
+            "Percentile (2013)": "10",
+            "Rank (2013)": "50",
+            "Margins of Error (2013)": "2.5",
+            "State (2013)": "14.3",
+            "Pooled": false,
+            "level": "Church, synagogue, mosque, or religious institution",
+            "rank": 3
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "761",
+            "National (2013)": "5",
+            "National Trend (Pooled)": "5.4",
+            "State Trend (Pooled)": "6.8",
+            "Percentile (2013)": "4",
+            "Rank (2013)": "19",
+            "Margins of Error (2013)": "1.7",
+            "State (2013)": "6.2",
+            "Pooled": false,
+            "level": "Any other type of organization",
+            "rank": 4
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "763",
+            "National (2013)": "36.3",
+            "National Trend (Pooled)": "36.4",
+            "State Trend (Pooled)": "38.8",
+            "Percentile (2013)": "7",
+            "Rank (2013)": "36",
+            "Margins of Error (2013)": "3.4",
+            "State (2013)": "35.1",
+            "Pooled": false,
+            "level": "Any Type",
+            "rank": 5
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "760",
+            "National (2013)": "9.7",
+            "National Trend (Pooled)": "9.8",
+            "State Trend (Pooled)": "11.7",
+            "Percentile (2013)": "5",
+            "Rank (2013)": "25",
+            "Margins of Error (2013)": "2.3",
+            "State (2013)": "11.3",
+            "Pooled": false,
+            "level": "Officer or member of committee for group or organization",
+            "rank": 6
+          }
+        ]
+      }
+    ]
   },
   {
+    "icon": "fa fa-gift",
+    "name": "Volunteering and Giving",
+    "rank": 1,
     "data": [
       {
         "Indicator": "Volunteering",
-        "timeseries": true,
-        "timeseriesdata": [
+        "data": [
           {
-            "Year": "1972",
-            "CT": "",
-            "US": "65.5"
-          },
-          {
-            "Year": "1976",
-            "CT": "64.4",
-            "US": "61.6"
-          },
-          {
-            "Year": "1980",
-            "CT": "72.9",
-            "US": "64"
-          },
-          {
-            "Year": "1984",
-            "CT": "68.6",
-            "US": "64.9"
-          },
-          {
-            "Year": "1988",
-            "CT": "69.2",
-            "US": "62.2"
-          },
-          {
-            "Year": "1992",
-            "CT": "78.8",
-            "US": "67.7"
-          },
-          {
-            "Year": "1996",
-            "CT": "62.3",
-            "US": "58.4"
-          },
-          {
-            "Year": "2000",
-            "CT": "59.5",
-            "US": "59.5"
-          },
-          {
-            "Year": "2004",
-            "CT": "63.2",
-            "US": "63.8"
-          },
-          {
-            "Year": "2008",
-            "CT": "67.2",
-            "US": "63.6"
-          },
-          {
-            "Year": "2012",
-            "CT": "62.7",
-            "US": "61.8"
+            "timeseries": true,
+            "timeseriesdata": [
+              {
+                "Year": "1972",
+                "CT": "",
+                "US": "65.5"
+              },
+              {
+                "Year": "1976",
+                "CT": "64.4",
+                "US": "61.6"
+              },
+              {
+                "Year": "1980",
+                "CT": "72.9",
+                "US": "64"
+              },
+              {
+                "Year": "1984",
+                "CT": "68.6",
+                "US": "64.9"
+              },
+              {
+                "Year": "1988",
+                "CT": "69.2",
+                "US": "62.2"
+              },
+              {
+                "Year": "1992",
+                "CT": "78.8",
+                "US": "67.7"
+              },
+              {
+                "Year": "1996",
+                "CT": "62.3",
+                "US": "58.4"
+              },
+              {
+                "Year": "2000",
+                "CT": "59.5",
+                "US": "59.5"
+              },
+              {
+                "Year": "2004",
+                "CT": "63.2",
+                "US": "63.8"
+              },
+              {
+                "Year": "2008",
+                "CT": "67.2",
+                "US": "63.6"
+              },
+              {
+                "Year": "2012",
+                "CT": "62.7",
+                "US": "61.8"
+              }
+            ],
+            "Sample (2013)": "1904",
+            "National (2013)": "25.4",
+            "National Trend (Pooled)": "26.2",
+            "State Trend (Pooled)": "29.1",
+            "Percentile (2013)": "5",
+            "Rank (2013)": "22",
+            "Margins of Error (2013)": "2",
+            "State (2013)": "27.8",
+            "Pooled": false,
+            "level": "",
+            "rank": 0
           }
-        ],
-        "Sample (2013)": "1904",
-        "National (2013)": "25.4",
-        "National Trend (Pooled)": "26.2",
-        "State Trend (Pooled)": "29.1",
-        "Percentile (2013)": "5",
-        "Rank (2013)": "22",
-        "Margins of Error (2013)": "2",
-        "State (2013)": "27.8",
-        "Pooled": false
+        ]
       },
       {
         "Indicator": "Attended a public meeting ",
-        "timeseries": false,
-        "Sample (2013)": "1904",
-        "National (2013)": "8.3",
-        "National Trend (Pooled)": "8.7",
-        "State Trend (Pooled)": "10.5",
-        "Percentile (2013)": "4",
-        "Rank (2013)": "19",
-        "Margins of Error (2013)": "1.4",
-        "State (2013)": "10.4",
-        "Pooled": false
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "1904",
+            "National (2013)": "8.3",
+            "National Trend (Pooled)": "8.7",
+            "State Trend (Pooled)": "10.5",
+            "Percentile (2013)": "4",
+            "Rank (2013)": "19",
+            "Margins of Error (2013)": "1.4",
+            "State (2013)": "10.4",
+            "Pooled": false,
+            "level": " ",
+            "rank": 0
+          }
+        ]
       },
       {
         "Indicator": "Working with neighbors to fix or improve something in the community",
-        "timeseries": false,
-        "Sample (2013)": "1904",
-        "National (2013)": "7.6",
-        "National Trend (Pooled)": "8.2",
-        "State Trend (Pooled)": "9.2",
-        "Percentile (2013)": "5",
-        "Rank (2013)": "22",
-        "Margins of Error (2013)": "1.3",
-        "State (2013)": "8.6",
-        "Pooled": false
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "1904",
+            "National (2013)": "7.6",
+            "National Trend (Pooled)": "8.2",
+            "State Trend (Pooled)": "9.2",
+            "Percentile (2013)": "5",
+            "Rank (2013)": "22",
+            "Margins of Error (2013)": "1.3",
+            "State (2013)": "8.6",
+            "Pooled": false,
+            "level": "",
+            "rank": 0
+          }
+        ]
       },
       {
         "Indicator": "Charitable Giving ($25 or more)",
-        "timeseries": false,
-        "Sample (2013)": "1904",
-        "National (2013)": "50.1",
-        "National Trend (Pooled)": "50.7",
-        "State Trend (Pooled)": "57.9",
-        "Percentile (2013)": "3",
-        "Rank (2013)": "12",
-        "Margins of Error (2013)": "2.2",
-        "State (2013)": "56.2",
-        "Pooled": false
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "1904",
+            "National (2013)": "50.1",
+            "National Trend (Pooled)": "50.7",
+            "State Trend (Pooled)": "57.9",
+            "Percentile (2013)": "3",
+            "Rank (2013)": "12",
+            "Margins of Error (2013)": "2.2",
+            "State (2013)": "56.2",
+            "Pooled": false,
+            "level": "",
+            "rank": 0
+          }
+        ]
       }
-    ],
-    "icon": "fa fa-gift",
-    "name": "Volunteering and Giving",
-    "rank": 1
+    ]
   },
   {
-    "data": [
-      {
-        "Indicator": "Confidence in Corporations  - A great deal",
-        "timeseries": false,
-        "Sample (2013)": "509",
-        "National (2013)": "6.5",
-        "National Trend (Pooled)": "6.4",
-        "State Trend (Pooled)": "6.4",
-        "Percentile (2013)": "7",
-        "Rank (2013)": "36",
-        "Margins of Error (2013)": "4.2",
-        "State (2013)": "6.8",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Confidence in Corporations  - Some",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "58",
-        "National Trend (Pooled)": "57",
-        "State Trend (Pooled)": "56.8",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "57.1",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Confidence in Corporations  - Hardly any",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "20.6",
-        "National Trend (Pooled)": "22",
-        "State Trend (Pooled)": "21.5",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "19.1",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Confidence in Corporations  - None",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "14.8",
-        "National Trend (Pooled)": "14.6",
-        "State Trend (Pooled)": "15.3",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "17",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Confidence in Corporations  - A great deal or Some",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "64.5",
-        "National Trend (Pooled)": "63.4",
-        "State Trend (Pooled)": "63.3",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "63.9",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Confidence in Media  - A great deal",
-        "timeseries": false,
-        "Sample (2013)": "519",
-        "National (2013)": "4.1",
-        "National Trend (Pooled)": "4.5",
-        "State Trend (Pooled)": "6.8",
-        "Percentile (2013)": "3",
-        "Rank (2013)": "12",
-        "Margins of Error (2013)": "4.2",
-        "State (2013)": "6",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Confidence in Media  - Some",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "50.9",
-        "National Trend (Pooled)": "53.5",
-        "State Trend (Pooled)": "54.5",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "53.2",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Confidence in Media  - Hardly any",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "25.5",
-        "National Trend (Pooled)": "26.6",
-        "State Trend (Pooled)": "25.2",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "23.3",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Confidence in Media  - None",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "19.4",
-        "National Trend (Pooled)": "15.4",
-        "State Trend (Pooled)": "13.6",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "17.5",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Confidence in Media  - A great deal or Some",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "55",
-        "National Trend (Pooled)": "58",
-        "State Trend (Pooled)": "61.2",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "59.2",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Confidence in Public Schools  - A great deal",
-        "timeseries": false,
-        "Sample (2013)": "509",
-        "National (2013)": "28.5",
-        "National Trend (Pooled)": "29.2",
-        "State Trend (Pooled)": "36.6",
-        "Percentile (2013)": "3",
-        "Rank (2013)": "13",
-        "Margins of Error (2013)": "2.8",
-        "State (2013)": "36.6",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Confidence in Public Schools  - Some",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "56",
-        "National Trend (Pooled)": "56.9",
-        "State Trend (Pooled)": "53.5",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "51.6",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Confidence in Public Schools  - Hardly any",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "9.3",
-        "National Trend (Pooled)": "9.3",
-        "State Trend (Pooled)": "6.1",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "6.8",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Confidence in Public Schools  - None",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "6.2",
-        "National Trend (Pooled)": "4.6",
-        "State Trend (Pooled)": "3.8",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "5.1",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Confidence in Public Schools  - A great deal or Some",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "84.5",
-        "National Trend (Pooled)": "86.1",
-        "State Trend (Pooled)": "90.1",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "88.1",
-        "Pooled": true
-      }
-    ],
     "icon": "fa fa-university",
     "name": "Confidence in Public Institutions",
-    "rank": 7
+    "rank": 7,
+    "data": [
+      {
+        "Indicator": "Confidence in Corporations",
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "509",
+            "National (2013)": "6.5",
+            "National Trend (Pooled)": "6.4",
+            "State Trend (Pooled)": "6.4",
+            "Percentile (2013)": "7",
+            "Rank (2013)": "36",
+            "Margins of Error (2013)": "4.2",
+            "State (2013)": "6.8",
+            "Pooled": true,
+            "level": "A great deal",
+            "rank": 1
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "58",
+            "National Trend (Pooled)": "57",
+            "State Trend (Pooled)": "56.8",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "57.1",
+            "Pooled": true,
+            "level": "Some",
+            "rank": 2
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "20.6",
+            "National Trend (Pooled)": "22",
+            "State Trend (Pooled)": "21.5",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "19.1",
+            "Pooled": true,
+            "level": "Hardly any",
+            "rank": 3
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "14.8",
+            "National Trend (Pooled)": "14.6",
+            "State Trend (Pooled)": "15.3",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "17",
+            "Pooled": true,
+            "level": "None",
+            "rank": 4
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "64.5",
+            "National Trend (Pooled)": "63.4",
+            "State Trend (Pooled)": "63.3",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "63.9",
+            "Pooled": true,
+            "level": "A great deal or Some",
+            "rank": 0
+          }
+        ]
+      },
+      {
+        "Indicator": "Confidence in Media",
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "519",
+            "National (2013)": "4.1",
+            "National Trend (Pooled)": "4.5",
+            "State Trend (Pooled)": "6.8",
+            "Percentile (2013)": "3",
+            "Rank (2013)": "12",
+            "Margins of Error (2013)": "4.2",
+            "State (2013)": "6",
+            "Pooled": true,
+            "level": "A great deal",
+            "rank": 1
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "50.9",
+            "National Trend (Pooled)": "53.5",
+            "State Trend (Pooled)": "54.5",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "53.2",
+            "Pooled": true,
+            "level": "Some",
+            "rank": 2
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "25.5",
+            "National Trend (Pooled)": "26.6",
+            "State Trend (Pooled)": "25.2",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "23.3",
+            "Pooled": true,
+            "level": "Hardly any",
+            "rank": 3
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "19.4",
+            "National Trend (Pooled)": "15.4",
+            "State Trend (Pooled)": "13.6",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "17.5",
+            "Pooled": true,
+            "level": "None",
+            "rank": 4
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "55",
+            "National Trend (Pooled)": "58",
+            "State Trend (Pooled)": "61.2",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "59.2",
+            "Pooled": true,
+            "level": "A great deal or Some",
+            "rank": 0
+          }
+        ]
+      },
+      {
+        "Indicator": "Confidence in Public Schools",
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "509",
+            "National (2013)": "28.5",
+            "National Trend (Pooled)": "29.2",
+            "State Trend (Pooled)": "36.6",
+            "Percentile (2013)": "3",
+            "Rank (2013)": "13",
+            "Margins of Error (2013)": "2.8",
+            "State (2013)": "36.6",
+            "Pooled": true,
+            "level": "A great deal",
+            "rank": 1
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "56",
+            "National Trend (Pooled)": "56.9",
+            "State Trend (Pooled)": "53.5",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "51.6",
+            "Pooled": true,
+            "level": "Some",
+            "rank": 2
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "9.3",
+            "National Trend (Pooled)": "9.3",
+            "State Trend (Pooled)": "6.1",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "6.8",
+            "Pooled": true,
+            "level": "Hardly any",
+            "rank": 3
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "6.2",
+            "National Trend (Pooled)": "4.6",
+            "State Trend (Pooled)": "3.8",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "5.1",
+            "Pooled": true,
+            "level": "None",
+            "rank": 4
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "84.5",
+            "National Trend (Pooled)": "86.1",
+            "State Trend (Pooled)": "90.1",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "88.1",
+            "Pooled": true,
+            "level": "A great deal or Some",
+            "rank": 0
+          }
+        ]
+      }
+    ]
   },
   {
+    "icon": "fa fa-check-circle-o",
+    "name": "Voting and Registrations",
+    "rank": 2,
     "data": [
       {
         "Indicator": "Voting (2012)",
-        "timeseries": false,
-        "Sample (2013)": "2056",
-        "National (2013)": "61.8",
-        "National Trend (Pooled)": "-9999",
-        "State Trend (Pooled)": "-9999",
-        "Percentile (2013)": "6",
-        "Rank (2013)": "26",
-        "Margins of Error (2013)": "2.1",
-        "State (2013)": "62.7",
-        "Pooled": false
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "2056",
+            "National (2013)": "61.8",
+            "National Trend (Pooled)": "-9999",
+            "State Trend (Pooled)": "-9999",
+            "Percentile (2013)": "6",
+            "Rank (2013)": "26",
+            "Margins of Error (2013)": "2.1",
+            "State (2013)": "62.7",
+            "Pooled": false,
+            "level": "",
+            "rank": 0
+          }
+        ]
       },
       {
         "Indicator": "Registration (2012)",
-        "timeseries": false,
-        "Sample (2013)": "2056",
-        "National (2013)": "71.2",
-        "National Trend (Pooled)": "-9999",
-        "State Trend (Pooled)": "-9999",
-        "Percentile (2013)": "7",
-        "Rank (2013)": "34",
-        "Margins of Error (2013)": "2",
-        "State (2013)": "70.5",
-        "Pooled": false
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "2056",
+            "National (2013)": "71.2",
+            "National Trend (Pooled)": "-9999",
+            "State Trend (Pooled)": "-9999",
+            "Percentile (2013)": "7",
+            "Rank (2013)": "34",
+            "Margins of Error (2013)": "2",
+            "State (2013)": "70.5",
+            "Pooled": false,
+            "level": "",
+            "rank": 0
+          }
+        ]
       }
-    ],
-    "icon": "fa fa-check-circle-o",
-    "name": "Voting and Registrations",
-    "rank": 2
+    ]
   },
   {
-    "data": [
-      {
-        "Indicator": "Vote in local elections - Always",
-        "timeseries": false,
-        "Sample (2013)": "767",
-        "National (2013)": "33",
-        "National Trend (Pooled)": "33.1",
-        "State Trend (Pooled)": "38.2",
-        "Percentile (2013)": "5",
-        "Rank (2013)": "24",
-        "Margins of Error (2013)": "3.4",
-        "State (2013)": "39.4",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Vote in local elections - Sometimes",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "25.5",
-        "National Trend (Pooled)": "25.1",
-        "State Trend (Pooled)": "24.4",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "24.1",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Vote in local elections - Rarely",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "10.2",
-        "National Trend (Pooled)": "10",
-        "State Trend (Pooled)": "8.5",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "8.6",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Vote in local elections - Never",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "31.2",
-        "National Trend (Pooled)": "31.9",
-        "State Trend (Pooled)": "28.9",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "27.9",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Vote in local elections - Always or Sometimes",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "58.5",
-        "National Trend (Pooled)": "58.2",
-        "State Trend (Pooled)": "62.6",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "63.5",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Nonelectoral participation: Contacted or visited public official? (percent Yes)",
-        "timeseries": false,
-        "Sample (2013)": "764",
-        "National (2013)": "10.8",
-        "National Trend (Pooled)": "11",
-        "State Trend (Pooled)": "14.5",
-        "Percentile (2013)": "4",
-        "Rank (2013)": "19",
-        "Margins of Error (2013)": "2.4",
-        "State (2013)": "13.8",
-        "Pooled": false
-      },
-      {
-        "Indicator": "Nonelectoral participation: Bought or boycotted a product or service?  (percent Yes)",
-        "timeseries": false,
-        "Sample (2013)": "761",
-        "National (2013)": "12.8",
-        "National Trend (Pooled)": "11.6",
-        "State Trend (Pooled)": "15.2",
-        "Percentile (2013)": "5",
-        "Rank (2013)": "21",
-        "Margins of Error (2013)": "2.5",
-        "State (2013)": "14",
-        "Pooled": false
-      },
-      {
-        "Indicator": "Use the Internet to express a public opinion? - Never",
-        "timeseries": false,
-        "Sample (2013)": "752",
-        "National (2013)": "71.6",
-        "National Trend (Pooled)": "71.9",
-        "State Trend (Pooled)": "70.8",
-        "Percentile (2013)": "4",
-        "Rank (2013)": "20",
-        "Margins of Error (2013)": "2",
-        "State (2013)": "69.9",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Use the Internet to express a public opinion? - Infrequently",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "20.5",
-        "National Trend (Pooled)": "20.2",
-        "State Trend (Pooled)": "22",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "21.6",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Use the Internet to express a public opinion? - Frequently",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "7.9",
-        "National Trend (Pooled)": "8",
-        "State Trend (Pooled)": "7.2",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "8.4",
-        "Pooled": true
-      }
-    ],
     "icon": "fa fa-flag-o",
     "name": "Political Involvement",
-    "rank": 5
-  },
-  {
+    "rank": 5,
     "data": [
       {
-        "Indicator": "Talk with neighbors - Never",
-        "timeseries": false,
-        "Sample (2013)": "744",
-        "National (2013)": "14.3",
-        "National Trend (Pooled)": "15.9",
-        "State Trend (Pooled)": "14.9",
-        "Percentile (2013)": "3",
-        "Rank (2013)": "11",
-        "Margins of Error (2013)": "3.6",
-        "State (2013)": "13.2",
-        "Pooled": true
+        "Indicator": "Vote in local elections",
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "767",
+            "National (2013)": "33",
+            "National Trend (Pooled)": "33.1",
+            "State Trend (Pooled)": "38.2",
+            "Percentile (2013)": "5",
+            "Rank (2013)": "24",
+            "Margins of Error (2013)": "3.4",
+            "State (2013)": "39.4",
+            "Pooled": true,
+            "level": "Always",
+            "rank": 1
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "25.5",
+            "National Trend (Pooled)": "25.1",
+            "State Trend (Pooled)": "24.4",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "24.1",
+            "Pooled": true,
+            "level": "Sometimes",
+            "rank": 2
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "10.2",
+            "National Trend (Pooled)": "10",
+            "State Trend (Pooled)": "8.5",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "8.6",
+            "Pooled": true,
+            "level": "Rarely",
+            "rank": 3
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "31.2",
+            "National Trend (Pooled)": "31.9",
+            "State Trend (Pooled)": "28.9",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "27.9",
+            "Pooled": true,
+            "level": "Never",
+            "rank": 4
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "58.5",
+            "National Trend (Pooled)": "58.2",
+            "State Trend (Pooled)": "62.6",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "63.5",
+            "Pooled": true,
+            "level": "Always or Sometimes",
+            "rank": 0
+          }
+        ]
       },
       {
-        "Indicator": "Talk with neighbors - Infrequently",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "44.3",
-        "National Trend (Pooled)": "41.7",
-        "State Trend (Pooled)": "40",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "41.2",
-        "Pooled": true
+        "Indicator": "Nonelectoral participation (percent Yes)",
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "764",
+            "National (2013)": "10.8",
+            "National Trend (Pooled)": "11",
+            "State Trend (Pooled)": "14.5",
+            "Percentile (2013)": "4",
+            "Rank (2013)": "19",
+            "Margins of Error (2013)": "2.4",
+            "State (2013)": "13.8",
+            "Pooled": false,
+            "level": "Contacted or visited public official",
+            "rank": 0
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "761",
+            "National (2013)": "12.8",
+            "National Trend (Pooled)": "11.6",
+            "State Trend (Pooled)": "15.2",
+            "Percentile (2013)": "5",
+            "Rank (2013)": "21",
+            "Margins of Error (2013)": "2.5",
+            "State (2013)": "14",
+            "Pooled": false,
+            "level": "Bought or boycotted a product or service",
+            "rank": 1
+          }
+        ]
       },
       {
-        "Indicator": "Talk with neighbors - Frequently",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "41.4",
-        "National Trend (Pooled)": "42.5",
-        "State Trend (Pooled)": "45",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "45.5",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Do favors for neighbors - Never",
-        "timeseries": false,
-        "Sample (2013)": "744",
-        "National (2013)": "37.4",
-        "National Trend (Pooled)": "38.9",
-        "State Trend (Pooled)": "35.5",
-        "Percentile (2013)": "7",
-        "Rank (2013)": "33",
-        "Margins of Error (2013)": "2.3",
-        "State (2013)": "34.9",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Do favors for neighbors - Infrequently",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "50.4",
-        "National Trend (Pooled)": "47.3",
-        "State Trend (Pooled)": "51",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "53.4",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Do favors for neighbors - Frequently",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "12.1",
-        "National Trend (Pooled)": "13.8",
-        "State Trend (Pooled)": "13.6",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "11.7",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Trust the people in your neighborhood - All",
-        "timeseries": false,
-        "Sample (2013)": "515",
-        "National (2013)": "15.3",
-        "National Trend (Pooled)": "15.4",
-        "State Trend (Pooled)": "18",
-        "Percentile (2013)": "7",
-        "Rank (2013)": "21",
-        "Margins of Error (2013)": "4.2",
-        "State (2013)": "18.1",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Trust the people in your neighborhood  - Most",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "40.5",
-        "National Trend (Pooled)": "40.8",
-        "State Trend (Pooled)": "43.7",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "43.8",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Trust the people in your neighborhood  - Some",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "35.3",
-        "National Trend (Pooled)": "35",
-        "State Trend (Pooled)": "30",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "29",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Trust the people in your neighborhood  - None",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "9",
-        "National Trend (Pooled)": "8.8",
-        "State Trend (Pooled)": "8.3",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "9.1",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Trust the people in your neighborhood  - Most or All",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "55.8",
-        "National Trend (Pooled)": "56.2",
-        "State Trend (Pooled)": "61.7",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "61.9",
-        "Pooled": true
+        "Indicator": "Use the Internet to express a public opinion",
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "752",
+            "National (2013)": "71.6",
+            "National Trend (Pooled)": "71.9",
+            "State Trend (Pooled)": "70.8",
+            "Percentile (2013)": "4",
+            "Rank (2013)": "20",
+            "Margins of Error (2013)": "2",
+            "State (2013)": "69.9",
+            "Pooled": true,
+            "level": "Never",
+            "rank": 3
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "20.5",
+            "National Trend (Pooled)": "20.2",
+            "State Trend (Pooled)": "22",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "21.6",
+            "Pooled": true,
+            "level": "Infrequently",
+            "rank": 2
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "7.9",
+            "National Trend (Pooled)": "8",
+            "State Trend (Pooled)": "7.2",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "8.4",
+            "Pooled": true,
+            "level": "Frequently",
+            "rank": 1
+          }
+        ]
       }
-    ],
+    ]
+  },
+  {
     "icon": "fa fa-exchange",
     "name": "Interactions With Neighbors",
-    "rank": 3
-  },
-  {
+    "rank": 3,
     "data": [
       {
-        "Indicator": "Talk politics with family or friends - Never",
-        "timeseries": false,
-        "Sample (2013)": "743",
-        "National (2013)": "28.4",
-        "National Trend (Pooled)": "30.5",
-        "State Trend (Pooled)": "27.5",
-        "Percentile (2013)": "6",
-        "Rank (2013)": "29",
-        "Margins of Error (2013)": "3.2",
-        "State (2013)": "27.2",
-        "Pooled": true
+        "Indicator": "Talk with neighbors",
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "744",
+            "National (2013)": "14.3",
+            "National Trend (Pooled)": "15.9",
+            "State Trend (Pooled)": "14.9",
+            "Percentile (2013)": "3",
+            "Rank (2013)": "11",
+            "Margins of Error (2013)": "3.6",
+            "State (2013)": "13.2",
+            "Pooled": true,
+            "level": "Never",
+            "rank": 3
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "44.3",
+            "National Trend (Pooled)": "41.7",
+            "State Trend (Pooled)": "40",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "41.2",
+            "Pooled": true,
+            "level": "Infrequently",
+            "rank": 2
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "41.4",
+            "National Trend (Pooled)": "42.5",
+            "State Trend (Pooled)": "45",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "45.5",
+            "Pooled": true,
+            "level": "Frequently",
+            "rank": 1
+          }
+        ]
       },
       {
-        "Indicator": "Talk politics with family or friends - Infrequently",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "44.6",
-        "National Trend (Pooled)": "42",
-        "State Trend (Pooled)": "42.9",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "45",
-        "Pooled": true
+        "Indicator": "Do favors for neighbors",
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "744",
+            "National (2013)": "37.4",
+            "National Trend (Pooled)": "38.9",
+            "State Trend (Pooled)": "35.5",
+            "Percentile (2013)": "7",
+            "Rank (2013)": "33",
+            "Margins of Error (2013)": "2.3",
+            "State (2013)": "34.9",
+            "Pooled": true,
+            "level": "Never",
+            "rank": 3
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "50.4",
+            "National Trend (Pooled)": "47.3",
+            "State Trend (Pooled)": "51",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "53.4",
+            "Pooled": true,
+            "level": "Infrequently",
+            "rank": 2
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "12.1",
+            "National Trend (Pooled)": "13.8",
+            "State Trend (Pooled)": "13.6",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "11.7",
+            "Pooled": true,
+            "level": "Frequently",
+            "rank": 1
+          }
+        ]
       },
       {
-        "Indicator": "Talk politics with family or friends - Frequently",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "27",
-        "National Trend (Pooled)": "27.4",
-        "State Trend (Pooled)": "29.6",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "27.8",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Eat dinner with other HH members - Never",
-        "timeseries": false,
-        "Sample (2013)": "607",
-        "National (2013)": "3.6",
-        "National Trend (Pooled)": "3.4",
-        "State Trend (Pooled)": "2.5",
-        "Percentile (2013)": "6",
-        "Rank (2013)": "28",
-        "Margins of Error (2013)": "2.5",
-        "State (2013)": "2.7",
-        "Pooled": true
-      },
-      {
-        "Indicator": "Eat dinner with other HH members – Infrequently",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "8.6",
-        "National Trend (Pooled)": "8.1",
-        "State Trend (Pooled)": "9.2",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "8.6",
-        "Pooled": false
-      },
-      {
-        "Indicator": "Eat dinner with other HH members – Frequently",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "87.8",
-        "National Trend (Pooled)": "88.5",
-        "State Trend (Pooled)": "88.3",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "88.7",
-        "Pooled": false
-      },
-      {
-        "Indicator": "How often did you hear from family/friends? - Never",
-        "timeseries": false,
-        "Sample (2013)": "740",
-        "National (2013)": "2.9",
-        "National Trend (Pooled)": "12.2",
-        "State Trend (Pooled)": "9.9",
-        "Percentile (2013)": "6",
-        "Rank (2013)": "28",
-        "Margins of Error (2013)": "3",
-        "State (2013)": "2.6",
-        "Pooled": true
-      },
-      {
-        "Indicator": "How often did you hear from family/friends? - Infrequently",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "21.4",
-        "National Trend (Pooled)": "18.2",
-        "State Trend (Pooled)": "16.4",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "19.6",
-        "Pooled": true
-      },
-      {
-        "Indicator": "How often did you hear from family/friends? - Frequently",
-        "timeseries": false,
-        "Sample (2013)": "-666666",
-        "National (2013)": "75.7",
-        "National Trend (Pooled)": "69.7",
-        "State Trend (Pooled)": "73.7",
-        "Percentile (2013)": "-666666",
-        "Rank (2013)": "-666666",
-        "Margins of Error (2013)": "-666666",
-        "State (2013)": "77.8",
-        "Pooled": true
+        "Indicator": "Trust the people in your neighborhood",
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "515",
+            "National (2013)": "15.3",
+            "National Trend (Pooled)": "15.4",
+            "State Trend (Pooled)": "18",
+            "Percentile (2013)": "7",
+            "Rank (2013)": "21",
+            "Margins of Error (2013)": "4.2",
+            "State (2013)": "18.1",
+            "Pooled": true,
+            "level": "All",
+            "rank": 1
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "40.5",
+            "National Trend (Pooled)": "40.8",
+            "State Trend (Pooled)": "43.7",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "43.8",
+            "Pooled": true,
+            "level": "Most",
+            "rank": 2
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "35.3",
+            "National Trend (Pooled)": "35",
+            "State Trend (Pooled)": "30",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "29",
+            "Pooled": true,
+            "level": "Some",
+            "rank": 3
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "9",
+            "National Trend (Pooled)": "8.8",
+            "State Trend (Pooled)": "8.3",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "9.1",
+            "Pooled": true,
+            "level": "None",
+            "rank": 4
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "55.8",
+            "National Trend (Pooled)": "56.2",
+            "State Trend (Pooled)": "61.7",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "61.9",
+            "Pooled": true,
+            "level": "Most or All",
+            "rank": 0
+          }
+        ]
       }
-    ],
+    ]
+  },
+  {
     "icon": "fa fa-comments-o",
     "name": "Communication With Family and Friends",
-    "rank": 4
+    "rank": 4,
+    "data": [
+      {
+        "Indicator": "Talk politics with family or friends",
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "743",
+            "National (2013)": "28.4",
+            "National Trend (Pooled)": "30.5",
+            "State Trend (Pooled)": "27.5",
+            "Percentile (2013)": "6",
+            "Rank (2013)": "29",
+            "Margins of Error (2013)": "3.2",
+            "State (2013)": "27.2",
+            "Pooled": true,
+            "level": "Never",
+            "rank": 3
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "44.6",
+            "National Trend (Pooled)": "42",
+            "State Trend (Pooled)": "42.9",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "45",
+            "Pooled": true,
+            "level": "Infrequently",
+            "rank": 2
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "27",
+            "National Trend (Pooled)": "27.4",
+            "State Trend (Pooled)": "29.6",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "27.8",
+            "Pooled": true,
+            "level": "Frequently",
+            "rank": 1
+          }
+        ]
+      },
+      {
+        "Indicator": "Eat dinner with other household members",
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "8.6",
+            "National Trend (Pooled)": "8.1",
+            "State Trend (Pooled)": "9.2",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "8.6",
+            "Pooled": false,
+            "level": "Infrequently",
+            "rank": 2
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "87.8",
+            "National Trend (Pooled)": "88.5",
+            "State Trend (Pooled)": "88.3",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "88.7",
+            "Pooled": false,
+            "level": "Frequently",
+            "rank": 1
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "740",
+            "National (2013)": "2.9",
+            "National Trend (Pooled)": "12.2",
+            "State Trend (Pooled)": "9.9",
+            "Percentile (2013)": "6",
+            "Rank (2013)": "28",
+            "Margins of Error (2013)": "3",
+            "State (2013)": "2.6",
+            "Pooled": true,
+            "level": "Never",
+            "rank": 3
+          }
+        ]
+      },
+      {
+        "Indicator": "How often did you hear from family/friends?",
+        "data": [
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "21.4",
+            "National Trend (Pooled)": "18.2",
+            "State Trend (Pooled)": "16.4",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "19.6",
+            "Pooled": true,
+            "level": "Infrequently",
+            "rank": 1
+          },
+          {
+            "timeseries": false,
+            "Sample (2013)": "-666666",
+            "National (2013)": "75.7",
+            "National Trend (Pooled)": "69.7",
+            "State Trend (Pooled)": "73.7",
+            "Percentile (2013)": "-666666",
+            "Rank (2013)": "-666666",
+            "Margins of Error (2013)": "-666666",
+            "State (2013)": "77.8",
+            "Pooled": true,
+            "level": "Frequently",
+            "rank": 0
+          }
+        ]
+      }
+    ]
   }
 ]

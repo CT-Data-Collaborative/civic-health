@@ -487,6 +487,10 @@ table.ctdata-table {
   table.ctdata-table .name, table.ctdata-table .col-name, table.ctdata-table .value {
     padding-right: .5rem;
     padding-left: .5rem; }
+  @media screen and (min-width: 1100px) {
+    table.ctdata-table .subcategory_break td,
+    table.ctdata-table .subcategory_break th {
+      padding-bottom: 0.75rem; } }
   @media screen and (max-width: 1100px) {
     table.ctdata-table {
       margin-bottom: 1rem; }
@@ -499,7 +503,11 @@ table.ctdata-table {
         padding-left: 1.25rem !important; }
       table.ctdata-table tr:hover {
         background: none; }
+      table.ctdata-table tbody > tr > td:last-child {
+        padding-bottom: 0.75rem; }
       table.ctdata-table tbody > tr > th {
         padding-bottom: 0.25rem; }
       table.ctdata-table td:before {
-        content: attr(data-title) ": "; } }
+        content: attr(data-title) ": "; }
+      table.ctdata-table tbody:not(:last-child) .subcategory_break td:last-child {
+        border-bottom: 1px solid #ececec; } }
