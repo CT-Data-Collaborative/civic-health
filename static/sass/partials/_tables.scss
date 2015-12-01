@@ -54,6 +54,11 @@ table.ctdata-table {
             display: block;
         }
 
+        .value {
+            text-align: left!important;
+            padding-left: 1.25rem!important;
+        }
+
         tr:hover {
             background: none;
         }

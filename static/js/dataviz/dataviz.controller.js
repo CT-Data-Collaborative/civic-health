@@ -3,14 +3,32 @@ angular.module('app')
     ['$scope', '$http', '$log', '$location', '$filter',/* '$anchorScroll', '$rootScope', '$routeParams', */'sidebarDisplay', 'categories', 'lodash',
     function($scope, $http, $log, $location, $filter,/* $anchorScroll, $rootScope, $routeParams, */sidebarDisplay, categories, lodash){
         var lo = lodash;
+        $scope.charts = {};
         $scope.toggle = sidebarDisplay.toggle;
 
         $scope.aboutCollapsed = false;
 
+        $scope.checkChart = function(slug) {
+            slug = $filter('sluggify')(slug);
+
+            if (!(slug in $scope.charts)) {
+                $scope.charts[slug] = false;
+                return false;
+            } else {
+                return $scope.charts[slug];
+            }
+        }
         $scope.toggleChart = function(slug) {
             slug = $filter('sluggify')(slug);
 
-            $("#"+slug).toggle();
+            if (!(slug in $scope.charts)) {
+                alert("Somehow, \""+slug+"\" was not in scope.charts!")
+                $scope.charts[slug] = false;
+                // return false;
+            } else {
+                // return $scope.charts[slug];
+                $scope.charts[slug] = !$scope.charts[slug];
+            }
         }
 
         // $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {

@@ -21,6 +21,8 @@ function timeSeries() {
                 data = rawdata,
                 width = config.width * 0.75;
 
+            console.log("original width: "+width);
+
             if (width < 100) {
                 var yTicks = 2,
                     xTicksYears = 16,
@@ -39,10 +41,10 @@ function timeSeries() {
             } else if (width < 300) {
                 var yTicks = 3,
                     xTicksYears = 12,
-                    height = 0.45 * width,
+                    height = 0.6 * width,
                     margin = {
                         top: height * 0.1,
-                        left: width * 0.25,
+                        left: width * 0.3,
                         bottom: height * 0.3,
                         right: width * 0.05
                     },

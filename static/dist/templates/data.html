@@ -93,7 +93,7 @@
                       <a ng-if="datum['Margins of Error (2013)']=='-666666'" href="#" tooltip="Certain indicators or indicator levels are presented as ranked or percentile values in the last four columns. For these indicators, all other indicator levels are not provided."><i class="fa fa-question suppression_tip"></i></a>
                     </td>
                   </tr>
-                  <tr class="timeseries_row" ng-if="datum.timeseries" id="{{datum.Indicator | sluggify}}" style="display:none;" ng-repeat-end>
+                  <tr class="timeseries_row" ng-if="datum.timeseries" id="{{datum.Indicator | sluggify}}" ng-show="checkChart(datum.Indicator)" ng-repeat-end>
                     <th></th>
                     <td class="timeseries_cell" colspan="8">
                       <timeseries  data=datum.timeseriesdata></timeseries>

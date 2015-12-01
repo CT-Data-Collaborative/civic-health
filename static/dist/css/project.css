@@ -494,6 +494,9 @@ table.ctdata-table {
         display: none; }
       table.ctdata-table tr, table.ctdata-table td {
         display: block; }
+      table.ctdata-table .value {
+        text-align: left !important;
+        padding-left: 1.25rem !important; }
       table.ctdata-table tr:hover {
         background: none; }
       table.ctdata-table tbody > tr > th {
