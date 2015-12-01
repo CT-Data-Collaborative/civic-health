@@ -24,7 +24,6 @@ angular.module('app')
         // the sidebar and propigating selections through the catgories service
         $scope.updateSelected = function(category) {
             categories.toggle(category);
-            console.log(lodash.pluck(categories.list, "selected"))
         };
 
         $scope.checkSelected = function(bool) {

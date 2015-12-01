@@ -79,15 +79,20 @@ div.data-container {
     margin-bottom: 1rem;
 }
 
-i.suppression_tip {
-    font-size:0.75rem;
-    color:$ctdata-dark-blue;
-}
+.about_index {
+    p {
+        border-radius: 0.25rem;
+        padding: 0.7rem;
+        margin: 0.5rem;
+        background-color: $extra-light-grey;
+        font-size: 1.25rem;
+    }
 
-.about_index p {
-    border-radius: 0.25rem;
-    padding: 0.7rem;
-    margin: 0.5rem;
-    background-color: $extra-light-grey;
-    font-size: 1.25rem;
+    @media screen and (max-width: $reflow-table-break) {
+        button, a {
+            display: block;
+            float: left;
+            clear: both;
+        }
+    }
 }

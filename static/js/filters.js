@@ -19,6 +19,26 @@ angular.module('app')
         }
     }
 })
+.filter('anySuppressed', ['lodash', function(lodash) {
+    return function(arr, suppression) {
+        arr = lodash.flattenDeep(lodash.pluck(arr, "data"));
+
+        if (typeof suppression !== "undefined") {
+            // console.log("checking suppression: "+suppression);
+            return lodash.some(arr, function(o) {
+                o = lodash.values(o);
+                return lodash.indexOf(o, suppression) !== -1;
+            });
+        } else {
+            // assume to check either suppression
+            // console.log("checking both suppression types");
+            return lodash.some(arr, function(o) {
+                o = lodash.values(o);
+                return lodash.indexOf(o, '-666666') !== -1 || lodash.indexOf(o, '-9999') !== -1;
+            });
+        }
+    }
+}])
 .filter('any', ['lodash', function(lodash) {
     return function(arr, prop) {
         if (typeof prop !== "undefined") {

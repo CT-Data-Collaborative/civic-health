@@ -298,16 +298,18 @@ div.data-container {
   padding-bottom: 1rem;
   margin-bottom: 1rem; }
 
-i.suppression_tip {
-  font-size: 0.75rem;
-  color: #1EACF1; }
-
 .about_index p {
   border-radius: 0.25rem;
   padding: 0.7rem;
   margin: 0.5rem;
   background-color: #ececec;
   font-size: 1.25rem; }
+
+@media screen and (max-width: 1100px) {
+  .about_index button, .about_index a {
+    display: block;
+    float: left;
+    clear: both; } }
 
 .sidebar-nav {
   /*position: absolute;*/
@@ -531,7 +533,9 @@ table.ctdata-table {
         padding-bottom: 0.75rem; }
       table.ctdata-table tbody > tr > th {
         padding-bottom: 0.25rem; }
-      table.ctdata-table td:before {
+      table.ctdata-table tbody td:before {
         content: attr(data-title) ": "; }
       table.ctdata-table tbody:not(:last-child) .subcategory_break td:last-child {
         border-bottom: 1px solid #ececec; } }
+  table.ctdata-table tfoot tr.suppression_notes {
+    font-size: 0.9rem; }

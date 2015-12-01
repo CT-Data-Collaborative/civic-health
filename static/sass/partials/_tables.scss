@@ -78,12 +78,18 @@ table.ctdata-table {
             padding-bottom:0.25rem;
         }
 
-        td:before {
+        tbody td:before {
             content: attr(data-title) ":\00A0";
         }
 
         tbody:not(:last-child) .subcategory_break td:last-child {
             border-bottom: 1px solid $extra-light-grey;
+        }
+    }
+
+    tfoot {
+        tr.suppression_notes {
+            font-size:0.9rem;
         }
     }
 }
