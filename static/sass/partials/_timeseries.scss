@@ -27,9 +27,14 @@ i.timeseries_toggle {
     font-size:1.4rem;
 }
 
-@media screen and (max-width: $reflow-table-break) {
-    div.data-container {
-        border-bottom: 1px solid $dark-grey;
+@media screen and (min-width: $reflow-table-break) {
+    td.timeseries_cell {
         padding-bottom: 1rem;
+        padding-top: 1rem;
+    }
+}
+@media screen and (max-width: $reflow-table-break) {
+    td.timeseries_cell:before {
+        content: ""!important;
     }
 }

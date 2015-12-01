@@ -12,7 +12,7 @@ angular.module('app')
                 data = {
                     data : scope.data,
                     config : {
-                        "width" : element.parent()[0].getBoundingClientRect().width * 0.4
+                        "width" : element.parent().parent().parent()[0].getBoundingClientRect().width * 0.6
                     }
                 };
 

@@ -73,6 +73,12 @@
     background: white;
 }
 
+div.data-container {
+    border-bottom: 1px solid $dark-grey;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
 i.suppression_tip {
     font-size:0.75rem;
     color:$ctdata-dark-blue;
@@ -88,7 +94,7 @@ i.suppression_tip {
 
 .about_index p {
     border-radius: 0.25rem;
-    padding: 0.5rem;
+    padding: 0.7rem;
     margin: 0.5rem;
     background-color: $extra-light-grey;
     font-size: 1.25rem;

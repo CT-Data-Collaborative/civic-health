@@ -19,6 +19,24 @@ angular.module('app')
         }
     }
 })
+.filter('any', ['lodash', function(lodash) {
+    return function(arr, prop) {
+        if (typeof prop !== "undefined") {
+            return lodash.some(arr, prop)
+        } else {
+            return lodash.some(arr)
+        }
+    }
+}])
+.filter('none', ['lodash', function(lodash) {
+    return function(arr, prop) {
+        if (typeof prop !== "undefined") {
+            return !lodash.some(arr, prop)
+        } else {
+            return !lodash.some(arr)
+        }
+    }
+}])
 .filter('sluggify', function() {
     return function(input) {
         return input.toLowerCase().replace(/[^a-zA-Z0-9_]/g, "_")

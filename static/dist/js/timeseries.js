@@ -24,8 +24,8 @@ function timeSeries() {
             if (width < 100) {
                 var yTicks = 2,
                     xTicksYears = 16,
-                    width = 1.25 * width,
-                    height = 0.5 * width,
+                    width = 1.4 * width,
+                    height = 0.6 * width,
                     margin = {
                         top: height * 0.1,
                         left: width * 0.35,

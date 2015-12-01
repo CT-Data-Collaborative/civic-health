@@ -15,7 +15,7 @@
       </button>
     </div>
     <div class="row">
-      <div class="col-sm-6 about_index" collapse="aboutCollapsed">
+      <div class="col-sm-5 about_index" collapse="aboutCollapsed">
         <p>
           DRAFT - The Civic Health Index looks at key indicators of civic life in Connecticut: how Connecticut residents engage in civic organizations and group activities, how attentive they are to community problem solving and politics, and how connected they are to family, friends, and neighbors.
           - Add list of advisory group members
@@ -26,15 +26,15 @@
       <div class="col-sm-12">
         <div ng-repeat="cat in categories" ng-show="cat.selected">
           <h2>{{cat.name}}</h2>
-          <div class="col-sm-12 data-container" ng-repeat="datum in cat.data">
+          <div class="col-sm-12 data-container">
             <table class="ctdata-table">
                 <thead>
                   <tr>
                     <th></th>
                     <th class="col-span-center col-name" colspan="2">State</th>
                     <th class="col-span-center col-name" colspan="2">National</th>
-                    <th class="col-span-center col-name" colspan="4" ng-if="datum.Pooled">State - 3-Year Trend</th>
-                    <th class="col-span-center col-name" colspan="4" ng-if="!datum.Pooled">State</th>
+                    <th class="col-span-center col-name" colspan="4" ng-if="cat.data | any:'Pooled' ">State - 3-Year Trend</th>
+                    <th class="col-span-center col-name" colspan="4" ng-if="cat.data | none:'Pooled' ">State</th>
                   </tr>
                   <tr>
                     <th></th>
@@ -49,7 +49,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr ng-repeat-start="datum in cat.data">
                     <th class="name">
                       {{ datum["Indicator"] }}
                       <i ng-if="datum.timeseries" class="fa fa-line-chart timeseries_toggle" ng-click="toggleChart(datum.Indicator)"></i>
@@ -93,9 +93,14 @@
                       <a ng-if="datum['Margins of Error (2013)']=='-666666'" href="#" tooltip="Certain indicators or indicator levels are presented as ranked or percentile values in the last four columns. For these indicators, all other indicator levels are not provided."><i class="fa fa-question suppression_tip"></i></a>
                     </td>
                   </tr>
+                  <tr class="timeseries_row" ng-if="datum.timeseries" id="{{datum.Indicator | sluggify}}" style="display:none;" ng-repeat-end>
+                    <th></th>
+                    <td class="timeseries_cell" colspan="8">
+                      <timeseries  data=datum.timeseriesdata></timeseries>
+                    </td>
+                  </tr>
                 </tbody>
             </table>
-            <timeseries style="display:none;" ng-if="datum.timeseries" data=datum.timeseriesdata id="{{datum.Indicator | sluggify}}"></timeseries>
           </div>
         </div>
       </div>
