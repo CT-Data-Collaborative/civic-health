@@ -298,18 +298,22 @@ div.data-container {
   padding-bottom: 1rem;
   margin-bottom: 1rem; }
 
-.about_index p {
-  border-radius: 0.25rem;
-  padding: 0.7rem;
-  margin: 0.5rem;
-  background-color: #ececec;
-  font-size: 1.25rem; }
-
-@media screen and (max-width: 1100px) {
-  .about_index button, .about_index a {
-    display: block;
-    float: left;
-    clear: both; } }
+.about_index {
+  max-width: calc(100% - 300px); }
+  .about_index p {
+    border-radius: 0.25rem;
+    padding: 0.7rem;
+    margin: 0.5rem;
+    background-color: #ececec;
+    font-size: 1.25rem; }
+  .about_index a {
+    float: right; }
+  @media screen and (max-width: 1100px) {
+    .about_index button, .about_index a {
+      display: block;
+      float: left;
+      clear: both;
+      margin: 0.1rem 0; } }
 
 .sidebar-nav {
   /*position: absolute;*/
@@ -443,7 +447,7 @@ div.contributor {
     border: 1px solid #9EDDFC; }
 
 .ctdata-btn-dark i {
-  color: #4A4A4A; }
+  color: #fff; }
 
 .ctdata-btn-light {
   background-color: #1EACF1;

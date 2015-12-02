@@ -9,15 +9,19 @@
     </div>
   </div>
   <div class="container-fluid main-internal">
-    <div class="row about_index">
-      <button type="button" class="btn btn-sm ctdata-btn-light" ng-click="aboutCollapsed = !aboutCollapsed">
-        About the Civic Health Index
-        <i ng-class="{'true' : 'fa fa-plus', 'false' : 'fa fa-minus'}[aboutCollapsed]"></i>
-      </button>
-      <a href="/static/dist/data/data.zip" target="_self" class="ctdata-btn-dark btn btn-sm">
-          Get Raw Data
-        <i class="fa fa-download"></i>
-      </a>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="about_index">
+          <button type="button" class="btn btn-sm ctdata-btn-dark" ng-click="aboutCollapsed = !aboutCollapsed">
+            About the Civic Health Index
+            <i ng-class="{'true' : 'fa fa-plus', 'false' : 'fa fa-minus'}[aboutCollapsed]"></i>
+          </button>
+          <a href="/static/dist/data/data.zip" target="_self" class="ctdata-btn-dark btn btn-sm">
+              Get Raw Data
+            <i class="fa fa-download"></i>
+          </a>
+        </div>
+      </div>
     </div>
     <div class="row">
       <div class="col-sm-5 about_index" collapse="aboutCollapsed">

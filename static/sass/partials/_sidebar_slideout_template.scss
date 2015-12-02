@@ -80,6 +80,8 @@ div.data-container {
 }
 
 .about_index {
+    max-width: calc(100% - #{$sidebar-menu-width});
+
     p {
         border-radius: 0.25rem;
         padding: 0.7rem;
@@ -88,11 +90,16 @@ div.data-container {
         font-size: 1.25rem;
     }
 
+    a {
+        float: right;
+    }
+
     @media screen and (max-width: $reflow-table-break) {
         button, a {
             display: block;
             float: left;
             clear: both;
+            margin: 0.1rem 0;
         }
     }
 }
