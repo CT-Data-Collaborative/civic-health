@@ -2,9 +2,9 @@ angular.module('app')
 .filter('suppressions', function() {
   return function(input) {
     if (input === "-9,999.0" || input === "-9999") {
-        return 'NA';
+        return '&ddagger;';
     } else if (input === "-666,666.0" || input === "-666666") {
-        return ' * ';
+        return '&dagger;';
     } else {
         return input;
     }
@@ -63,7 +63,5 @@ angular.module('app')
     };
 })
 .filter('safe', ['$sce', function($sce) {
-    return function(val) {
-        return $sce.trustAsHtml(val.toString());
-    };
+    return $sce.trustAsHtml;
 }]);
