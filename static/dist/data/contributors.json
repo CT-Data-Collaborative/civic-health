@@ -1,18 +1,23 @@
 [
   {
     "name": "National Conference on Citizenship",
-    "url": "www.ncoc.net"
+    "url": "www.ncoc.net",
+    "about" : "The National Conference on Citizenship (NCoC) is a congressionally chartered non-partisan nonprofit organization dedicated to strengthening civic life in America. They are at the head of a nationwide network of partners pursuing civic health initiatives, national service projects, and cross-sector conferences. The Civic Health Index is part of NCoC's Civic Health Initiative (CHI) - the nation's largest and most definitive measure of civic engagement."
   },{
     "name": "Everyday Democracy",
-    "url": "http://www.everyday-democracy.org/"
+    "url": "http://www.everyday-democracy.org/",
+    "about" : "Everyday Democracy is a project of The Paul J. Aicher Foundation, a private operating foundation dedicated to strengthening deliberative democracy and improving the quality of public life in the United States. Their mission is to help communities talk and work together to create communities that work for everyone. Through grant-funded work, they utilize the Civic Health Index to frame humanities programs that influence civic engagement and education."
   },{
     "name": "Connecticut Secretary of the State",
-    "url": "www.ct.gov/sots"
+    "url": "www.ct.gov/sots",
+    "about" : "Secretary of the State of Connecticut Denise Merrill serves as the state’s chief elections official and business registrar. As a former state legislator and Majority Leader in the State House of Representatives, Secretary Merrill helped pass bills supporting civics education. As the Secretary of the State, she and her staff continue the work to expand democratic participation, protect every citizen’s rights and privileges, and ensure that every vote is counted accurately."
   },{
     "name": "DataHaven",
-    "url": "www.ctdatahaven.org/"
+    "url": "www.ctdatahaven.org/",
+    "about" : "DataHaven is a nonprofit organization working to improve the quality of life in the Greater New Haven area and Connecticut at large. Through their many partnerships, reports, and programs they promote public access to high-quality information and analysis. The official 2016 Civic Health Index publication is authored by Mary Buchanan, Erica Pandey, and Mark Abraham of DataHaven, and released by NCoC."
   },{
     "name": "Connecticut Campus Compact",
-    "url": "ctcampuscompact.org/"
+    "url": "ctcampuscompact.org/",
+    "about" : "The Campus Compact is a national coalition of almost 1,200 college and university presidents. The Connecticut state coalition includes the vast majority of such institutions in the state - private, public, research, and Ivy League alike. Their work promotes partnerships and action that connect economic prosperity and engaged citizenship."
   }
 ]

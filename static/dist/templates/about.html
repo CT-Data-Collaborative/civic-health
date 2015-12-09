@@ -9,13 +9,22 @@
     </div>
   </div>
   <div class="container-fluid main-internal">
-    <h1 class="title">About the Contributors</h1>
     <div class="row">
-      <div class="col-sm-12">
+      <h1 class="title">About the Civic Health Index</h1>
+      <div class="col-sm-8 about_contributors">
+        <p>
+          DRAFT - The Civic Health Index looks at key indicators of civic life in Connecticut: how Connecticut residents engage in civic organizations and group activities, how attentive they are to community problem solving and politics, and how connected they are to family, friends, and neighbors.
+        </p>
+          <p>Add list of advisory group members</p>
+      </div>
+    </div>
+    <div class="row">
+      <h1 class="title">About the Contributors</h1>
+      <div class="col-sm-8">
         <div ng-repeat="contributor in contributors" class="contributor">
           <h3 id="{{ contributor.name | sluggify }}">{{contributor.name}}</h3>
           <a href="http://{{ contributor.url }}">{{ contributor.url }}</a>
-          <p>A blurb about {{ contributor.name }}</p>
+          <p>{{ contributor.about }}</p>
         </div>
       </div>
     </div>

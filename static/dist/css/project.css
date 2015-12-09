@@ -413,7 +413,13 @@ div.data-container {
   width: 50%;
   margin: 5% 25%; }
 
+div.about_contributors {
+  font-size: 1.25rem; }
+  div.about_contributors p {
+    padding: 0.5rem 0.25rem 0.5rem; }
+
 div.contributor {
+  font-size: 1.25rem;
   border-bottom: 1px solid #979797;
   padding: 0.5rem 0.25rem; }
   div.contributor p {
