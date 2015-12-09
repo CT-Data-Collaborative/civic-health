@@ -503,6 +503,7 @@ table.ctdata-table {
   table.ctdata-table tbody tr:hover {
     background: #9EDDFC; }
   table.ctdata-table .name {
+    font-size: 1.1rem;
     text-align: left;
     font-weight: 500;
     padding-left: 1rem; }
