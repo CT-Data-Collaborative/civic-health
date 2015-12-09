@@ -81,6 +81,7 @@ div.data-container {
 
 .about_index {
     max-width: calc(100% - #{$sidebar-menu-width});
+    min-width: 12rem;
 
     p {
         border-radius: 0.25rem;

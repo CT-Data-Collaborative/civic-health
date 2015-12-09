@@ -292,7 +292,8 @@ div.data-container {
   margin-bottom: 1rem; }
 
 .about_index {
-  max-width: calc(100% - 300px); }
+  max-width: calc(100% - 300px);
+  min-width: 12rem; }
   .about_index p {
     border-radius: 0.25rem;
     padding: 0.7rem;
