@@ -1,6 +1,56 @@
 timeseries {
 }
-svg.timeseries {
+
+dataviz {
+  width: calc(100% - #{$sidebar-menu-width});
+  padding-right: $sidebar-menu-width;
+
+  div.timeseries-container {
+    height: 20rem;
+    width: inherit;
+  }
+  div.timeseries-container-internal {
+    height: 100%;
+    width: 100%;
+  }
+
+  div.timeseries-container-internal > svg {
+    g.axis path,
+    g.axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+
+    g.y-axis g.tick line {
+      stroke: $extra-light-grey;
+    }
+
+    g.axis path {
+      display: none;
+    }
+
+    g.timeseries-lines path {
+      fill: none;
+      stroke-width: 1.5px;
+    }
+
+    g.timeseries-points path,
+    g.timeseries-legend path.point {
+      fill-opacity: 0;
+      fill: $white;
+      stroke-width: 1px;
+    }
+  }
+
+  div.legend-container.timeseries-legend-container {
+    width: inherit;
+    height: 1.5rem;
+    border: 1px solid $dark-grey;
+  }
+}
+
+/*svg.timeseries {
   width:100%;
 }
 
@@ -41,4 +91,4 @@ tr.timeseries_row *:hover,{
     td.timeseries_cell:before {
         content: ""!important;
     }
-}
+}*/
