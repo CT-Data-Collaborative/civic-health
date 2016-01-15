@@ -1,0 +1,56 @@
+barchart {
+}
+
+dataviz {
+  width: calc(100% - #{$sidebar-menu-width});
+  padding-right: $sidebar-menu-width;
+
+  div.barchart-container {
+    height: 20rem;
+    width: inherit;
+  }
+  div.barchart-container-internal {
+    height: 100%;
+    width: 100%;
+  }
+
+  div.barchart-container-internal > svg {
+    g.axis path,
+    g.axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+
+    g.y-axis g.tick line {
+      stroke: $extra-light-grey;
+    }
+
+    g.axis path {
+      display: none;
+    }
+
+    rect.barchart-bar {
+      fill-opacity: 0.85;
+    }
+
+     text.barchart-value {
+      fill: $extra-dark-grey;
+    }
+
+
+    rect.bar-color-1 {
+      fill: $ctdata-extra-dark-blue;
+    }
+
+    rect.bar-color-2 {
+      fill: $ctdata-light-blue;
+    }
+  }
+
+  div.legend-container.barchart-legend-container {
+    width: inherit;
+    height: 1.5rem;
+    border: 1px solid $dark-grey;
+  }
+}

@@ -713,3 +713,75 @@ a.next__link:hover {
 
 .next__content .teaser {
   color: white; }
+
+dataviz {
+  width: calc(100% - 300px);
+  padding-right: 300px; }
+  dataviz div.groupedbar-container {
+    height: 20rem;
+    width: inherit; }
+  dataviz div.groupedbar-container-internal {
+    height: 100%;
+    width: 100%; }
+  dataviz div.groupedbar-container-internal > svg g.axis path,
+  dataviz div.groupedbar-container-internal > svg g.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges; }
+  dataviz div.groupedbar-container-internal > svg g.y-axis g.tick line {
+    stroke: #ececec; }
+  dataviz div.groupedbar-container-internal > svg g.axis path {
+    display: none; }
+  dataviz div.groupedbar-container-internal > svg g.groupedbar-lines path {
+    fill: none;
+    stroke-width: 1.5px; }
+  dataviz div.groupedbar-container-internal > svg g.groupedbar-points path,
+  dataviz div.groupedbar-container-internal > svg g.groupedbar-legend path.point {
+    fill-opacity: 0;
+    fill: #fff;
+    stroke-width: 1px; }
+  dataviz div.groupedbar-container-internal > svg rect.groupedbar-bar {
+    fill-opacity: 0.85; }
+  dataviz div.groupedbar-container-internal > svg rect.bar-color-1 {
+    fill: #4670A7; }
+  dataviz div.groupedbar-container-internal > svg rect.bar-color-2 {
+    fill: #9EDDFC; }
+  dataviz div.groupedbar-container-internal > svg rect.bar-color-3 {
+    fill: #b94a48; }
+  dataviz div.groupedbar-container-internal > svg rect.bar-color-4 {
+    fill: #979797; }
+  dataviz div.legend-container.groupedbar-legend-container {
+    width: inherit;
+    height: 1.5rem;
+    border: 1px solid #979797; }
+
+dataviz {
+  width: calc(100% - 300px);
+  padding-right: 300px; }
+  dataviz div.barchart-container {
+    height: 20rem;
+    width: inherit; }
+  dataviz div.barchart-container-internal {
+    height: 100%;
+    width: 100%; }
+  dataviz div.barchart-container-internal > svg g.axis path,
+  dataviz div.barchart-container-internal > svg g.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges; }
+  dataviz div.barchart-container-internal > svg g.y-axis g.tick line {
+    stroke: #ececec; }
+  dataviz div.barchart-container-internal > svg g.axis path {
+    display: none; }
+  dataviz div.barchart-container-internal > svg rect.barchart-bar {
+    fill-opacity: 0.85; }
+  dataviz div.barchart-container-internal > svg text.barchart-value {
+    fill: #4A4A4A; }
+  dataviz div.barchart-container-internal > svg rect.bar-color-1 {
+    fill: #4670A7; }
+  dataviz div.barchart-container-internal > svg rect.bar-color-2 {
+    fill: #9EDDFC; }
+  dataviz div.legend-container.barchart-legend-container {
+    width: inherit;
+    height: 1.5rem;
+    border: 1px solid #979797; }

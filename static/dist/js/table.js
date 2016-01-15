@@ -15,7 +15,6 @@ function tableChart() {
 
     function chart(selection) {
         selection.each(function(dataset) {
-            // console.log(dataset);
             var table = d3.select(this).select("table").remove();
             var config = dataset['config'];
             var rawdata = dataset['data'];

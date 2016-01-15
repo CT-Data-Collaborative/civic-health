@@ -1,11 +1,11 @@
 angular.module('app')
-.directive('dataviz', ['$window', '$http', 'timeseriesService',/* 'barChartService', */function($window, $http, timeseriesService/*, barChartService*/) {
+.directive('dataviz', ['$window', '$http', 'timeseriesService', 'groupedBarChartService', 'barChartService', 'tableService', function($window, $http, timeseriesService, groupedBarChartService, barChartService, tableService) {
     // This function should reflect whatever your d3 function is called.
     var charts = {
         "line" : timeseriesService.chart,
-        // "bar" : barChartService.chart,
-        // "groupedBar" : groupedBarChartService.chart,
-        // "table" : tableService.chart
+        "bar" : barChartService.chart,
+        "groupedBar" : groupedBarChartService.chart,
+        "table" : tableService.chart
     };
     return  {
         restrict: 'E',
