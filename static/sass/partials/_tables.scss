@@ -12,7 +12,10 @@
     .source:before {
         content: "Source: ";
     }
-    .source {
+    .note:before {
+        content: "Notes: ";
+    }
+    .source, .note {
         font-size: 1rem;
         font-style: italic;
         margin-bottom: 0;

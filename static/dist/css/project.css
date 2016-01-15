@@ -591,7 +591,9 @@ tr.timeseries_row *:hover,{
     margin-bottom: 0; }
   .table-container .source:before {
     content: "Source: "; }
-  .table-container .source {
+  .table-container .note:before {
+    content: "Notes: "; }
+  .table-container .source, .table-container .note {
     font-size: 1rem;
     font-style: italic;
     margin-bottom: 0; }

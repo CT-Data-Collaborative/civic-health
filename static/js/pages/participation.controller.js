@@ -5,7 +5,7 @@ angular.module('app')
         $scope.toggle = sidebarDisplay.toggle;
 
         $scope.$on('$viewContentLoaded', function(event) {
-            $scope.toggle.open = true;
+            $scope.toggle.open = false;
             sidebarDisplay.section = 'Political Participation';
             $scope.nextSection = 'Community Cohesion';
             $scope.nextSectionTeaser = "Stuff about cohesion";

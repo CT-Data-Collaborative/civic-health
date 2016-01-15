@@ -2,6 +2,15 @@ angular.module('app')
 .service('groupedBarChartService', ['$q', '$http', 'lodash', function($q, $http, lodash) {
     var groupedBarChartService = {};
 
+
+    //var windowWidth = d3.select(document.documentElement.clientWidth)[0][0];
+    //            if (windowWidth < 992) {
+    //                var lineHeight = 0.55;
+    //            } else {
+    //                var lineHeight = 1.1;
+    //            }
+
+
     groupedBarChartService.chart = function(container, data, config) {
         var timeFormats = {
             "year" : "YYYY",

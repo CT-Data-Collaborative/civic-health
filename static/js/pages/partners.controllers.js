@@ -12,7 +12,7 @@ angular.module('app')
         });
 
         $scope.$on('$viewContentLoaded', function(event) {
-            $scope.toggle.open = true;
+            $scope.toggle.open = false;
             sidebarDisplay.section = 'Partners';
             $scope.nextSection = 'Raw Data';
             $scope.nextSectionTeaser = "Stuff about raw data";
