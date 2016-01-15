@@ -1,3 +1,15 @@
+.table-container {
+    border-top: solid 2px $ctdata-dark-blue;
+    border-bottom: solid 2px $ctdata-dark-blue;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    .table-title {
+        color: $ctdata-dark-blue;
+    }
+}
+
 table.ctdata-table {
     width: calc(100% - #{$sidebar-menu-width});
     margin-bottom: 2rem;
