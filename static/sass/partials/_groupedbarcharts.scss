@@ -1,0 +1,71 @@
+groupedbar {
+}
+
+dataviz {
+  width: calc(100% - #{$sidebar-menu-width});
+  padding-right: $sidebar-menu-width;
+
+  div.groupedbar-container {
+    height: 20rem;
+    width: inherit;
+  }
+  div.groupedbar-container-internal {
+    height: 100%;
+    width: 100%;
+  }
+
+  div.groupedbar-container-internal > svg {
+    g.axis path,
+    g.axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+
+    g.y-axis g.tick line {
+      stroke: $extra-light-grey;
+    }
+
+    g.axis path {
+      display: none;
+    }
+
+    g.groupedbar-lines path {
+      fill: none;
+      stroke-width: 1.5px;
+    }
+
+    g.groupedbar-points path,
+    g.groupedbar-legend path.point {
+      fill-opacity: 0;
+      fill: $white;
+      stroke-width: 1px;
+    }
+
+    rect.groupedbar-bar {
+      fill-opacity: 0.85;
+    }
+
+    rect.bar-color-1 {
+      fill: $ctdata-extra-dark-blue;
+    }
+
+    rect.bar-color-2 {
+      fill: $ctdata-light-blue;
+    }
+
+    rect.bar-color-3 {
+      fill: $red;
+    }
+
+    rect.bar-color-4 {
+      fill: $dark-grey;
+    }
+  }
+
+  div.legend-container.groupedbar-legend-container {
+    width: inherit;
+    height: 1.5rem;
+    border: 1px solid $dark-grey;
+  }
+}

@@ -1,4 +1,27 @@
-table.ctdata-table {
+dataviz {
+  width: calc(100% - #{$sidebar-menu-width});
+  padding-right: $sidebar-menu-width;
+
+  /*div.table-container {
+    height: 30rem;
+    overflow-y: auto;
+  }*/
+
+  div.table-container-internal {}
+
+  table {
+    width: inherit;
+    border-collapse: collapse;
+    border: 1px solid red;
+  }
+
+  table td:nth-child(odd),
+  table th:nth-child(odd) {
+    background: rgba(62, 87, 99, 0.5);
+  }
+}
+
+/*table.ctdata-table {
     width: calc(100% - #{$sidebar-menu-width});
     margin-bottom: 2rem;
 
@@ -94,3 +117,4 @@ table.ctdata-table {
         }
     }
 }
+*/
