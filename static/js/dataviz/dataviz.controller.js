@@ -1,11 +1,18 @@
- angular.module('app')
- .controller('DataVizController',
-     ['$scope', '$http', '$log', '$location', '$filter',/* '$anchorScroll', '$rootScope', '$routeParams', */'sidebarDisplay', 'categories', 'lodash',
-     function($scope, $http, $log, $location, $filter,/* $anchorScroll, $rootScope, $routeParams, */sidebarDisplay, categories, lodash){
-         $scope.toggle = sidebarDisplay.toggle;
+angular.module('app')
+    .controller('DataVizController',
+        ['$scope', '$http', '$log', '$location', '$filter', 'sidebarDisplay', 'categories',
+            function ($scope, $http, $log, $location, $filter, sidebarDisplay, categories) {
+                $scope.toggle = sidebarDisplay.toggle;
 
-         $scope.$on('$viewContentLoaded', function(event) {
-             $scope.toggle.open = true;
-             sidebarDisplay.section = 'Raw Data';
-        });
-}])
+                var promise = categories.getCategories("all");
+                promise.then(function (result) {
+                    $scope.categories = categories.list;
+                }, function (rejection) {
+                    alert("promise rejected!");
+                });
+
+                $scope.$on('$viewContentLoaded', function (event) {
+                    $scope.toggle.open = true;
+                    sidebarDisplay.section = 'Raw Data';
+                });
+            }])
