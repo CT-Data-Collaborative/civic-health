@@ -506,40 +506,79 @@ div.contributor {
 .ctdata-btn-light i {
   color: #4670A7; }
 
-svg.timeseries {
-  width: 100%; }
+dataviz {
+  width: calc(100% - 300px);
+  padding-right: 300px; }
+  dataviz div.timeseries-container {
+    height: 20rem;
+    width: inherit; }
+  dataviz div.timeseries-container-internal {
+    height: 100%;
+    width: 100%; }
+  dataviz div.timeseries-container-internal > svg g.axis path,
+  dataviz div.timeseries-container-internal > svg g.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges; }
+  dataviz div.timeseries-container-internal > svg g.y-axis g.tick line {
+    stroke: #ececec; }
+  dataviz div.timeseries-container-internal > svg g.axis path {
+    display: none; }
+  dataviz div.timeseries-container-internal > svg g.timeseries-lines path {
+    fill: none;
+    stroke-width: 1.5px; }
+  dataviz div.timeseries-container-internal > svg g.timeseries-points path,
+  dataviz div.timeseries-container-internal > svg g.timeseries-legend path.point {
+    fill-opacity: 0;
+    fill: #fff;
+    stroke-width: 1px; }
+  dataviz div.legend-container.timeseries-legend-container {
+    width: inherit;
+    height: 1.5rem;
+    border: 1px solid #979797; }
+
+/*svg.timeseries {
+  width:100%;
+}
 
 .axis path,
 .axis line {
   fill: none;
   stroke: #000;
-  shape-rendering: crispEdges; }
+  shape-rendering: crispEdges;
+}
 
 .x.axis path {
-  display: none; }
+  display: none;
+}
 
 .line {
   fill: none;
-  stroke-width: 1.5px; }
+  stroke-width: 1.5px;
+}
 
 i.timeseries_toggle {
-  color: #4670A7;
-  cursor: pointer;
-  font-size: 1.4rem; }
+    color: $ctdata-extra-dark-blue;
+    cursor: pointer;
+    font-size:1.4rem;
+}
 
 tr.timeseries_row:hover,
-tr.timeseries_row *:hover {
-  background-color: #fff !important; }
+tr.timeseries_row *:hover,{
+  background-color: $white!important;
+}
 
-@media screen and (min-width: 1100px) {
-  td.timeseries_cell {
-    padding-bottom: 1rem;
-    padding-top: 1rem; } }
-
-@media screen and (max-width: 1100px) {
-  td.timeseries_cell:before {
-    content: "" !important; } }
-
+@media screen and (min-width: $reflow-table-break) {
+    td.timeseries_cell {
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+    }
+}
+@media screen and (max-width: $reflow-table-break) {
+    td.timeseries_cell:before {
+        content: ""!important;
+    }
+}*/
 .table-container {
   border-top: solid 2px #1EACF1;
   border-bottom: solid 2px #1EACF1;
