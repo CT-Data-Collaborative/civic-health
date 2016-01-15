@@ -43,16 +43,20 @@ angular.module('app')
 
         makeTimeSeries(chartContainer);
 
-        var legendDiv = legendContainer.selectAll("div.legend")
-            .data([lineKeys])
-            .enter()
+        // create container for legends
+        legendContainer = d3.select(container)
+            .append("div")
+            .classed({
+                "legend-container" : true,
+                "timeseries-legend-container" : true,
+            })
             .append("div")
                 .classed({
-                    "legend": true,
-                    "timeseries-legend": true
+                    "timeseries-legend-container-internal" : true,
                 })
+            .datum(lineKeys);
 
-        makeLegend(legendDiv);
+        makeLegend(legendContainer);
 
         // /** START SCROLL NOTICE **/
         // // if we are under a certain pixel size, there will be horizontal scrolling
@@ -129,85 +133,32 @@ angular.module('app')
         // });
 
         function makeLegend(selection) {
-            selection.each(function(data) {
-
-                // sizing and margin vars
-                var BBox = this.getBoundingClientRect(),
-                margin = {
-                    // "top" : d3.max([BBox.height * 0.08, 32]),
-                    "top" : BBox.height * 0.01,
-                    "right" : BBox.width * 0.01,
-                    "bottom" : BBox.height * 0.01,
-                    "left" : BBox.width * 0.01
-                },
-                width = BBox.width - (margin.left + margin.right)
-                height = BBox.height - (margin.top + margin.bottom),
-
-                // // containers
-                // svg = d3.select(this)
-                //     .append("svg")
-                //         .attr("height", height)
-                //         .attr("width", width)
-
+            selection.each(function(legendData) {
                 // color scale
                 colors = d3.scale.ordinal()
                     .range(["#1EACF1", "#B94A48"])
-                    .domain(data);
+                    .domain(lineKeys);
 
-                var legendEntries = d3.select(this)
-                    .selectAll("div")
-                    .data(data)
-                    .enter()
-                    .append("svg")
-                        .attr("height", height)
-                        .attr("width", width)
-                    .append("g")
-                    .classed("legend", true)
-                    .attr("height", height)
-                    .attr("width", width)
-                    .attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
-
-                var legendGroups = legend.selectAll("g.entry")
+                var legendEntries = d3.select(this).selectAll("div.timeseries-legend-entry")
                     .data(legendData)
                     .enter()
-                        .append("g")
-                        .attr("data-class", function(d) {
-                            return sluggify(d);
-                        })
-                        .attr("class", function(d) {
-                            var classes = [
-                                "entry",
-                                sluggify(d)
-                            ].join(" ");
-                            return classes;
-                        })
-                        .attr("transform", function(d, i) { return "translate(0, " + (19 * i) + ")";})
-                        .datum(function(d) { return d; });
+                    .append("div")
+                        .classed("timeseries-legend-entry", true)
+                        .datum(function(d) { return d; })
 
-                legendGroups.each(function() {
-                    var tspanCount = legendGroups.selectAll("tspan").size();
-                    
-                    d3.select(this)
-                        .attr("transform", function(d, i) { return "translate(0, " + (19 * i) + ((tspanCount - i) * 19) + ")";})
+                legendEntries.each(function(entryData) {
+                    d3.select(this).append("span")
+                        .classed("timeseries-legend-entry-color", true)
+                        .style("background-color", colors(entryData));
 
-                    d3.select(this).append("path")
-                        .attr("fill", function(d, i) {return colors(d); } )
-                        .attr("stroke", function(d, i) {return colors(d); } )
-                        .attr("stroke-width", 0)
-                        .attr("d", d3.svg.symbol().type(function(d) {return symbolScale(d); }).size(25));
-
-                    d3.select(this).append("text")
-                        .attr("fill", "#4A4A4A")
-                        .attr("y", 6)
-                        .attr("dx", 8)
-                        .tspans(function(d) {
-                            return d3.wordwrap(d, 20);
-                        });
+                    d3.select(this).append("span")
+                        .classed("timeseries-legend-entry-label", true)
+                        .text(entryData);
                 })
 
                 // all spans are by default unstyled, with no way to do it in jetpack,
                 // so in order to fight the hanging indent effect, move them over 8 px
-                d3.selectAll("tspan").attr("dx", 8)
+                // d3.selectAll("tspan").attr("dx", 8)
             });
         }
 
@@ -250,9 +201,7 @@ angular.module('app')
                     // color scale
                     colors = d3.scale.ordinal()
                         .range(["#1EACF1", "#B94A48"])
-                        .domain(
-                            lineKeys
-                        ),
+                        .domain(lineKeys),
 
                     // point shape "scale"
                     symbolScale = d3.scale.ordinal()
@@ -307,7 +256,10 @@ angular.module('app')
                         .scale(y)
                         .orient("left")
                         .innerTickSize(-width)
-                        .tickPadding(10),
+                        .tickPadding(10)
+                        .tickFormat(function(t) {
+                            return d3.format("f")(t) + "%";
+                        });
 
                     // // line charting function
                     line = d3.svg.line()

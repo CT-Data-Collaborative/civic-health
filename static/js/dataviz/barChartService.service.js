@@ -31,14 +31,6 @@ angular.module('app')
                 .classed("barchart-container-internal", true)
                 .datum(data);
 
-        // create container for legends
-        // legendContainer = d3.select(container)
-        //     .append("div")
-        //     .classed({
-        //         "legend-container" : true,
-        //         "barchart-legend-container" : true,
-        //     });
-
         // chartContainer.append("pre")
             // .text(JSON.stringify(data, null, 4));
             // .text(JSON.stringify(yRangeMax, null, 4));
@@ -49,17 +41,6 @@ angular.module('app')
         makebarchartChart(chartContainer);
 
         return;
-
-        var legendDiv = legendContainer.selectAll("div.legend")
-            .data([barKeys])
-            .enter()
-            .append("div")
-                .classed({
-                    "legend": true,
-                    "barchart-legend": true
-                })
-
-        makeLegend(legendDiv);
 
         // /** START SCROLL NOTICE **/
         // // if we are under a certain pixel size, there will be horizontal scrolling
@@ -135,90 +116,32 @@ angular.module('app')
         //     });
         // });
 
-        function makeLegend(selection) {
-            selection.each(function(data) {
-
-                // sizing and margin vars
-                var BBox = this.getBoundingClientRect(),
-                margin = {
-                    // "top" : d3.max([BBox.height * 0.08, 32]),
-                    "top" : BBox.height * 0.01,
-                    "right" : BBox.width * 0.01,
-                    "bottom" : BBox.height * 0.01,
-                    "left" : BBox.width * 0.01
-                },
-                width = BBox.width - (margin.left + margin.right)
-                height = BBox.height - (margin.top + margin.bottom),
-
-                // // containers
-                // svg = d3.select(this)
-                //     .append("svg")
-                //         .attr("height", height)
-                //         .attr("width", width)
-
-                // color scale
-                colors = d3.scale.ordinal()
-                    .range(["#1EACF1", "#B94A48"])
-                    .domain(data);
-
-                var legendEntries = d3.select(this)
-                    .selectAll("div")
-                    .data(data)
-                    .enter()
-                    .append("svg")
-                        .attr("height", height)
-                        .attr("width", width)
-                    .append("g")
-                    .classed("legend", true)
-                    .attr("height", height)
-                    .attr("width", width)
-                    .attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
-
-                var legendGroups = legend.selectAll("g.entry")
-                    .data(legendData)
-                    .enter()
-                        .append("g")
-                        .attr("data-class", function(d) {
-                            return sluggify(d);
-                        })
-                        .attr("class", function(d) {
-                            var classes = [
-                                "entry",
-                                sluggify(d)
-                            ].join(" ");
-                            return classes;
-                        })
-                        .attr("transform", function(d, i) { return "translate(0, " + (19 * i) + ")";})
-                        .datum(function(d) { return d; });
-
-                legendGroups.each(function() {
-                    var tspanCount = legendGroups.selectAll("tspan").size();
-                    
-                    d3.select(this)
-                        .attr("transform", function(d, i) { return "translate(0, " + (19 * i) + ((tspanCount - i) * 19) + ")";})
-
-                    d3.select(this).append("path")
-                        .attr("fill", function(d, i) {return colors(d); } )
-                        .attr("stroke", function(d, i) {return colors(d); } )
-                        .attr("stroke-width", 0)
-                        .attr("d", d3.svg.symbol().type(function(d) {return symbolScale(d); }).size(25));
-
-                    d3.select(this).append("text")
-                        .attr("fill", "#4A4A4A")
-                        .attr("y", 6)
-                        .attr("dx", 8)
-                        .tspans(function(d) {
-                            return d3.wordwrap(d, 20);
-                        });
-                })
-
-                // all spans are by default unstyled, with no way to do it in jetpack,
-                // so in order to fight the hanging indent effect, move them over 8 px
-                d3.selectAll("tspan").attr("dx", 8)
-            });
-        }
-
         function makebarchartChart(selection) {
+            // helper function, wraps text for axis labels
+            function wrap(text, width) {
+              text.each(function() {
+                var text = d3.select(this),
+                    words = text.text().split(/\s+/).reverse(),
+                    word,
+                    line = [],
+                    lineNumber = 0,
+                    lineHeight = 1.1, // ems
+                    y = text.attr("y"),
+                    dy = parseFloat(text.attr("dy")),
+                    tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+                while (word = words.pop()) {
+                  line.push(word);
+                  tspan.text(line.join(" "));
+                  if (tspan.node().getComputedTextLength() > width) {
+                    line.pop();
+                    tspan.text(line.join(" "));
+                    line = [word];
+                    tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+                  }
+                }
+              });
+            }
+
             selection.each(function(data) {
                 // sizing and margin vars
                 var BBox = this.getBoundingClientRect(),
@@ -281,13 +204,17 @@ angular.module('app')
                     //     .text(JSON.stringify(data, null, 4))
                     // return;
 
-                    chart.append("g")
+                    var xAxisGroup = chart.append("g")
                         .classed({
                             "x-axis" : true,
                             "axis" : true
                         })
                         .attr("transform", "translate(0, " + height + ")")
                         .call(xAxis);
+
+                    // wordwrap axis labels
+                    xAxisGroup.selectAll(".tick text")
+                            .call(wrap, x.rangeBand());
 
                     chart.append("g")
                         .classed({
@@ -316,7 +243,7 @@ angular.module('app')
                         .append("text")
                              .classed("barchart-value", true)
                             .text(function(d) {
-                                return d3.format("f")(d.Value) + "%";
+                                return d3.format("0.1f")(d.Value) + "%";
                             })
                             .attr("width", x.rangeBand())
                             .attr("y", function(d) { return y(d.Value); })

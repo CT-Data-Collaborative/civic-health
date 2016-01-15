@@ -2,9 +2,9 @@ barchart {
 }
 
 dataviz {
-  width: calc(100% - #{$sidebar-menu-width});
-  padding-right: $sidebar-menu-width;
-
+  width: 100%;
+  display: inline-block;
+  
   div.barchart-container {
     height: 20rem;
     width: inherit;

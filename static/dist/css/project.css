@@ -507,8 +507,8 @@ div.contributor {
   color: #4670A7; }
 
 dataviz {
-  width: calc(100% - 300px);
-  padding-right: 300px; }
+  width: 100%;
+  display: inline-block; }
   dataviz div.timeseries-container {
     height: 20rem;
     width: inherit; }
@@ -534,8 +534,19 @@ dataviz {
     stroke-width: 1px; }
   dataviz div.legend-container.timeseries-legend-container {
     width: inherit;
-    height: 1.5rem;
-    border: 1px solid #979797; }
+    height: 1.5rem; }
+    dataviz div.legend-container.timeseries-legend-container div.timeseries-legend-container-internal {
+      text-align: center; }
+    dataviz div.legend-container.timeseries-legend-container div.timeseries-legend-entry {
+      display: inline-block;
+      margin: 0 0.1rem;
+      padding: 0 0.05rem; }
+      dataviz div.legend-container.timeseries-legend-container div.timeseries-legend-entry span {
+        margin: 0 0.1rem; }
+      dataviz div.legend-container.timeseries-legend-container div.timeseries-legend-entry span.timeseries-legend-entry-color {
+        display: inline-block;
+        height: 1rem;
+        width: 1rem; }
 
 /*svg.timeseries {
   width:100%;
@@ -715,8 +726,8 @@ a.next__link:hover {
   color: white; }
 
 dataviz {
-  width: calc(100% - 300px);
-  padding-right: 300px; }
+  width: 100%;
+  display: inline-block; }
   dataviz div.groupedbar-container {
     height: 20rem;
     width: inherit; }
@@ -752,12 +763,31 @@ dataviz {
     fill: #979797; }
   dataviz div.legend-container.groupedbar-legend-container {
     width: inherit;
-    height: 1.5rem;
-    border: 1px solid #979797; }
+    height: 1.5rem; }
+    dataviz div.legend-container.groupedbar-legend-container div.groupedbar-legend-container-internal {
+      text-align: center; }
+    dataviz div.legend-container.groupedbar-legend-container div.groupedbar-legend-entry {
+      display: inline-block;
+      margin: 0 0.1rem;
+      padding: 0 0.05rem; }
+      dataviz div.legend-container.groupedbar-legend-container div.groupedbar-legend-entry span {
+        margin: 0 0.1rem; }
+      dataviz div.legend-container.groupedbar-legend-container div.groupedbar-legend-entry span.groupedbar-legend-entry-color {
+        display: inline-block;
+        height: 1rem;
+        width: 1rem; }
+        dataviz div.legend-container.groupedbar-legend-container div.groupedbar-legend-entry span.groupedbar-legend-entry-color.bar-color-1 {
+          background-color: rgba(70, 112, 167, 0.85); }
+        dataviz div.legend-container.groupedbar-legend-container div.groupedbar-legend-entry span.groupedbar-legend-entry-color.bar-color-2 {
+          background-color: rgba(158, 221, 252, 0.85); }
+        dataviz div.legend-container.groupedbar-legend-container div.groupedbar-legend-entry span.groupedbar-legend-entry-color.bar-color-3 {
+          background-color: rgba(185, 74, 72, 0.85); }
+        dataviz div.legend-container.groupedbar-legend-container div.groupedbar-legend-entry span.groupedbar-legend-entry-color.bar-color-4 {
+          background-color: rgba(151, 151, 151, 0.85); }
 
 dataviz {
-  width: calc(100% - 300px);
-  padding-right: 300px; }
+  width: 100%;
+  display: inline-block; }
   dataviz div.barchart-container {
     height: 20rem;
     width: inherit; }

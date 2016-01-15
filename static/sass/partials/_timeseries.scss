@@ -2,8 +2,8 @@ timeseries {
 }
 
 dataviz {
-  width: calc(100% - #{$sidebar-menu-width});
-  padding-right: $sidebar-menu-width;
+  width: 100%;
+  display: inline-block;
 
   div.timeseries-container {
     height: 20rem;
@@ -46,7 +46,27 @@ dataviz {
   div.legend-container.timeseries-legend-container {
     width: inherit;
     height: 1.5rem;
-    border: 1px solid $dark-grey;
+    
+    div.timeseries-legend-container-internal {
+      text-align: center;
+    }
+
+    div.timeseries-legend-entry {
+      display: inline-block;
+      margin: 0 0.1rem;
+      padding: 0 0.05rem;
+
+
+      span {
+        margin: 0 0.1rem;
+      }
+
+      span.timeseries-legend-entry-color {
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+      }
+    }
   }
 }
 

@@ -2,8 +2,8 @@ groupedbar {
 }
 
 dataviz {
-  width: calc(100% - #{$sidebar-menu-width});
-  padding-right: $sidebar-menu-width;
+  width: 100%;
+  display: inline-block;
 
   div.groupedbar-container {
     height: 20rem;
@@ -66,6 +66,43 @@ dataviz {
   div.legend-container.groupedbar-legend-container {
     width: inherit;
     height: 1.5rem;
-    border: 1px solid $dark-grey;
+    
+    div.groupedbar-legend-container-internal {
+      text-align: center;
+    }
+
+    div.groupedbar-legend-entry {
+      display: inline-block;
+      margin: 0 0.1rem;
+      padding: 0 0.05rem;
+
+
+      span {
+        margin: 0 0.1rem;
+      }
+
+      span.groupedbar-legend-entry-color {
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+
+        &.bar-color-1 {
+          background-color: rgba($ctdata-extra-dark-blue, 0.85);
+        }
+
+        &.bar-color-2 {
+          background-color: rgba($ctdata-light-blue, 0.85);
+        }
+
+        &.bar-color-3 {
+          background-color: rgba($red, 0.85);
+        }
+
+        &.bar-color-4 {
+          background-color: rgba($dark-grey, 0.85);
+        }
+        
+      }
+    }
   }
 }
