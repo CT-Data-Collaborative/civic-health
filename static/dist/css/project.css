@@ -725,6 +725,30 @@ a.next__link:hover {
 .next__content .teaser {
   color: white; }
 
+.groupedbar-tip {
+  color: #fff;
+  background-color: #4A4A4A;
+  /*padding: 0.25rem 0.5rem;*/
+  padding: 0.4rem;
+  font-weight: 700;
+  border-radius: 0.1rem;
+  text-align: center;
+  line-height: 1; }
+
+.groupedbar-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0; }
+
 dataviz {
   width: 100%;
   display: inline-block; }
@@ -743,16 +767,19 @@ dataviz {
     stroke: #ececec; }
   dataviz div.groupedbar-container-internal > svg g.axis path {
     display: none; }
-  dataviz div.groupedbar-container-internal > svg g.groupedbar-lines path {
-    fill: none;
-    stroke-width: 1.5px; }
-  dataviz div.groupedbar-container-internal > svg g.groupedbar-points path,
-  dataviz div.groupedbar-container-internal > svg g.groupedbar-legend path.point {
-    fill-opacity: 0;
-    fill: #fff;
-    stroke-width: 1px; }
+  @media screen and (max-width: 600px) {
+    dataviz div.groupedbar-container-internal > svg g.x-axis g.tick text,
+    dataviz div.groupedbar-container-internal > svg g.groupedbar-group text.groupedbar-value {
+      font-size: 0.75rem; } }
+  @media screen and (min-width: 601px) and (max-width: 840px) {
+    dataviz div.groupedbar-container-internal > svg g.x-axis g.tick text,
+    dataviz div.groupedbar-container-internal > svg g.groupedbar-group text.groupedbar-value {
+      font-size: 0.85rem; } }
   dataviz div.groupedbar-container-internal > svg rect.groupedbar-bar {
     fill-opacity: 0.85; }
+  dataviz div.groupedbar-container-internal > svg rect.groupedbar-bar:hover {
+    stroke-width: 0.15rem;
+    stroke: rgba(151, 151, 151, 0.75); }
   dataviz div.groupedbar-container-internal > svg rect.bar-color-1 {
     fill: #4670A7; }
   dataviz div.groupedbar-container-internal > svg rect.bar-color-2 {
@@ -785,6 +812,30 @@ dataviz {
         dataviz div.legend-container.groupedbar-legend-container div.groupedbar-legend-entry span.groupedbar-legend-entry-color.bar-color-4 {
           background-color: rgba(151, 151, 151, 0.85); }
 
+.barchart-tip {
+  color: #fff;
+  background-color: #4A4A4A;
+  /*padding: 0.25rem 0.5rem;*/
+  padding: 1rem;
+  font-weight: 700;
+  border-radius: 0.1rem;
+  text-align: center;
+  line-height: 1; }
+
+.barchart-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0; }
+
 dataviz {
   width: 100%;
   display: inline-block; }
@@ -803,6 +854,14 @@ dataviz {
     stroke: #ececec; }
   dataviz div.barchart-container-internal > svg g.axis path {
     display: none; }
+  @media screen and (max-width: 600px) {
+    dataviz div.barchart-container-internal > svg g.x-axis g.tick text,
+    dataviz div.barchart-container-internal > svg text.barchart-value {
+      font-size: 0.75rem; } }
+  @media screen and (min-width: 601px) and (max-width: 840px) {
+    dataviz div.barchart-container-internal > svg g.x-axis g.tick text,
+    dataviz div.barchart-container-internal > svg text.barchart-value {
+      font-size: 0.85rem; } }
   dataviz div.barchart-container-internal > svg rect.barchart-bar {
     fill-opacity: 0.85; }
   dataviz div.barchart-container-internal > svg text.barchart-value {

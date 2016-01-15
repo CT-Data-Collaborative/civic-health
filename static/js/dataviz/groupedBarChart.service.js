@@ -205,15 +205,28 @@ angular.module('app')
                         "top" : BBox.height * 0.05,
                         "right" : BBox.width * 0.05,
                         "bottom" : BBox.height * 0.3,
-                        "left" : d3.max([BBox.width * 0.05, 55])
+                        "left" : d3.max([BBox.width * 0.05, 75])
                     },
                     width = BBox.width - (margin.left + margin.right)
                     height = BBox.height - (margin.top + margin.bottom),
+
+                    // tooltip function
+                    tip = d3.tip()
+                        .attr("class", "groupedbar-tip")
+                        .html(function(d) {
+                            return lodash.chain([
+                                d.Label,
+                                d3.format("f")(d.Value) + "%"
+                            ])
+                            .compact()
+                            .join("<br />");
+                        })
 
                     // containers
                     svg = d3.select(this).append("svg")
                         .attr("height", BBox.height)
                         .attr("width", BBox.width)
+                        .call(tip)
                         // .attr("transform", "translate(0, 0)"),
                     chart = svg.append("g")
                         .attr("height", height)
@@ -318,21 +331,21 @@ angular.module('app')
                             thisGroupX1 = x1.copy()
                                 .domain(thisGroupBars);
 
-                        if (thisGroupLabels.length > 0) {
-                            // move x0-axis down
-                            x0AxisGroup.attr("transform", "translate(0, " + (height + (margin.bottom/2)) + ")")
+                        // if (thisGroupLabels.length > 0) {
+                        //     // move x0-axis down
+                        //     x0AxisGroup.attr("transform", "translate(0, " + (height + (margin.bottom/2)) + ")")
 
-                            // // // Using x1 axis to label individual bars
-                            // d3.select(this).append("g")
-                            //     .classed({
-                            //         "x-axis" : true,
-                            //         "axis" : true
-                            //     })
-                            //     .attr("transform", "translate(0, " + height + ")")
-                            //     .call(x1);
-                        }
+                        //     // // // Using x1 axis to label individual bars
+                        //     // d3.select(this).append("g")
+                        //     //     .classed({
+                        //     //         "x-axis" : true,
+                        //     //         "axis" : true
+                        //     //     })
+                        //     //     .attr("transform", "translate(0, " + height + ")")
+                        //     //     .call(x1);
+                        // }
 
-                        d3.select(this).selectAll("rect.groupdbar-bar")
+                        d3.select(this).selectAll("rect.groupedbar-bar")
                             .data(groupData)
                             .enter()
                             .append("rect")
@@ -343,36 +356,38 @@ angular.module('app')
                                 .attr("height", function(d) { return height - y(d.Value); })
                                 .attr("x", function(d) { return thisGroupX1(d.Bar); })
                                 .attr("y", function(d) { return y(d.Value); })
+                                .on("mouseover", tip.show)
+                                .on("mouseout", tip.hide)
 
-                        d3.select(this).selectAll("text.groupdbar-value")
-                            .data(groupData)
-                            .enter()
-                            .append("text")
-                                 .classed("groupdbar-value", true)
-                                .text(function(d) {
-                                    return d3.format("0.1f")(d.Value) + "%";
-                                })
-                                .attr("width", thisGroupX1.rangeBand())
-                                .attr("y", function(d) { return y(d.Value); })
-                                .attr("text-anchor", "middle")
-                                .attr("x", function(d) { return thisGroupX1(d.Bar) + (thisGroupX1.rangeBand()/2); })
-                                .attr("dy", -4)
+                        // d3.select(this).selectAll("text.groupedbar-value")
+                        //     .data(groupData)
+                        //     .enter()
+                        //     .append("text")
+                        //          .classed("groupedbar-value", true)
+                        //         .text(function(d) {
+                        //             return d3.format("0.1f")(d.Value) + "%";
+                        //         })
+                        //         .attr("width", thisGroupX1.rangeBand())
+                        //         .attr("y", function(d) { return y(d.Value); })
+                        //         .attr("text-anchor", "middle")
+                        //         .attr("x", function(d) { return thisGroupX1(d.Bar) + (thisGroupX1.rangeBand()/2); })
+                        //         .attr("dy", -4)
 
                         // Using text to label individual bars
-                        d3.select(this).selectAll("text.groupdbar-label")
-                            .data(groupData)
-                            .enter()
-                            .append("text")
-                                 .classed("groupdbar-label", true)
-                                .text(function(d) { return d.Label; })
-                                .attr("width", x1.rangeBand())
+                        // d3.select(this).selectAll("text.groupedbar-label")
+                        //     .data(groupData)
+                        //     .enter()
+                        //     .append("text")
+                        //          .classed("groupedbar-label", true)
+                        //         .text(function(d) { return d.Label; })
+                        //         .attr("width", x1.rangeBand())
                                 /* VARIATIONS */
                                 
                                 // under bars, middle aligned
-                                .attr("y", height)
-                                .attr("text-anchor", "middle")
-                                .attr("x", function(d) { return x1(d.Bar) + (x1.rangeBand()/2); })
-                                .attr("dy", 16)
+                                // .attr("y", height)
+                                // .attr("text-anchor", "middle")
+                                // .attr("x", function(d) { return x1(d.Bar) + (x1.rangeBand()/2); })
+                                // .attr("dy", 16)
                                 
                                 /*
                                 // inside bars, rotated right 90 deg, at right side of bar with x and y padding

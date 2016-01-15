@@ -148,16 +148,29 @@ angular.module('app')
                     margin = {
                         "top" : BBox.height * 0.05,
                         "right" : BBox.width * 0.05,
-                        "bottom" : BBox.height * 0.2,
-                        "left" : d3.max([BBox.width * 0.05, 55])
+                        "bottom" : BBox.height * 0.3,
+                        "left" : d3.max([BBox.width * 0.05, 75])
                     },
                     width = BBox.width - (margin.left + margin.right)
                     height = BBox.height - (margin.top + margin.bottom),
+
+                    // tooltip function
+                    tip = d3.tip()
+                        .attr("class", "groupedbar-tip")
+                        .html(function(d) {
+                            return lodash.chain([
+                                d.Label,
+                                d3.format("f")(d.Value) + "%"
+                            ])
+                            .compact()
+                            .join("<br />");
+                        })
 
                     // containers
                     svg = d3.select(this).append("svg")
                         .attr("height", BBox.height)
                         .attr("width", BBox.width)
+                        .call(tip)
                         // .attr("transform", "translate(0, 0)"),
                     chart = svg.append("g")
                         .attr("height", height)
@@ -236,20 +249,22 @@ angular.module('app')
                             .attr("height", function(d) { return height - y(d.Value); })
                             .attr("x", function(d) { return x(d.Bar); })
                             .attr("y", function(d) { return y(d.Value); })
+                            .on("mouseover", tip.show)
+                            .on("mouseout", tip.hide)
 
-                    chart.selectAll("text.barchart-value")
-                        .data(data)
-                        .enter()
-                        .append("text")
-                             .classed("barchart-value", true)
-                            .text(function(d) {
-                                return d3.format("0.1f")(d.Value) + "%";
-                            })
-                            .attr("width", x.rangeBand())
-                            .attr("y", function(d) { return y(d.Value); })
-                            .attr("text-anchor", "middle")
-                            .attr("x", function(d) { return x(d.Bar) + (x.rangeBand()/2); })
-                            .attr("dy", -4)
+                    // chart.selectAll("text.barchart-value")
+                    //     .data(data)
+                    //     .enter()
+                    //     .append("text")
+                    //          .classed("barchart-value", true)
+                    //         .text(function(d) {
+                    //             return d3.format("0.1f")(d.Value) + "%";
+                    //         })
+                    //         .attr("width", x.rangeBand())
+                    //         .attr("y", function(d) { return y(d.Value); })
+                    //         .attr("text-anchor", "middle")
+                    //         .attr("x", function(d) { return x(d.Bar) + (x.rangeBand()/2); })
+                    //         .attr("dy", -4)
 
                     return;
             });

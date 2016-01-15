@@ -1,13 +1,13 @@
 Group,Bar,Label,Value
-Volunteering,First Ranked State,UT,66
-Volunteering,CT,Rank: 22nd,27.8
-Volunteering,Last Ranked State,LA,16.7
-Charitable Giving,First Ranked State,UT,66.9
-Charitable Giving,CT,Rank: 12th,56.2
-Charitable Giving,Last Ranked State,LA,35.8
-Attend a Public Meeting,First Ranked State,VT,20.3
-Attend a Public Meeting,CT,Rank: 19th,10.4
-Attend a Public Meeting,Last Ranked State,AZ,4.3
-Group Membership,First Ranked State,UT,58.8
-Group Membership,CT,Rank: 36th,35.1
-Group Membership,Last Ranked State,LA,27.1
+Volunteering,First Ranked State,"UT, Ranked 1st",66
+Volunteering,CT,"CT, Ranked 22nd",27.8
+Volunteering,Last Ranked State,"LA, Ranked 51st",16.7
+Charitable Giving,First Ranked State,"UT, Ranked 1st",66.9
+Charitable Giving,CT,"CT, Ranked 12th",56.2
+Charitable Giving,Last Ranked State,"LA, Ranked 51st",35.8
+Attend a Public Meeting,First Ranked State,"VT, Ranked 1st",20.3
+Attend a Public Meeting,CT,"CT, Ranked 19th",10.4
+Attend a Public Meeting,Last Ranked State,"AZ, Ranked 51st",4.3
+Group Membership,First Ranked State,"UT, Ranked 1st",58.8
+Group Membership,CT,"CT, Ranked 36th",35.1
+Group Membership,Last Ranked State,"LA, Ranked 51st",27.1

@@ -1,9 +1,35 @@
 groupedbar {
 }
 
+.groupedbar-tip {
+  color: $white;
+  background-color: $extra-dark-grey;
+  /*padding: 0.25rem 0.5rem;*/
+  padding: 0.4rem;
+  font-weight: $heavy;
+  border-radius: 0.1rem;
+  text-align: center;
+  line-height: 1;
+}
+.groupedbar-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
 dataviz {
   width: 100%;
   display: inline-block;
+
 
   div.groupedbar-container {
     height: 20rem;
@@ -30,20 +56,22 @@ dataviz {
       display: none;
     }
 
-    g.groupedbar-lines path {
-      fill: none;
-      stroke-width: 1.5px;
-    }
-
-    g.groupedbar-points path,
-    g.groupedbar-legend path.point {
-      fill-opacity: 0;
-      fill: $white;
-      stroke-width: 1px;
+    g.x-axis g.tick text,
+    g.groupedbar-group text.groupedbar-value {
+      @media screen and (max-width: 600px) {
+        font-size: 0.75rem;
+      }
+      @media screen and (min-width: 601px) and (max-width: 840px) {
+        font-size: 0.85rem;
+      }
     }
 
     rect.groupedbar-bar {
       fill-opacity: 0.85;
+    }
+    rect.groupedbar-bar:hover {
+      stroke-width: 0.15rem;
+      stroke: rgba($dark-grey, 0.75);
     }
 
     rect.bar-color-1 {

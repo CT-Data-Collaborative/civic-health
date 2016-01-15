@@ -6,7 +6,8 @@
     "angular-route": "1.4.8",
     "angular-ui-bootstrap-bower": "0.13.4",
     "ng-lodash": "~0.2.1",
-    "angular-animate": "~1.4.7"
+    "angular-animate": "~1.4.7",
+    "d3-tip": "~0.6.7"
   },
   "devDependencies": {
     "d3": "~3.5.6",
