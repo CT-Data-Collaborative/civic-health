@@ -1,115 +1,116 @@
 <div id="page-content-wrapper" ng-controller="DataVizController">
-  <div class="top-row">
-    <div class="arrow_box">
-      <div class="top-row-title">
-        <i id="menu-toggle" class="fa fa-bars" ng-click="toggle.open = !toggle.open"></i>
-        <h1>Civic Health Index</h1>
-        <h5 class="pull-right"><a href="#about">Contributors</a></h5>
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid main-internal">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="about_index">
-          <button type="button" class="btn btn-sm ctdata-btn-dark" ng-click="aboutCollapsed = !aboutCollapsed">
-            About the Civic Health Index
-            <i ng-class="{'true' : 'fa fa-plus', 'false' : 'fa fa-minus'}[aboutCollapsed]"></i>
-          </button>
-          <a href="/static/dist/data/data.zip" target="_self" class="ctdata-btn-dark btn btn-sm">
-              Get Raw Data
-            <i class="fa fa-download"></i>
-          </a>
+    <div class="container-fluid main-internal">
+        <div class="row hero">
+            <div class="col-sm-12 col-md-8 col-md-offset-2">
+                <h1>2016 Connecticut Civic Health Index Dashboard</h1>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-5 about_index" collapse="aboutCollapsed">
-        <p>
-          DRAFT - The Civic Health Index looks at key indicators of civic life in Connecticut: how Connecticut residents engage in civic organizations and group activities, how attentive they are to community problem solving and politics, and how connected they are to family, friends, and neighbors.
-          <br>
-          - Add list of advisory group members
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <div ng-repeat="cat in categories" ng-show="cat.selected">
-          <h2>{{cat.name}}</h2>
-          <div class="col-sm-12 data-container">
-            <table class="ctdata-table">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th class="col-span-center col-name" colspan="2">State</th>
-                    <th class="col-span-center col-name" colspan="2">National</th>
-                    <th class="col-span-center col-name" colspan="4" ng-if="cat.data | any:'Pooled' ">State - 3-Year Trend</th>
-                    <th class="col-span-center col-name" colspan="4" ng-if="cat.data | none:'Pooled' ">State</th>
-                  </tr>
-                  <tr>
-                    <th></th>
-                    <th class="col-name">Estimate</th>
-                    <th class="col-name">3-Year Trend</th>
-                    <th class="col-name">Estimate</th>
-                    <th class="col-name">3-Year Trend</th>
-                    <th class="col-name">Rank</th>
-                    <th class="col-name">Percentile</th>
-                    <th class="col-name">Sample Size</th>
-                    <th class="col-name">Margins of Error</th>
-                  </tr>
-                </thead>
-                <tbody ng-repeat="indicator in cat.data">
-                  <tr ng-repeat-start="level in indicator.data" ng-class="{'true' : 'subcategory_break', 'false' : ''}[$last]">
-                    <th class="name">
-                      {{ indicator.Indicator }}{{ level.level=='' ? '' : ' - '+level.level}}
-                      <i ng-if="level.timeseries" class="fa fa-line-chart timeseries_toggle" ng-click="toggleChart(indicator.Indicator+'-'+level.level)"></i>
-                    </th>
-                    <td data-title="State Estimate" class="value"
-                      ng-bind-html="level['State (2013)'] | number:1 | suppressions | percent | safe">
-                    </td>
-                    <td data-title="State 3-Year Trend" class="value"
-                      ng-bind-html="level['State Trend (Pooled)'] | number:1 | suppressions | percent | safe">
-                    </td>
-                    <td data-title="National Estimate" class="value"
-                      ng-bind-html="level['National (2013)'] | number:1 | suppressions | percent | safe">
-                    </td>
-                    <td data-title="National 3-Year Trend" class="value"
-                      ng-bind-html="level['National Trend (Pooled)'] | number:1 | suppressions | percent | safe">
-                    </td>
-                    <td data-title="{{level.Pooled ? '3-Year State Trend Rank' : 'Rank'}}" class="value"
-                      ng-bind-html="level['Rank (2013)'] | suppressions | safe">
-                    </td>
-                    <td data-title="{{level.Pooled ? '3-Year State Trend Percentile' : 'Percentile'}}" class="value"
-                      ng-bind-html="level['Percentile (2013)'] | suppressions | safe">
-                    </td>
-                    <td data-title="{{level.Pooled ? '3-Year State Trend Sample Size' : 'Sample Size'}}" class="value"
-                      ng-bind-html="level['Sample (2013)'] | suppressions | safe">
-                    </td>
-                    <td data-title="{{level.Pooled ? '3-Year State Trend Margins of Error' : 'Margins of Error'}}" class="value"
-                      ng-bind-html="level['Margins of Error (2013)'] | number:1 | suppressions | percent | safe">
-                    </td>
-                  </tr>
-                  <tr class="timeseries_row" ng-if="level.timeseries" id="{{indicator.Indicator+'-'+level.level | sluggify}}" ng-show="checkChart(indicator.Indicator+'-'+level.level)" ng-repeat-end>
-                    <th></th>
-                    <td class="timeseries_cell" colspan="8">
-                      <timeseries  data=level.timeseriesdata></timeseries>
-                    </td>
-                  </tr>
-                </tbody>
-                <tfoot ng-if="cat.data | anySuppressed">
-                  <tr class="suppression_notes">
-                    <th></th>
-                      <td colspan="4" ng-if="cat.data | anySuppressed:'-9999'">
-                          <p><strong>&ddagger;</strong> - Pooled Estimates for voting are not calculated because voting rates from Midterm and Presidential years are often too different to combine.</p>
-                      </td>
-                      <td colspan="4" ng-if="cat.data | anySuppressed:'-666666'">
-                          <p><strong>&dagger;</strong> - Certain indicators or indicator levels are presented as ranked or percentile values in the last four columns. For these indicators, all other indicator levels are not provided</p>
-                      </td>
-                  </tr>
-                </tfoot>
-            </table>
-          </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-8 col-md-offset-2">
+                <div class="about_index">
+                    <a href="/static/dist/data/data.zip" target="_self" class="ctdata-btn-dark btn btn-sm">
+                        Get Raw Data
+                        <i class="fa fa-download"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="row">
+            <div class="col-sm-5 about_index" collapse="aboutCollapsed">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <div ng-repeat="cat in categories" ng-show="cat.selected">
+                    <h2>{{cat.name}}</h2>
+                    <div class="col-sm-12 data-container">
+                        <table class="ctdata-table">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th class="col-span-center col-name" colspan="2">State</th>
+                                <th class="col-span-center col-name" colspan="2">National</th>
+                                <th class="col-span-center col-name" colspan="4" ng-if="cat.data | any:'Pooled' ">State - 3-Year Trend</th>
+                                <th class="col-span-center col-name" colspan="4" ng-if="cat.data | none:'Pooled' ">State</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th class="col-name">Estimate</th>
+                                <th class="col-name">3-Year Trend</th>
+                                <th class="col-name">Estimate</th>
+                                <th class="col-name">3-Year Trend</th>
+                                <th class="col-name">Rank</th>
+                                <th class="col-name">Percentile</th>
+                                <th class="col-name">Sample Size</th>
+                                <th class="col-name">Margins of Error</th>
+                            </tr>
+                            </thead>
+                            <tbody ng-repeat="indicator in cat.data">
+                            <tr ng-repeat-start="level in indicator.data" ng-class="{'true' : 'subcategory_break', 'false' : ''}[$last]">
+                                <th class="name">
+                                    {{ indicator.Indicator }}{{ level.level=='' ? '' : ' - '+level.level}}
+                                    <i ng-if="level.timeseries" class="fa fa-line-chart timeseries_toggle" ng-click="toggleChart(indicator.Indicator+'-'+level.level)"></i>
+                                </th>
+                                <td data-title="State Estimate" class="value"
+                                    ng-bind-html="level['State (2013)'] | number:1 | suppressions | percent | safe">
+                                </td>
+                                <td data-title="State 3-Year Trend" class="value"
+                                    ng-bind-html="level['State Trend (Pooled)'] | number:1 | suppressions | percent | safe">
+                                </td>
+                                <td data-title="National Estimate" class="value"
+                                    ng-bind-html="level['National (2013)'] | number:1 | suppressions | percent | safe">
+                                </td>
+                                <td data-title="National 3-Year Trend" class="value"
+                                    ng-bind-html="level['National Trend (Pooled)'] | number:1 | suppressions | percent | safe">
+                                </td>
+                                <td data-title="{{level.Pooled ? '3-Year State Trend Rank' : 'Rank'}}" class="value"
+                                    ng-bind-html="level['Rank (2013)'] | suppressions | safe">
+                                </td>
+                                <td data-title="{{level.Pooled ? '3-Year State Trend Percentile' : 'Percentile'}}" class="value"
+                                    ng-bind-html="level['Percentile (2013)'] | suppressions | safe">
+                                </td>
+                                <td data-title="{{level.Pooled ? '3-Year State Trend Sample Size' : 'Sample Size'}}" class="value"
+                                    ng-bind-html="level['Sample (2013)'] | suppressions | safe">
+                                </td>
+                                <td data-title="{{level.Pooled ? '3-Year State Trend Margins of Error' : 'Margins of Error'}}" class="value"
+                                    ng-bind-html="level['Margins of Error (2013)'] | number:1 | suppressions | percent | safe">
+                                </td>
+                            </tr>
+                            <tr class="timeseries_row" ng-if="level.timeseries" id="{{indicator.Indicator+'-'+level.level | sluggify}}" ng-show="checkChart(indicator.Indicator+'-'+level.level)" ng-repeat-end>
+                                <th></th>
+                                <td class="timeseries_cell" colspan="8">
+                                    <timeseries  data=level.timeseriesdata></timeseries>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tfoot ng-if="cat.data | anySuppressed">
+                            <tr class="suppression_notes">
+                                <th></th>
+                                <td colspan="4" ng-if="cat.data | anySuppressed:'-9999'">
+                                    <p><strong>&ddagger;</strong> - Pooled Estimates for voting are not calculated because voting rates from Midterm and Presidential years are often too different to combine.</p>
+                                </td>
+                                <td colspan="4" ng-if="cat.data | anySuppressed:'-666666'">
+                                    <p><strong>&dagger;</strong> - Certain indicators or indicator levels are presented as ranked or percentile values in the last four columns. For these indicators, all other indicator levels are not provided</p>
+                                </td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <a href="{{ nextSectionURL }}" class="next__link">
+                    <div class="container">
+                        <div class="next__content">
+                            <p class="continue">Contine Reading:</p>
+                            <p class="next-section">{{ nextSection }}</p>
+                            <p class="teaser">{{ nextSectionTeaser }}</p>
+                        </div>
+                        <!-- /.next__content -->
+                    </div>
+                    <!-- /.container -->
+                </a>
+                <!-- /.next__link -->
+            </div>
+        </div>
     </div>
-</div>

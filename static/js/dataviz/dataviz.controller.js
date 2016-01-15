@@ -44,6 +44,7 @@ angular.module('app')
         })
 
          $scope.$on('$viewContentLoaded', function(event) {
-            $scope.toggle.open = true;
+             $scope.toggle.open = true;
+             sidebarDisplay.section = 'Raw Data';
         });
 }])

@@ -1,0 +1,11 @@
+.hero {
+  height: 15rem;
+  background: $ctdata-dark-blue;
+  padding-top: 4rem;
+  margin-bottom: 4rem;
+
+  h1,h2,h3,h4 {
+    color: white;
+    text-align: center;
+  }
+}

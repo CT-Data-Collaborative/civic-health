@@ -4,59 +4,96 @@
 
   .navbar {
     background-color: $ctdata-extra-dark-blue;
+    border-radius: 0;
+  }
+
+  ul.pull-left, ul.pull-right {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font: 100% $font1;
+
+    i {
+      color: white;
+    }
+    li {
+      color: white;
+      float:left;
+      // margin: 7px 5px 0 5px;
+      margin: .4rem .5rem .4rem .5rem;
+      .current-section {
+        color: white;
+        border-bottom: solid 1px white;
+      }
+      @media screen and (max-width: 415px) {
+        // margin: .2rem .25rem;
+        margin: .1rem .1rem;
+      }
+
+    }
+  }
+
+  ul.pull-left {
+    float: left;
   }
 
   ul.pull-right {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          font: 100% $font1;
-          float: right;
+    float: right;
+    i {
+      border: solid 1px white;
+      padding: .25rem;
+      margin: -.25rem;
+    }
+    .current-section {
+      font-style: italic;
+    }
+  }
 
-          li {
-              float:left;
-              // margin: 7px 5px 0 5px;
-              margin: .4rem .5rem .4rem .5rem;
+  ul.pull-left {
+    li {
+      float:left;
+      // margin: 7px 5px 0 5px;
+      margin: .4rem .5rem .4rem .5rem;
 
-              @media screen and (max-width: 415px) {
-                  // margin: .2rem .25rem;
-                  margin: .1rem .1rem;
-              }
-
-          }
-
-          li.logo {
-              margin-right: 2rem;
-          }
-          a {
-              color: #d2e4e7;
-              text-decoration: none;
-              font-size: .85rem;
-          }
-
-          a:hover {
-              color:#fff;
-              text-decoration: none;
-
-          }
+      @media screen and (max-width: 415px) {
+        // margin: .2rem .25rem;
+        margin: .1rem .1rem;
       }
+
+    }
+
+    li.logo {
+      margin-right: 2rem;
+    }
+    a {
+      color: #d2e4e7;
+      text-decoration: none;
+      font-size: .85rem;
+    }
+
+    a:hover {
+      color:#fff;
+      text-decoration: none;
+
+    }
+  }
 
   .logo-circle {
-      @media screen and (max-width:500px) {
-          display: none;
-      }
+    @media screen and (max-width:500px) {
+      display: none;
+    }
 
-      margin-top: .25em;
-      margin-right: .25em;
-      border-radius: 50%;
-      width: 1em;
-      height: 1em;
-      float: right;
+    margin-top: .25em;
+    margin-right: .25em;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    float: right;
   }
 
   .logo-link {
-      font-weight: $light;
-      padding-right: .5em;
+    font-weight: $light;
+    padding-right: .5em;
   }
 
 }

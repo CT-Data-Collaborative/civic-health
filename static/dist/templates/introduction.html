@@ -1,0 +1,103 @@
+<div id="page-content-wrapper" ng-controller="AboutPageController">
+    <div class="container-fluid main-internal">
+        <div class="row hero">
+            <div class="col-sm-12 col-md-8 col-md-offset-2">
+                <h1>2016 Connecticut Civic Health Index Dashboard</h1>
+            </div>
+        </div>
+        <!-- /.hero -->
+        <div class="row">
+            <div class="col-sm-12 col-md-8 col-md-offset-2 about_contributors">
+                <p class="lede">The 2016 Civic Health Index looks at key indicators of civic life in Connecticut: how
+                    Connecticut
+                    residents engage in civic organizations and group activities, how attentive they are to community
+                    problem solving and politics, and how connected they are to family, friends, and neighbors.</p>
+                <aside>
+                    <h4>Read the Full Report</h4>
+                    <a href="#">Download</a>
+                </aside>
+                <p>A coalition of groups &mdash; including the Secretary of the State, Everyday Democracy, the National
+                    Conference on Citizenship and DataHaven &mdash; produced this latest report on civic health in
+                    Connecticut as a follow-up to the first report issued in 2011.</p>
+                <p>The report gives Connecticut relatively high marks compared to the national average for volunteering
+                    (29.1 percent vs. 26.2 percent) and charitable giving (57.9 percent vs. 50.7 percent) in 2011, 2012
+                    and 2013. Residents in Connecticut are also more likely than the rest of the country to have
+                    attended a public meeting (10.5 percent vs. 8.7 percent) or worked with neighbors to fix or improve
+                    something in the community (9.2 percent vs. 8.2 percent) during those years.</p>
+
+                <p>However, there are areas that reveal a stark need for improvement and subjects that are considerable
+                    cause for concern.</p>
+                <p>Deep inequalities in income in Connecticut have had a negative impact on the civic engagement
+                    of people living in those communities. The report notes: "The stark contrast between the wealthy
+                    and the poor in our state &mdash; the so-called 'Two Connecticuts' &mdash; is as evident in
+                    statistics on
+                    voting behavior as it is in educational opportunity. Despite a generally higher level of
+                    educational attainment in our state, people who are poor or who have lower levels of formal
+                    education participate less in our government at all levels. This continues to be the primary
+                    challenge for the state, one that the data and findings in this report corroborate."</p>
+                <p>The findings of the report are based on an analysis of the Census Current Population Survey, as
+                    well as other locally-available data sources, by the National Conference on Citizenship,
+                    DataHaven, and other partners involved in this project. The National Conference on Citizenship
+                    is a congressionally chartered organization dedicated to strengthening civic life in America.</p>
+                <h3>Key Findings</h3>
+                <p>By some indicators of civic health, Connecticut residents demonstrate significantly stronger levels
+                    of engagement than the national average; they participate at higher rates of volunteering, attending
+                    public meetings,
+                    charitable giving, talking with and trusting neighbors, voting in local elections, and having
+                    confidence in the media
+                    or public schools. However, compared to other states, Connecticut performed relatively poorly in
+                    other measures of
+                    engagement, including registering to vote, belonging to a school or community association, joining a
+                    church group or other
+                    religious group, and having confidence in corporations.</p>
+                <div class="table-container">
+                    <p class="table-title">Table 1: A Snapshot of Connecticut's Civic Health Findings</p>
+                </div>
+                <p>By many measures, high-income and college-educated adults demonstrate better civic health
+                    than adults with lower income or levels of education. Participation rates based on income or
+                    education
+                    vary most widely on indicators of voting and volunteering.</p>
+                <div class="table-container">
+                    <p class="table-title">Table 2: Indicators by Income and Education Levels</p>
+                </div>
+                <p>In general, involvement in civic pursuits increases with age.</p>
+                <div class="table-container">
+                    <p class="table-title">Table 3: Indicators by Age</p>
+                </div>
+                <p>By most civic measures, participation varies between racial and ethnic groups, but White adults are
+                    the most civically engaged. African Americans also demonstrate strong involvement in community
+                    groups and political action. All adults connect with family and friends at equal rates.</p>
+                <div class="table-container">
+                    <p class="table-title">Table 4: Indicators by Race / Ethnicity</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <a href="{{ nextSectionURL }}" class="next__link">
+                <div class="container">
+                    <div class="next__content">
+                        <p class="continue">Contine Reading:</p>
+                        <p class="next-section">{{ nextSection }}</p>
+                        <p class="teaser">{{ nextSectionTeaser }}</p>
+                    </div>
+                    <!-- /.next__content -->
+                </div>
+                <!-- /.container -->
+            </a>
+            <!-- /.next__link -->
+        </div>
+        <!-- /.row -->
+        <!--
+        <div class="row">
+            <div class="col-sm-12 col-md-8 col-md-offset-2">
+                <h1 class="title">About the Contributors</h1>
+                <div ng-repeat="contributor in contributors" class="contributor">
+                    <h3 id="{{ contributor.name | sluggify }}">{{ contributor.name }}</h3>
+                    <a href="http://{{ contributor.url }}">{{ contributor.url }}</a>
+                    <p>{{ contributor.about }}</p>
+                </div>
+            </div>
+        </div>
+        -->
+    </div>
+</div>
