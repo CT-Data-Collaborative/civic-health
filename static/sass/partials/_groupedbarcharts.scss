@@ -1,9 +1,7 @@
-groupedbar {
+.groupedbar {
 }
 
 dataviz {
-  width: calc(100% - #{$sidebar-menu-width});
-  padding-right: $sidebar-menu-width;
 
   div.groupedbar-container {
     height: 20rem;

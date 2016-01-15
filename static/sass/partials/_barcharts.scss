@@ -2,8 +2,6 @@ barchart {
 }
 
 dataviz {
-  width: calc(100% - #{$sidebar-menu-width});
-  padding-right: $sidebar-menu-width;
 
   div.barchart-container {
     height: 20rem;

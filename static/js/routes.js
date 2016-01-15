@@ -21,6 +21,10 @@ angular.module('app')
             templateUrl: 'static/dist/templates/institutional-presence.html',
             controller: 'InstitutionPageController'
         })
+        .when('/a-closer-look', {
+            templateUrl: 'static/dist/templates/closer-look.html',
+            controller: 'CloserLookPageController'
+        })
         .when('/call-to-action', {
             templateUrl: 'static/dist/templates/call-to-action.html',
             controller: 'CallToActionPageController'

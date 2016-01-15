@@ -15,10 +15,6 @@ angular.module('app')
         },
         link: function(scope, element, attrs) {
             scope.render = function() {
-                // data = {
-                //     data : scope.data,
-                //     config : scope.config
-                // };
 
                 if (scope.data) {
                     charts[scope.type](element[0], result.data, {}); //scope.config

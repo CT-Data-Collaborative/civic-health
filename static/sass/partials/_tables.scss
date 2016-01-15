@@ -7,12 +7,25 @@
     margin-right: 1rem;
     .table-title {
         color: $ctdata-dark-blue;
+        margin-bottom: 0;
     }
+    .source:before {
+        content: "Source: ";
+    }
+    .source {
+        font-size: 1rem;
+        font-style: italic;
+        margin-bottom: 0;
+    }
+
 }
 
 table.ctdata-table {
-    width: calc(100% - #{$sidebar-menu-width});
-    margin-bottom: 2rem;
+    //width: calc(100% - #{$sidebar-menu-width});
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    //margin-bottom: 2rem;
 
     tbody > tr > th {
         width: 40%;
@@ -26,7 +39,11 @@ table.ctdata-table {
     tbody tr:hover {
         background: $ctdata-light-blue;
     }
-
+    .hide {
+        //display: none;
+        background: white;
+        color: white;
+    }
     .name {
         font-size:1.1rem;
         text-align: left;
