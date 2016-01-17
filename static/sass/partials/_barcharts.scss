@@ -2,6 +2,33 @@ barchart {
 }
 
 dataviz {
+  width: 100%;
+  display: inline-block;
+
+  .barchart-tip {
+    color: $white;
+    background-color: $extra-dark-grey;
+    /*padding: 0.25rem 0.5rem;*/
+    padding: 1rem;
+    font-weight: $heavy;
+    border-radius: 0.1rem;
+    text-align: center;
+    line-height: 1;
+  }
+  .barchart-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+  }
 
   div.barchart-container {
     height: 20rem;
@@ -28,14 +55,23 @@ dataviz {
       display: none;
     }
 
+    g.x-axis g.tick text,
+    text.barchart-value {
+      @media screen and (max-width: 600px) {
+        font-size: 0.75rem;
+      }
+      @media screen and (min-width: 601px) and (max-width: 840px) {
+        font-size: 0.85rem;
+      }
+    }
+
     rect.barchart-bar {
       fill-opacity: 0.85;
     }
 
-     text.barchart-value {
+    text.barchart-value {
       fill: $extra-dark-grey;
     }
-
 
     rect.bar-color-1 {
       fill: $ctdata-extra-dark-blue;
