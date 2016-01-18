@@ -9,6 +9,7 @@ module.exports = {
         "static/dist/templates/*.html",
         "static/dist/images/*",
         "static/dist/bower_components/**/*.*",
+        "pdfs/*.pdf",
         "index.html"
     ]
 }
