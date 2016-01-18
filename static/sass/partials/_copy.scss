@@ -1,6 +1,11 @@
 .lede {
   font-size: 1.5rem;
   color: $ctdata-extra-dark-blue;
+  sup {
+    color: $ctdata-extra-dark-blue;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
 }
 
 p.lede:first-child:first-letter {
@@ -50,12 +55,42 @@ a.next__link:hover {
   .continue {
     text-transform: uppercase;
     color: white;
+    letter-spacing: 4px;
+    opacity: 0.8;
+    font-weight:300;
+
   }
   .next-section {
     font-weight: bold;
     color: white;
+    font-size: 1.25rem;
   }
   .teaser {
     color: white;
+    font-family: $font2;
+    font-size: 1.5rem;
+    //font-style: italic;
+    width: 75%;
   }
+  .teaser:before {
+    font-family: FontAwesome;
+    content: '\f10d';
+    font-size: 1rem;
+    float: left;
+    margin-right: .3rem;
+  }
+
+  .teaser:after {
+    font-family: FontAwesome;
+    content: '\f10e';
+    font-size: 1rem;
+    margin-left: .3rem;
+    position: relative;
+    bottom: .5rem
+  }
+}
+
+.footnote {
+  font-size: .75rem;
+  font-style: italics;
 }

@@ -7,9 +7,10 @@ angular.module('app')
         $scope.$on('$viewContentLoaded', function(event) {
             $scope.toggle.open = false;
             sidebarDisplay.section = 'A Closer Look';
-            $scope.nextSection = 'Institutional Presence';
-            $scope.nextSectionTeaser = "Stuff about institutions";
-            $scope.nextSectionURL = '#/institutional-presence';
+            $scope.nextSection = 'Conclusions';
+            $scope.nextSectionTeaser = "As this report has shown, there are many efforts underway to improve the civic" +
+                "health of our state. But even with important progress, urgent challenges remain.";
+            $scope.nextSectionURL = '#/conclusions';
         });
 
 }])

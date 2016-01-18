@@ -182,6 +182,9 @@ angular.module('app')
                         })
                         .enter()
                         .append('td')
+                        .attr("data-title", function(d) {
+                            return d.column;
+                        })
                         .attr("class", function(d) {
                             if (d.column==='Indicator') {
                                 return "name";

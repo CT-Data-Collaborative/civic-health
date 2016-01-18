@@ -8,9 +8,9 @@ angular.module('app')
             $scope.toggle.open = false;
             sidebarDisplay.section = 'Social Networks and Community Cohesion';
             $scope.nextSection = 'Institutional Presence';
-            $scope.nextSectionTeaser = "Stuff about institutions";
+            $scope.nextSectionTeaser = "Institutions — government, news media, corporations, hospitals, and schools — " +
+                "are the foundation of our society.";
             $scope.nextSectionURL = '#/institutional-presence';
         });
-
 }])
 

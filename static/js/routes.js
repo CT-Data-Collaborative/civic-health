@@ -25,9 +25,9 @@ angular.module('app')
             templateUrl: 'static/dist/templates/closer-look.html',
             controller: 'CloserLookPageController'
         })
-        .when('/call-to-action', {
-            templateUrl: 'static/dist/templates/call-to-action.html',
-            controller: 'CallToActionPageController'
+        .when('/conclusions', {
+            templateUrl: 'static/dist/templates/conclusions.html',
+            controller: 'ConclusionsPageController'
         })
         .when('/partners', {
             templateUrl: 'static/dist/templates/partners.html',

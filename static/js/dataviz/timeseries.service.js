@@ -174,16 +174,28 @@ angular.module('app')
                     },
                     width = BBox.width - (margin.left + margin.right)
                     height = BBox.height - (margin.top + margin.bottom),
+                    tip = d3.tip()
+                        .attr("class", "groupedbar-tip")
+                        .html(function(d) {
+                            return lodash.chain([
+                                d.Label,
+                                d3.format("f")(d.Value) + "%"
+                            ])
+                            .compact()
+                            .join("<br />");
+                        })
 
                     // containers
                     svg = d3.select(this).append("svg")
                         .attr("height", BBox.height)
                         .attr("width", BBox.width)
+                        .call(tip)
                         // .attr("transform", "translate(0, 0)"),
                     chart = svg.append("g")
                         .attr("height", height)
                         .attr("width", width)
                         .attr("transform", "translate(" + margin.left + ", " + margin.top + ")"),
+
 
                         // testing stuff - draws outlines around svg and container
                     // svgOutline = svg.append("rect")
@@ -336,7 +348,9 @@ angular.module('app')
                             .append("path")
                             .attr("stroke", function(d, i) {return colors(d.Key); } )
                             .attr("d", d3.svg.symbol().type("circle").size(65))
-                            .attr("transform", function(d) { return "translate(" + x(d.Year) + ", " + y(d.Value) +")";});
+                            .attr("transform", function(d) { return "translate(" + x(d.Year) + ", " + y(d.Value) +")";})
+                            .on("mouseover", tip.show)
+                            .on("mouseout", tip.hide);
 
                     return;
             });

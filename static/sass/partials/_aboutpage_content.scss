@@ -2,12 +2,16 @@ div.about_contributors {
     font-size: 1.25rem;
     p {
         padding: 0.5rem 0.25rem 0.5rem;
+        font-family: $font2;
+    }
+    a {
+        font-family: $font2;
     }
 }
 
 div.contributor {
     font-size: 1.25rem;
-    border-bottom: 1px solid $dark-grey;
+    //border-bottom: 1px solid $dark-grey;
     padding: 0.5rem 0.25rem;
 
     p {

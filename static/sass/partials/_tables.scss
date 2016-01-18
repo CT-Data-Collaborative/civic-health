@@ -3,11 +3,19 @@
     border-bottom: solid 2px $ctdata-dark-blue;
     margin-bottom: 2rem;
     margin-top: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+
     .table-title {
         color: $ctdata-dark-blue;
         margin-bottom: 0;
+        font-family: $font1;
+    }
+    .table-subtitle {
+        margin-bottom: 0;
+        padding-left: 2rem;
+        font-style: italic;
+        font-family: $font1;
     }
     .source:before {
         content: "Source: ";
@@ -19,16 +27,19 @@
         font-size: 1rem;
         font-style: italic;
         margin-bottom: 0;
+        padding-bottom: 0;
+        padding-left: 2.25rem;
     }
-
+    .source {
+        padding-top: 0;
+    }
+    dataviz {
+        padding-bottom: 1rem;
+    }
 }
 
 table.ctdata-table {
-    //width: calc(100% - #{$sidebar-menu-width});
     width: 100%;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    //margin-bottom: 2rem;
 
     tbody > tr > th {
         width: 40%;
