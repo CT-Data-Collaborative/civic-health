@@ -8,7 +8,8 @@ angular.module('app')
             $scope.toggle.open = false;
             sidebarDisplay.section = 'Political Participation';
             $scope.nextSection = 'Community Cohesion';
-            $scope.nextSectionTeaser = "Stuff about cohesion";
+            $scope.nextSectionTeaser = "Social networks, whose growth is linked with decreased neighborhood crime and " +
+                "better individual well-being, enrich communities in many ways.";
             $scope.nextSectionURL = '#/community-cohesion';
         });
 

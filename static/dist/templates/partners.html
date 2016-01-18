@@ -9,60 +9,79 @@
         <div class="row">
             <div class="col-sm-12 col-md-8 col-md-offset-2 about_contributors">
                 <h1>About The Funding Partners</h1>
-                <h3>CONNECTICUT HUMANITIES</h3>
-                <p>Connecticut Humanities creates opportunities to think, learn, and understand more about ourselves,
-                    our communities, and our state. It believes that this work is essential to a democratic society, to
-                    the well-being of the people, and
-                    to the economic vitality of Connecticut. It brings together people of different viewpoints, ages,
-                    and backgrounds to learn from and about each
-                    other, discuss issues of vital concern, explore new ideas and historical perspectives, and
-                    experience the cultural richness around them.</p>
-                <h3>WILLIAM CASPAR GRAUSTEIN MEMORIAL FUND</h3>
-                <p>William Caspar Graustein Memorial Fund has as its new mission achieving equity in education by
-                    working with those affected and inspiring all to end racism and poverty. In recognition of the depth
-                    and persistence of racial and economic
-                    inequality and its impact on children and families, the Fund has laid out a new strategic plan to
-                    guide the work of removing barriers to
-                    educational opportunity. This new mission emphasizes the importance of one of our state’s strongest
-                    assets – the families and neighborhoods
-                    that have direct experience in raising children and dealing with the barriers of racism and poverty.
-                    The Fund believes that within all of
-                    us, and especially those most affected by racism and poverty, there are the strengths,
-                    determination, creativity, and wisdom we need to
-                    succeed.</p>
-                <h3>THE FUND FOR GREATER HARTFORD</h3>
-                <p>The Fund for Greater Hartford, formerly known as The Hartford Courant Foundation, was started in
-                    1950, with its incorporation as a public foundation. In the early years, the Foundation’s annual
-                    grants were funded by contributions
-                    from The Hartford Courant, one of the states’ leading newspapers. The Fund entered a new era in
-                    1979, when the 215-year-old Hartford
-                    Courant was purchased by Times Mirror Corporation of Los Angeles. The Hartford Courant Foundation’s
-                    trustees understood the importance of
-                    the Foundation to the community, so as part of the purchase agreement the Foundation was
-                    restructured to become a private, independent
-                    foundation. The assets of The Fund, which consisted of stock in the Hartford Courant, were converted
-                    into a significant endowment which
-                    now funds the grants distributed each year. In 2014 alone, The Fund for Greater Hartford committed
-                    more than $600,000 to the Greater
-                    Hartford community with a focus on its four priority areas: Arts, Community Development, Education
-                    and Health and Social Services. </p>
-                <h1 class="title">About the Contributors</h1>
-                <div class="col-sm-8">
-                    <div ng-repeat="contributor in contributors" class="contributor">
-                        <h3 id="{{ contributor.name | sluggify }}">{{ contributor.name }}</h3>
-                        <a href="http://{{ contributor.url }}">{{ contributor.url }}</a>
-                        <p>{{ contributor.about }}</p>
-                    </div>
+                <div class="contributor">
+                    <h3><a href="http://cthumanities.org/">CONNECTICUT HUMANITIES</a></h3>
+                    <p>Connecticut Humanities creates opportunities to think, learn, and understand more about ourselves,
+                        our communities, and our state. It believes that this work is essential to a democratic society, to
+                        the well-being of the people, and
+                        to the economic vitality of Connecticut. It brings together people of different viewpoints, ages,
+                        and backgrounds to learn from and about each
+                        other, discuss issues of vital concern, explore new ideas and historical perspectives, and
+                        experience the cultural richness around them.</p>
                 </div>
+                <!-- /.contributor -->
+                <div class="contributor">
+                    <h3><a href="www.wcgmf.org/">WILLIAM CASPAR GRAUSTEIN MEMORIAL FUND</a></h3>
+                    <p>William Caspar Graustein Memorial Fund has as its new mission achieving equity in education by
+                        working with those affected and inspiring all to end racism and poverty. In recognition of the depth
+                        and persistence of racial and economic
+                        inequality and its impact on children and families, the Fund has laid out a new strategic plan to
+                        guide the work of removing barriers to
+                        educational opportunity. This new mission emphasizes the importance of one of our state’s strongest
+                        assets – the families and neighborhoods
+                        that have direct experience in raising children and dealing with the barriers of racism and poverty.
+                        The Fund believes that within all of
+                        us, and especially those most affected by racism and poverty, there are the strengths,
+                        determination, creativity, and wisdom we need to
+                        succeed.</p>
+                </div>
+                <!-- /.contributor -->
+                <div class="contributor">
+                    <h3><a href="www.fundforgreaterhartford.org/">THE FUND FOR GREATER HARTFORD</a></h3>
+                    <p>The Fund for Greater Hartford, formerly known as The Hartford Courant Foundation, was started in
+                        1950, with its incorporation as a public foundation. In the early years, the Foundation’s annual
+                        grants were funded by contributions
+                        from The Hartford Courant, one of the states’ leading newspapers. The Fund entered a new era in
+                        1979, when the 215-year-old Hartford
+                        Courant was purchased by Times Mirror Corporation of Los Angeles. The Hartford Courant Foundation’s
+                        trustees understood the importance of
+                        the Foundation to the community, so as part of the purchase agreement the Foundation was
+                        restructured to become a private, independent
+                        foundation. The assets of The Fund, which consisted of stock in the Hartford Courant, were converted
+                        into a significant endowment which
+                        now funds the grants distributed each year. In 2014 alone, The Fund for Greater Hartford committed
+                        more than $600,000 to the Greater
+                        Hartford community with a focus on its four priority areas: Arts, Community Development, Education
+                        and Health and Social Services. </p>
+                </div>
+                <!-- /.contributor -->
+
+                <h1 class="title">About the Contributors</h1>
+                <div ng-repeat="contributor in contributors" class="contributor">
+                    <h3 id="{{ contributor.name | sluggify }}"><a href="http://{{ contributor.url }}">{{ contributor.name }}</a></h3>
+                    <p>{{ contributor.about }}</p>
+                </div>
+                <h1 class="title">About Us</h1>
+                <div class="contributor">
+                    <h3><a href="ctdata.org">Connecticut Data Collaborative</a></h3>
+                    <p>The Collaborative is a public-private partnership that advocates for the public availability of
+                        open and accessible data to drive planning, policy, budgeting and decision making in Connecticut
+                        at the state, regional and local levels. We are a user-driven organization, serving nonprofits,
+                        advocates, policymakers, community groups, and funders in using data to drive policy and
+                        improve programs and services.</p>
+                </div>
+                <!-- /.contributor -->
+                <!-- /.title -->
             </div>
+
         </div>
         <div class="row">
             <a href="{{ nextSectionURL }}" class="next__link">
                 <div class="container">
                     <div class="next__content">
-                        <p class="continue">Contine Reading:</p>
+                        <p class="continue">Continue Reading:</p>
                         <p class="next-section">{{ nextSection }}</p>
-                        <p class="teaser">{{ nextSectionTeaser }}</p>
+
                     </div>
                     <!-- /.next__content -->
                 </div>

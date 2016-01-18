@@ -11,14 +11,16 @@
                 <p class="lede">The 2016 Civic Health Index looks at key indicators of civic life in Connecticut: how
                     Connecticut
                     residents engage in civic organizations and group activities, how attentive they are to community
-                    problem solving and politics, and how connected they are to family, friends, and neighbors.</p>
-                <aside>
-                    <h4>Read the Full Report</h4>
-                    <a href="#">Download</a>
+                    problem solving and politics, and how connected they are to family, friends, and neighbors.<sup>1</sup></p>
+                <aside class="links">
+                    <h4>Read the Reports</h4>
+                    <a href="{{ report2016URL }}">2016 Civic Health Index Report</a>
+                    <a href="{{ report2011URL }}">2011 Civic Health Index Report</a>
                 </aside>
                 <p>A coalition of groups &mdash; including the Secretary of the State, Everyday Democracy, the National
-                    Conference on Citizenship and DataHaven &mdash; produced this latest report on civic health in
-                    Connecticut as a follow-up to the first report issued in 2011.</p>
+                    Conference on Citizenship and DataHaven &mdash; produced <a href="{{ report2016URL }}">this latest report</a> on civic health in
+                    Connecticut as a follow-up to the <a href="{{ report2011URL }}">first
+                    report</a> issued in 2011.</p>
                 <p>The report gives Connecticut relatively high marks compared to the national average for volunteering
                     (29.1 percent vs. 26.2 percent) and charitable giving (57.9 percent vs. 50.7 percent) in 2011, 2012
                     and 2013. Residents in Connecticut are also more likely than the rest of the country to have
@@ -51,35 +53,52 @@
                     church group or other
                     religious group, and having confidence in corporations.</p>
                 <div class="table-container">
-                    <p class="table-title">Table 1: A Snapshot of Connecticut's Civic Health Findings</p>
+                    <p class="table-title">A Snapshot of Connecticut's Civic Health Findings</p>
+                    <p class="table-subtitle">Community Life</p>
+                    <dataviz which="'table_1a'" type="'table'"></dataviz>
+                    <p class="table-subtitle">Political Participation</p>
+                    <dataviz which="'table_1b'" type="'table'"></dataviz>
+                    <p class="table-subtitle">Social Networks</p>
+                    <dataviz which="'table_1c'" type="'table'"></dataviz>
+                    <p class="table-subtitle">Institutional Presence</p>
+                    <dataviz which="'table_1d'" type="'table'"></dataviz>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
+                    <!-- /.table-subtitle -->
                 </div>
                 <p>By many measures, high-income and college-educated adults demonstrate better civic health
                     than adults with lower income or levels of education. Participation rates based on income or
                     education
                     vary most widely on indicators of voting and volunteering.</p>
                 <div class="table-container">
-                    <p class="table-title">Table 2: Indicators by Income and Education Levels</p>
+                    <p class="table-title">Indicators by Income and Education Levels</p>
                     <dataviz which="'table_2'" type="'table'"></dataviz>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
+                    <!-- /.source -->
                 </div>
                 <p>In general, involvement in civic pursuits increases with age.</p>
                 <div class="table-container">
-                    <p class="table-title">Table 3: Indicators by Age</p>
+                    <p class="table-title">Indicators by Age</p>
                     <dataviz which="'table_3'" type="'table'"></dataviz>
+                    <p class="note">* pooled data - 2010, 2011, 2013</p>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
                 </div>
                 <p>By most civic measures, participation varies between racial and ethnic groups, but White adults are
                     the most civically engaged. African Americans also demonstrate strong involvement in community
                     groups and political action. All adults connect with family and friends at equal rates.</p>
                 <div class="table-container">
-                    <p class="table-title">Table 4: Indicators by Race / Ethnicity</p>
+                    <p class="table-title">Indicators by Race / Ethnicity</p>
                     <dataviz which="'table_4'" type="'table'"></dataviz>
+                    <p class="note">* pooled data - 2010, 2011, 2013</p>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
                 </div>
+                <p class="footnote">1. All text on this webpage taken from 2016 Civic Health Index Report.</p>
             </div>
         </div>
         <div class="row">
             <a href="{{ nextSectionURL }}" class="next__link">
                 <div class="container">
                     <div class="next__content">
-                        <p class="continue">Contine Reading:</p>
+                        <p class="continue">Continue Reading:</p>
                         <p class="next-section">{{ nextSection }}</p>
                         <p class="teaser">{{ nextSectionTeaser }}</p>
                     </div>
@@ -90,17 +109,5 @@
             <!-- /.next__link -->
         </div>
         <!-- /.row -->
-        <!--
-        <div class="row">
-            <div class="col-sm-12 col-md-8 col-md-offset-2">
-                <h1 class="title">About the Contributors</h1>
-                <div ng-repeat="contributor in contributors" class="contributor">
-                    <h3 id="{{ contributor.name | sluggify }}">{{ contributor.name }}</h3>
-                    <a href="http://{{ contributor.url }}">{{ contributor.url }}</a>
-                    <p>{{ contributor.about }}</p>
-                </div>
-            </div>
-        </div>
-        -->
     </div>
 </div>

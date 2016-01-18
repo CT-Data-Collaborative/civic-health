@@ -6,29 +6,15 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-12 col-md-8 col-md-offset-2">
-                <div class="about_index">
-                    <a href="/static/dist/data/data.zip" target="_self" class="ctdata-btn-dark btn btn-sm">
-                        Get Raw Data
-                        <i class="fa fa-download"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5 about_index" collapse="aboutCollapsed">
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <a href="/static/dist/data/data.zip" target="_self" class="ctdata-btn-dark btn btn-sm">
+                    Download Raw Data
+                    <i class="fa fa-download"></i>
+                </a>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-10 col-md-offset-1">
-                <dataviz which="'chart_3'" type="'groupedBar'"></dataviz>
-                <dataviz which="'chart_4'" type="'groupedBar'"></dataviz>
-                <dataviz which="'chart_6'" type="'groupedBar'"></dataviz>
-                <dataviz which="'chart_7'" type="'groupedBar'"></dataviz>
-                <dataviz which="'chart_8'" type="'groupedBar'"></dataviz>
-                <dataviz which="'chart_9'" type="'groupedBar'"></dataviz>
-                <dataviz which="'chart_10'" type="'groupedBar'"></dataviz>
-                <dataviz which="'chart_11'" type="'groupedBar'"></dataviz>
                 <div ng-repeat="cat in categories" ng-show="cat.selected">
                     <h2>{{ cat.name }}</h2>
                     <div class="col-sm-12 data-container">
@@ -119,20 +105,14 @@
                         </table>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <a href="{{ nextSectionURL }}" class="next__link">
-                    <div class="container">
-                        <div class="next__content">
-                            <p class="continue">Contine Reading:</p>
-                            <p class="next-section">{{ nextSection }}</p>
-                            <p class="teaser">{{ nextSectionTeaser }}</p>
-                        </div>
-                        <!-- /.next__content -->
-                    </div>
-                    <!-- /.container -->
-                </a>
-                <!-- /.next__link -->
+                <dataviz which="'chart_3'" type="'groupedBar'"></dataviz>
+                <dataviz which="'chart_4'" type="'groupedBar'"></dataviz>
+                <dataviz which="'chart_6'" type="'groupedBar'"></dataviz>
+                <dataviz which="'chart_7'" type="'groupedBar'"></dataviz>
+                <dataviz which="'chart_8'" type="'groupedBar'"></dataviz>
+                <dataviz which="'chart_9'" type="'groupedBar'"></dataviz>
+                <dataviz which="'chart_10'" type="'groupedBar'"></dataviz>
+                <dataviz which="'chart_11'" type="'groupedBar'"></dataviz>
             </div>
         </div>
     </div>

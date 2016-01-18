@@ -7,9 +7,10 @@ angular.module('app')
         $scope.$on('$viewContentLoaded', function(event) {
             $scope.toggle.open = false;
             sidebarDisplay.section = 'Institutional Presence';
-            $scope.nextSection = 'Call to Action';
-            $scope.nextSectionTeaser = "Stuff about call to action";
-            $scope.nextSectionURL = '#/call-to-action';
+            $scope.nextSection = 'A Closer Look';
+            $scope.nextSectionTeaser = "A deeper analysis reveals notable differences in civic engagement based on " +
+                "demographic characteristics, including age, gender, and race or ethnicity.";
+            $scope.nextSectionURL = '#/a-closer-look';
         });
 
 }])

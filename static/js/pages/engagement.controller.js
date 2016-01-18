@@ -8,7 +8,7 @@ angular.module('app')
             $scope.toggle.open = false;
             sidebarDisplay.section = 'Civic Engagement';
             $scope.nextSection = 'Political Participation';
-            $scope.nextSectionTeaser = "Stuff about political participation";
+            $scope.nextSectionTeaser = "A healthy democracy is based on a strong relationship between elected officials and their constituents.";
             $scope.nextSectionURL = '#/political-participation';
         });
 

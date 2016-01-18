@@ -15,7 +15,7 @@ angular.module('app')
             $scope.toggle.open = false;
             sidebarDisplay.section = 'Partners';
             $scope.nextSection = 'Raw Data';
-            $scope.nextSectionTeaser = "Stuff about raw data";
+            $scope.nextSectionTeaser = "";
             $scope.nextSectionURL = '#/raw-data';
         });
 

@@ -14,10 +14,15 @@
   },{
     "name": "DataHaven",
     "url": "www.ctdatahaven.org/",
-    "about" : "DataHaven is a nonprofit organization working to improve the quality of life in the Greater New Haven area and Connecticut at large. Through their many partnerships, reports, and programs they promote public access to high-quality information and analysis. The official 2016 Civic Health Index publication is authored by Mary Buchanan, Erica Pandey, and Mark Abraham of DataHaven, and released by NCoC."
+    "about" : "DataHaven is a nonprofit organization working to improve the quality of life in the Greater New Haven area and Connecticut at large. Through their many partnerships, reports, and programs they promote public access to high-quality information and analysis."
   },{
     "name": "Connecticut Campus Compact",
     "url": "ctcampuscompact.org/",
     "about" : "The Campus Compact is a national coalition of almost 1,200 college and university presidents. The Connecticut state coalition includes the vast majority of such institutions in the state - private, public, research, and Ivy League alike. Their work promotes partnerships and action that connect economic prosperity and engaged citizenship."
+  },
+  {
+    "name":"Wesleyan University",
+    "url": "www.wesleyan.edu",
+    "about": "Wesleyan University was founded in 1831 by Methodist leaders and Middletown citizens. Named for John Wesley, the founder of Methodism, Wesleyan is among the oldest of the originally Methodist institutions of higher education in the United States. Located in Middletown, Conn., Wesleyan offers instruction in 46 departments and 45 major fields of study and awards the Bachelor of Arts as well as graduate degrees."
   }
 ]
