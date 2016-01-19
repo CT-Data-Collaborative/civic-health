@@ -91,6 +91,10 @@ a.next__link:hover {
 }
 
 .footnote {
-  font-size: .75rem;
+  font-size: 1rem;
   font-style: italics;
+  width: 75%;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }

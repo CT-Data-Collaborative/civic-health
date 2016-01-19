@@ -815,8 +815,12 @@ a.next__link:hover {
   bottom: .5rem; }
 
 .footnote {
-  font-size: .75rem;
-  font-style: italics; }
+  font-size: 1rem;
+  font-style: italics;
+  width: 75%; }
+  @media screen and (max-width: 600px) {
+    .footnote {
+      width: 100%; } }
 
 dataviz {
   width: 100%;
