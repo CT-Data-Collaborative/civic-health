@@ -15,6 +15,23 @@
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <p>Download raw data using the link above or explore the raw data tables here first.</p>
+                <p>These tables present the results of the Tufts University <a href="http://civicyouth.org/">Center
+                    for Information and Research on Civic Learning and Engagement</a> (CIRCLE) analysis of the
+                    <a href="http://www.census.gov/programs-surveys/cps.html">U.S. Census Current Population
+                        Survey(CPS)</a>. Volunteering estimates are from the CPS September Volunteering Supplement.
+                Voting estimates are from the 2012 November Voting and Registration Supplement. All other civic
+                engagement indicators come from the 2013 CPS Civic Engagement Supplement.</p>
+                <p>Because multiple sources of data with varying sample sizes are used, the report is not able to
+                    compute one margin of error for Connecticut across all indicators. Any analysis that breaks down
+                    the sample into smaller groups (e.g., gender, education) will have smaller samples and therefore
+                    the margin of error will increase. Data for some indicators are pooled (2010-2013) for a more
+                    reliable estimate when sample sizes for certain cross tabulations may have been small.
+                    thermore, national rankings, while useful in benchmarking, may be small in range, with one or two
+                    percentage points separating the state/district ranked first from the state/district ranked last.</p>
+                <p>It is also important that our margin of  error estimates are approximate, as CPS sampling is highly
+                    complex and accurate estimation of error rates involves many parameters that are not publicly
+                    available. </p>
                 <div ng-repeat="cat in categories" ng-show="cat.selected">
                     <h2>{{ cat.name }}</h2>
                     <div class="col-sm-12 data-container">
@@ -105,14 +122,117 @@
                         </table>
                     </div>
                 </div>
-                <dataviz which="'chart_3'" type="'groupedBar'"></dataviz>
-                <dataviz which="'chart_4'" type="'groupedBar'"></dataviz>
-                <dataviz which="'chart_6'" type="'groupedBar'"></dataviz>
-                <dataviz which="'chart_7'" type="'groupedBar'"></dataviz>
-                <dataviz which="'chart_8'" type="'groupedBar'"></dataviz>
-                <dataviz which="'chart_9'" type="'groupedBar'"></dataviz>
-                <dataviz which="'chart_10'" type="'groupedBar'"></dataviz>
-                <dataviz which="'chart_11'" type="'groupedBar'"></dataviz>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-md-offset-1 about_contributors">
+                <p>We've reproduced all of the tables and charts displayed throughout the report in the order that
+                they appear</p>
+                <div class="table-container">
+                    <p class="table-title">A Snapshot of Connecticut's Civic Health Findings</p>
+                    <p class="table-subtitle">Community Life</p>
+                    <dataviz which="'table_1a'" type="'table'"></dataviz>
+                    <p class="table-subtitle">Political Participation</p>
+                    <dataviz which="'table_1b'" type="'table'"></dataviz>
+                    <p class="table-subtitle">Social Networks</p>
+                    <dataviz which="'table_1c'" type="'table'"></dataviz>
+                    <p class="table-subtitle">Institutional Presence</p>
+                    <dataviz which="'table_1d'" type="'table'"></dataviz>
+                    <p class="note">** 2010, unless otherwise noted.</p>
+                    <p class="note">*** Nationally, voter turnout reached a 40-year high in 2008.</p>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
+                    <!-- /.table-subtitle -->
+                </div>
+                <div class="table-container">
+                    <p class="table-title">Indicators by Income and Education Levels</p>
+                    <dataviz which="'table_2'" type="'table'"></dataviz>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
+                    <!-- /.source -->
+                </div>
+                 <div class="table-container">
+                    <p class="table-title">Indicators by Age</p>
+                    <dataviz which="'table_3'" type="'table'"></dataviz>
+                    <p class="note">* pooled data - 2010, 2011, 2013</p>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
+                </div>
+                 <div class="table-container">
+                    <p class="table-title">Indicators by Race / Ethnicity</p>
+                    <dataviz which="'table_4'" type="'table'"></dataviz>
+                    <p class="note">* pooled data - 2010, 2011, 2013</p>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
+                </div>
+                <div class="table-container">
+                    <p class="table-title">Connecticut Volunteering vs. U.S. Averages (2006-2013)</p>
+                    <dataviz which="'chart_1'" type="'line'"></dataviz>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
+                </div>
+                 <div class="table-container">
+                    <p class="table-title">Connecticut Charitable Giving ($25 or more) vs United States Averages (2006-2013)</p>
+                    <dataviz which="'chart_2'" type="'line'"></dataviz>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
+                </div>
+                <div class="table-container">
+                    <p class="table-title">Connecticut Volunteering, Philanthrophy, and Group Membership, 2013</p>
+                    <dataviz which="'chart_3'" type="'groupedBar'"></dataviz>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
+                    <!-- /.source -->
+                </div>
+                 <div class="table-container">
+                    <p class="table-title">Connecticut's Voter Registration and Turnout vs United States (2012)</p>
+                    <dataviz which="'diagram_x'" type="'groupedBar'"></dataviz>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
+                </div>
+
+                <div class="table-container">
+                    <p class="table-title">Connecticut's Informal Political Participation vs. U.S. Averages (2013)</p>
+                    <dataviz which="'chart_4'" type="'groupedBar'"></dataviz>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
+                </div>
+                <div class="table-container">
+                    <p class="table-title">Social Networks in Connecticut (2013)</p>
+                    <dataviz which="'chart_5'" type="'bar'"></dataviz>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
+                </div>
+                <div class="table-container">
+                    <p class="table-title">Connecticut's Confidence In Institutions (2015)</p>
+                    <dataviz which="'chart_6'" type="'groupedBar'"></dataviz>
+                    <p class="source"><a href="http://www.ctdatahaven.org/reports/datahaven-community-wellbeing-survey">DataHaven, 2015 Community Well-being Survey</a></p>
+                    <!-- /.source -->
+                </div>
+                 <div class="table-container">
+                    <p class="table-title">Civic Health by Education in Connecticut</p>
+                    <dataviz which="'chart_7'" type="'groupedBar'"></dataviz>
+                    <p class="note">Data is pooled from 2010, 2011, 2013</p>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
+                    <!-- /.source -->
+                </div>
+                <div class="table-container">
+                    <p class="table-title">Civic Health by Age in Connecticut</p>
+                    <dataviz which="'chart_8'" type="'groupedBar'"></dataviz>
+                    <p class="note">Data is pooled from 2010, 2011, 2013</p>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
+                </div>
+                <div class="table-container">
+                    <p class="table-title">Political Participation by Gender in Connecticut</p>
+                    <dataviz which="'chart_9'" type="'groupedBar'"></dataviz>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
+                </div>
+                <div class="table-container">
+                    <p class="table-title">Connecticut Registration and Voting Rates in 2012 by Race/Ethnicity</p>
+                    <dataviz which="'chart_10'" type="'groupedBar'"></dataviz>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
+                </div>
+                <div class="table-container">
+                    <p class="table-title">Connecticut Group Participation by Race and Ethnicity</p>
+                    <dataviz which="'chart_11'" type="'groupedBar'"></dataviz>
+                    <p class="source">NCoC Analysis of 2013 Census Current Population Survey</p>
+                </div>
+                <div class="table-container">
+                    <p class="table-title">Population Characteristics by Race and Ethnicity (2013)</p>
+                    <dataviz which="'table_5'" type="'table'"></dataviz>
+                    <p class="source">U.S. Census, American Community Survey 5-year estimates, 2009-13 </p>
+                    <!-- /.source -->
+                </div>>
             </div>
         </div>
     </div>
