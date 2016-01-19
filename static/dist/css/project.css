@@ -141,6 +141,12 @@
   .navbar-header ul.pull-left a:hover {
     color: #fff;
     text-decoration: none; }
+  @media screen and (max-width: 600px) {
+    .navbar-header ul.pull-left {
+      display: none; }
+    .navbar-header ul.pull-right li:last-of-type {
+      float: right;
+      margin-right: -1rem; } }
   .navbar-header .logo-circle {
     margin-top: .25em;
     margin-right: .25em;
@@ -169,6 +175,9 @@
     font-size: 1em;
     color: lightgrey;
     padding-top: 2px; }
+  @media screen and (max-width: 600px) {
+    .footer .copyright p {
+      font-size: .75rem; } }
 
 .top-row {
   height: 5em;
@@ -525,6 +534,12 @@ dataviz {
     shape-rendering: crispEdges; }
   dataviz div.timeseries-container-internal > svg g.y-axis g.tick line {
     stroke: #ececec; }
+  @media screen and (max-width: 600px) {
+    dataviz div.timeseries-container-internal > svg g.x-axis g.tick text {
+      font-size: 0.75rem; } }
+  @media screen and (min-width: 601px) and (max-width: 840px) {
+    dataviz div.timeseries-container-internal > svg g.x-axis g.tick text {
+      font-size: 0.85rem; } }
   dataviz div.timeseries-container-internal > svg g.axis path {
     display: none; }
   dataviz div.timeseries-container-internal > svg g.timeseries-lines path {
@@ -698,6 +713,18 @@ table.ctdata-table {
   .hero h1, .hero h2, .hero h3, .hero h4 {
     color: white;
     text-align: center; }
+  @media screen and (max-width: 600px) {
+    .hero {
+      height: 7rem;
+      padding-top: 2rem; }
+      .hero h1 {
+        font-size: 1.25rem; } }
+  @media screen and (min-width: 601px) and (max-width: 840px) {
+    .hero {
+      height: 10rem;
+      padding-top: 3rem; }
+      .hero h1 {
+        font-size: 1.75rem; } }
 
 aside.links {
   float: right;

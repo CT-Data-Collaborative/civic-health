@@ -26,6 +26,15 @@ dataviz {
       stroke: $extra-light-grey;
     }
 
+    g.x-axis g.tick text {
+      @media screen and (max-width: 600px) {
+        font-size: 0.75rem;
+      }
+      @media screen and (min-width: 601px) and (max-width: 840px) {
+        font-size: 0.85rem;
+      }
+    }
+
     g.axis path {
       display: none;
     }

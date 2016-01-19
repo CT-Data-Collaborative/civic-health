@@ -77,6 +77,17 @@
 
     }
   }
+  @media screen and (max-width: 600px) {
+    ul.pull-left {
+      display: none;
+    }
+    ul.pull-right {
+      li:last-of-type {
+        float: right;
+        margin-right: -1rem;
+      }
+    }
+  }
 
   .logo-circle {
     @media screen and (max-width:500px) {
