@@ -1,3 +1,5 @@
+//TODO Consolidate and refactor sass files for viz types
+
 .groupedbar {
 }
 
@@ -93,11 +95,12 @@ dataviz {
 
     g.x-axis g.tick text,
     g.groupedbar-group text.groupedbar-value {
+      font-size: .8rem;
       @media screen and (max-width: 600px) {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
       }
       @media screen and (min-width: 601px) and (max-width: 840px) {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
       }
     }
 

@@ -600,6 +600,14 @@ tr.timeseries_row *:hover,{
   margin-top: 1rem;
   margin-left: 3rem;
   margin-right: 3rem; }
+  @media screen and (max-width: 600px) {
+    .table-container {
+      margin-right: 0;
+      margin-left: 0; } }
+  @media screen and (min-width: 601px) and (max-width: 840px) {
+    .table-container {
+      margin-right: 0;
+      margin-left: 0; } }
   .table-container .table-title {
     color: #1EACF1;
     margin-bottom: 0;
@@ -787,6 +795,14 @@ dataviz {
   width: 100%;
   padding-right: 2rem;
   padding-left: 2rem; }
+  @media screen and (max-width: 600px) {
+    dataviz {
+      padding-right: 0;
+      padding-left: 0; } }
+  @media screen and (min-width: 601px) and (max-width: 840px) {
+    dataviz {
+      padding-right: 0;
+      padding-left: 0; } }
 
 .groupedbar-tip {
   color: #fff;
@@ -861,14 +877,17 @@ dataviz {
     stroke: #ececec; }
   dataviz div.groupedbar-container-internal > svg g.axis path {
     display: none; }
-  @media screen and (max-width: 600px) {
-    dataviz div.groupedbar-container-internal > svg g.x-axis g.tick text,
-    dataviz div.groupedbar-container-internal > svg g.groupedbar-group text.groupedbar-value {
-      font-size: 0.75rem; } }
-  @media screen and (min-width: 601px) and (max-width: 840px) {
-    dataviz div.groupedbar-container-internal > svg g.x-axis g.tick text,
-    dataviz div.groupedbar-container-internal > svg g.groupedbar-group text.groupedbar-value {
-      font-size: 0.85rem; } }
+  dataviz div.groupedbar-container-internal > svg g.x-axis g.tick text,
+  dataviz div.groupedbar-container-internal > svg g.groupedbar-group text.groupedbar-value {
+    font-size: .8rem; }
+    @media screen and (max-width: 600px) {
+      dataviz div.groupedbar-container-internal > svg g.x-axis g.tick text,
+      dataviz div.groupedbar-container-internal > svg g.groupedbar-group text.groupedbar-value {
+        font-size: 0.65rem; } }
+    @media screen and (min-width: 601px) and (max-width: 840px) {
+      dataviz div.groupedbar-container-internal > svg g.x-axis g.tick text,
+      dataviz div.groupedbar-container-internal > svg g.groupedbar-group text.groupedbar-value {
+        font-size: 0.75rem; } }
   dataviz div.groupedbar-container-internal > svg rect.groupedbar-bar {
     fill-opacity: 0.85; }
   dataviz div.groupedbar-container-internal > svg rect.groupedbar-bar:hover {

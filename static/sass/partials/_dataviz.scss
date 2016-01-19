@@ -2,4 +2,12 @@ dataviz {
   width: 100%;
   padding-right: 2rem;
   padding-left: 2rem;
+  @media screen and (max-width: 600px) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  @media screen and (min-width: 601px) and (max-width: 840px) {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
